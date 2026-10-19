@@ -50,14 +50,14 @@ window.SITE = {
     {
       id: "nariz",
       label: "Nariz",
-      icon: "dring",
+      scene: "nose-dring",
       text: "Aba nasal com joia em aço cirúrgico ou titânio, e D ring pra quem quer um visual delicado.",
       from: "Aba nasal: R$ 60 (aço) · R$ 80 (titânio)",
     },
     {
       id: "boca",
       label: "Boca",
-      icon: "labret",
+      scene: "lip-labret",
       text: "Labret e variações com joias em titânio, do ponto de luz minimalista às peças com pedras.",
       from: "Perfurações a partir de R$ 60",
     },
@@ -71,7 +71,7 @@ window.SITE = {
     {
       id: "mamilo",
       label: "Mamilo",
-      icon: "barbell",
+      scene: "barbell",
       text: "Feito com cuidado, privacidade e joia em titânio.",
       from: "Joia em titânio a partir de R$ 60",
     },
@@ -104,13 +104,14 @@ window.SITE = {
   ],
 
   // Catálogo de joias (valores de referência do catálogo do WhatsApp da Fran).
+  // scene: ilustração de "como fica" (ver SCENES em main.js).
   jewelry: [
-    { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring" },
-    { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring" },
-    { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud" },
-    { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret" },
-    { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell" },
-    { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem" },
+    { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring", scene: "ear-ring", where: "no helix" },
+    { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring", scene: "nose-dring", where: "na aba nasal" },
+    { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "no lóbulo" },
+    { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret", scene: "lip-labret", where: "abaixo do lábio" },
+    { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell", scene: "barbell", where: "barbell reto" },
+    { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem", scene: "nose-gem", where: "na aba nasal" },
   ],
 
   piercingGallery: [
@@ -122,23 +123,19 @@ window.SITE = {
   ],
 
   // Portfólio do Italo.
-  // tags: "colorido" | "blackwork" | "fineline"
+  // tags: "colorido" | "blackwork"
   // link (opcional): post no Instagram ou qualquer página externa.
   portfolio: [
     { src: "assets/img/tattoo/dragao.webp", alt: "Dragão old school colorido no antebraço", title: "Dragão", tags: ["colorido"], link: "https://www.instagram.com/itallo.ttt/" },
     { src: "assets/img/tattoo/pantera-isp.webp", alt: "Cabeça de pantera old school com boné vermelho", title: "Pantera", tags: ["colorido"] },
-    { src: "assets/img/tattoo/prisoner.webp", alt: "Mão verde com máquina de tattoo e banner Prisoner of the Grind", title: "Prisoner of the Grind", tags: ["colorido"] },
     { src: "assets/img/tattoo/gato.webp", alt: "Gato preto old school com flor colorida", title: "Gato & flor", tags: ["colorido"] },
     { src: "assets/img/tattoo/pantera-coracoes.webp", alt: "Pantera preta com corações vermelhos", title: "Pantera de corações", tags: ["colorido"] },
-    { src: "assets/img/tattoo/rosa.webp", alt: "Rosa com teia de aranha em tons de azul", title: "Rosa & teia", tags: ["colorido"] },
+    { src: "assets/img/tattoo/prisoner.webp", alt: "Mão verde com máquina de tattoo e banner Prisoner of the Grind", title: "Prisoner of the Grind", tags: ["colorido"] },
     { src: "assets/img/tattoo/adaga-caveira.webp", alt: "Caveira atravessada por adaga em pontilhismo", title: "Adaga & caveira", tags: ["blackwork"] },
-    { src: "assets/img/tattoo/ceifador.webp", alt: "Ceifador em preto e cinza", title: "Ceifador", tags: ["blackwork"] },
+    { src: "assets/img/tattoo/rosa.webp", alt: "Rosa com teia de aranha em tons de azul", title: "Rosa & teia", tags: ["colorido"] },
     { src: "assets/img/tattoo/morcego-demonio.webp", alt: "Cabeça de morcego demoníaco em blackwork", title: "Morcego", tags: ["blackwork"] },
-    { src: "assets/img/tattoo/morcego-braco.webp", alt: "Asa de morcego em blackwork no braço", title: "Asa", tags: ["blackwork"] },
-    { src: "assets/img/tattoo/flor.webp", alt: "Flor pequena em traço preto", title: "Flor", tags: ["blackwork", "fineline"] },
-    { src: "assets/img/tattoo/borboleta.webp", alt: "Borboleta em preto e cinza no ombro", title: "Borboleta", tags: ["blackwork", "fineline"] },
-    { src: "assets/img/tattoo/escrita.webp", alt: "Frase em letra cursiva no antebraço", title: "Lettering", tags: ["fineline"] },
   ],
+
 
   // Flashes prontos para tatuar.
   // DEMO: imagens do portfólio usadas como exemplo — trocar pelas artes reais do Italo.

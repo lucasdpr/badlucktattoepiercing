@@ -16,8 +16,8 @@ npx http-server -p 8080
 | Seção | Interação |
 | --- | --- |
 | Hero "Bad \| Luck" | Divisão diagonal clara/escura; o lado em foco cresce no hover |
-| Fran — piercing | Mapa interativo da orelha (helix, tragus, conch, rook, daith…), regiões do corpo, catálogo de joias com "sacolinha", vale-presente, galeria com lightbox |
-| Italo — tattoo | Portfólio em mural com filtro (colorido / blackwork / fineline), "Tire sua sorte" (baralho que revela um flash), flashes com "Quero esse" |
+| Fran — piercing | Mapa interativo da orelha (helix, tragus, conch, rook, daith…), regiões do corpo, catálogo de joias com ilustração de "como fica" e "sacolinha", vale-presente, galeria com lightbox |
+| Italo — tattoo | Portfólio em mural com filtro (colorido / blackwork) e "ver mais", "Tire sua sorte" (baralho que revela um flash), flashes com "Quero esse" |
 | Agendamento | Passo a passo que monta a mensagem e abre o WhatsApp **de quem vai atender** (piercing → Fran, tattoo → Italo, os dois → duas mensagens) |
 | Extras | Botão flutuante do WhatsApp, cabeçalho que muda de tema por seção, menu mobile, FAQ |
 
@@ -29,8 +29,8 @@ Quase tudo fica em **`assets/js/data.js`**:
 
 - `artists` — WhatsApp, Instagram e nomes da Fran e do Italo
 - `piercingAreas` / `earSpots` — regiões e pontos do mapa da orelha
-- `jewelry` — catálogo de joias e preços
-- `portfolio` — trabalhos do Italo (`tags`: `colorido`, `blackwork`, `fineline`; `link` opcional para o post)
+- `jewelry` — catálogo de joias e preços (`scene` escolhe a ilustração de "como fica", definidas em `SCENES` no `main.js`)
+- `portfolio` — trabalhos do Italo (`tags`: `colorido` ou `blackwork`; `link` opcional para o post). Os 8 primeiros aparecem direto, o resto em "Ver mais trabalhos"
 - `flashes` — flashes disponíveis
 - `faq` — perguntas frequentes
 
@@ -38,7 +38,9 @@ Para adicionar um trabalho ao portfólio: coloque a foto em `assets/img/tattoo/`
 
 ## Pendências antes de publicar
 
-- [ ] **Fotos em alta resolução.** As imagens atuais foram recortadas de prints do Instagram (≈500 px) só para a demonstração. Pedir os originais à Fran e ao Italo.
+- [ ] **Fotos em alta resolução.** As imagens atuais foram recortadas de prints do Instagram (≈500 px) só para a demonstração — é o que mais limita a qualidade visual hoje. Pedir os originais (ideal ≥ 1200 px) à Fran e ao Italo.
+- [ ] **Depoimentos reais** (a Fran tem destaque "Feedback" no Instagram) — não foram inventados no site.
+- [ ] `og:image` precisa de URL absoluta depois que houver domínio.
 - [ ] **Flashes reais.** Os flashes usam fotos do portfólio como exemplo; trocar pelas artes disponíveis do Italo.
 - [ ] **Revisar textos** (biografias, FAQ, descrições das regiões) com a Fran e o Italo.
 - [ ] **Confirmar preços** — vieram do catálogo do WhatsApp da Fran e não está claro se incluem perfuração + joia.

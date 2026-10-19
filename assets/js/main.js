@@ -104,6 +104,44 @@
     $$(".reveal").forEach((el) => revealObserver.observe(el));
   }
 
+  /* ---------- Ilustrações das joias ---------- */
+  // Ilustrações de "como fica" cada joia (gradientes #g-metal / #g-gem definidos no index.html)
+  const EAR = `
+    <path class="sc-skin" d="M118 96 C132 44 204 18 250 56 C292 90 290 166 266 214 C248 250 226 266 219 302 C213 342 202 376 168 382 C136 387 116 362 122 330 C124 312 112 300 108 282 C104 262 112 250 110 232 C108 208 104 140 118 96 Z"/>
+    <path class="sc-line" d="M118 96 C132 44 204 18 250 56 C292 90 290 166 266 214 C248 250 226 266 219 302 C213 342 202 376 168 382 C136 387 116 362 122 330"/>
+    <path class="sc-line sc-soft" d="M142 92 C164 62 214 54 240 84 C262 110 258 162 240 196"/>
+    <path class="sc-line sc-soft" d="M150 126 C182 104 222 116 226 152 C230 186 206 214 190 246 C178 268 166 282 150 288"/>
+    <path class="sc-line sc-soft" d="M122 214 C106 224 106 254 126 264"/>
+    <path class="sc-line sc-soft" d="M150 290 C168 286 186 276 194 260"/>`;
+  const NOSE = `
+    <path class="sc-skin" d="M180 -40 C176 0 172 32 160 58 C150 80 120 106 100 122 C92 132 86 140 92 149 C96 152 100 149 104 148 C112 147 117 151 123 153 C131 156 136 164 134 180 L132 240 L280 240 L280 -40 Z"/>
+    <path class="sc-line" d="M180 -40 C176 0 172 32 160 58 C150 80 120 106 100 122 C92 132 86 140 92 149 C96 152 100 149 104 148 C112 147 117 151 123 153 C131 156 136 164 134 180 L132 240"/>
+    <path class="sc-line sc-soft" d="M112 140 C106 130 120 122 128 134"/>
+    <path class="sc-line sc-soft" d="M196 52 C188 50 180 54 176 60"/>`;
+  const SPARK = (x, y) =>
+    `<path class="sc-spark" d="M${x} ${y - 9} L${x + 2} ${y - 2} L${x + 9} ${y} L${x + 2} ${y + 2} L${x} ${y + 9} L${x - 2} ${y + 2} L${x - 9} ${y} L${x - 2} ${y - 2} Z"/>`;
+  const SCENES = {
+    "ear-ring": `<g transform="translate(66 4) scale(.43)">${EAR}</g>
+      <circle cx="178" cy="50" r="12" fill="none" stroke="url(#g-metal)" stroke-width="4.5"/>
+      <circle cx="178" cy="62" r="3" fill="url(#g-gem)"/>${SPARK(200, 34)}`,
+    "ear-studs": `<g transform="translate(66 4) scale(.43)">${EAR}</g>
+      <circle cx="139" cy="157" r="5.5" fill="url(#g-gem)" stroke="#cfcac4"/>
+      <circle cx="129" cy="143" r="3.8" fill="url(#g-gem)" stroke="#cfcac4"/>${SPARK(156, 146)}`,
+    "nose-dring": `<g transform="translate(-60 -95) scale(1.55)">${NOSE}
+      <path d="M112 133 L112 156 C96 156 96 133 112 133" fill="none" stroke="url(#g-metal)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="112" cy="133" r="2.6" fill="url(#g-metal)"/></g>${SPARK(98, 92)}`,
+    "nose-gem": `<g transform="translate(-60 -95) scale(1.55)">${NOSE}
+      <circle cx="117" cy="135" r="4.5" fill="url(#g-gem)" stroke="#cfcac4"/></g>${SPARK(150, 96)}`,
+    "lip-labret": `<rect class="sc-skin" width="240" height="180"/>
+      <path class="sc-lip" d="M58 84 C80 66 104 62 120 72 C136 62 160 66 182 84 C162 89 140 91 120 91 C100 91 78 89 58 84 Z"/>
+      <path class="sc-lip sc-lip--low" d="M58 84 C78 89 100 91 120 91 C140 91 162 89 182 84 C168 112 142 120 120 120 C98 120 72 112 58 84 Z"/>
+      <circle cx="120" cy="138" r="5.5" fill="url(#g-gem)" stroke="#cfcac4"/>${SPARK(140, 130)}`,
+    barbell: `<ellipse cx="120" cy="128" rx="74" ry="7" fill="rgba(59,46,38,.12)"/>
+      <rect x="76" y="89" width="88" height="6" rx="3" fill="url(#g-metal)" stroke="#bdb8b2" stroke-width=".8"/>
+      <circle cx="68" cy="92" r="13" fill="url(#g-metal)" stroke="#bdb8b2"/>
+      <circle cx="172" cy="92" r="13" fill="url(#g-metal)" stroke="#bdb8b2"/>${SPARK(66, 86)}`,
+  };
+
   /* ---------- Explorador de piercings ---------- */
   const tabsEl = $("[data-explorer-tabs]");
   const panelEl = $("[data-explorer-panel]");
@@ -172,9 +210,13 @@
       );
       return;
     }
-    artEl.innerHTML = area.img
-      ? `<span class="explorer__photo"><img src="${area.img}" alt="Exemplo de ${escapeHtml(area.label.toLowerCase())} feito pela Fran" loading="lazy"></span>`
-      : `<span class="explorer__icon" aria-hidden="true"><svg><use href="#j-${area.icon}"/></svg></span>`;
+    if (area.img) {
+      artEl.innerHTML = `<span class="explorer__photo"><img src="${area.img}" alt="Exemplo de ${escapeHtml(area.label.toLowerCase())} feito pela Fran" loading="lazy"></span>`;
+    } else if (area.scene) {
+      artEl.innerHTML = `<span class="explorer__scene jewel__scene"><svg viewBox="0 0 240 180" aria-hidden="true">${SCENES[area.scene]}</svg></span>`;
+    } else {
+      artEl.innerHTML = `<span class="explorer__icon" aria-hidden="true"><svg><use href="#j-${area.icon}"/></svg></span>`;
+    }
     artEl.classList.remove("is-swapping");
     void artEl.offsetWidth;
     artEl.classList.add("is-swapping");
@@ -227,10 +269,15 @@
     .map(
       (j) => `
       <li class="jewel" data-jewel="${j.id}">
-        <span class="jewel__icon" aria-hidden="true"><svg><use href="#j-${j.icon}"/></svg></span>
-        <b>${escapeHtml(j.name)}</b>
-        <small>${escapeHtml(j.material)}</small>
-        <span class="jewel__price">${j.from ? "<small>a partir de </small>" : ""}${money(j.price)}</span>
+        <div class="jewel__scene">
+          <svg viewBox="0 0 240 180" role="img" aria-label="Ilustração: ${escapeHtml(j.name)} ${escapeHtml(j.where || "")}">${SCENES[j.scene] || ""}</svg>
+          ${j.where ? `<span class="jewel__where">${escapeHtml(j.where)}</span>` : ""}
+        </div>
+        <div class="jewel__body">
+          <b>${escapeHtml(j.name)}</b>
+          <small>${escapeHtml(j.material)}</small>
+          <span class="jewel__price">${j.from ? "<small>a partir de </small>" : ""}${money(j.price)}</span>
+        </div>
         <button class="jewel__add" aria-pressed="false" aria-label="Separar ${escapeHtml(j.name)}">+</button>
       </li>`
     )
@@ -346,7 +393,7 @@
 
   /* ---------- Portfólio com filtro ---------- */
   const grid = $("[data-portfolio]");
-  const tagLabel = { colorido: "Old school colorido", blackwork: "Blackwork", fineline: "Fineline" };
+  const tagLabel = { colorido: "Old school colorido", blackwork: "Blackwork" };
   grid.innerHTML = S.portfolio
     .map(
       (p, i) =>

@@ -41,6 +41,10 @@
 
   <!-- Ícones das joias -->
   <svg width="0" height="0" class="sr-only" aria-hidden="true">
+    <defs>
+      <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#b9b6b2"/><stop offset=".7" stop-color="#f4f2ef"/><stop offset="1" stop-color="#8d8984"/></linearGradient>
+      <radialGradient id="g-gem" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#dfe9f2"/><stop offset="1" stop-color="#9fb4c8"/></radialGradient>
+    </defs>
     <symbol id="j-ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><circle cx="32" cy="12" r="2.4"/><circle cx="46" cy="18" r="2.4"/><circle cx="52" cy="32" r="2.4"/><circle cx="46" cy="46" r="2.4"/><circle cx="18" cy="46" r="2.4"/><circle cx="12" cy="32" r="2.4"/><circle cx="18" cy="18" r="2.4"/></g><path d="M26 50.5 L38 50.5" stroke="currentColor" stroke-width="3"/></symbol>
     <symbol id="j-dring" viewBox="0 0 64 64"><path d="M22 14 L22 50 M22 14 C52 14 52 50 22 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="22" cy="14" r="3" fill="currentColor"/></symbol>
     <symbol id="j-stud" viewBox="0 0 64 64"><circle cx="32" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="24" r="4" fill="currentColor"/><path d="M32 34 L32 52 M24 52 L40 52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
@@ -255,7 +259,6 @@
             <button class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
             <button class="filter" data-filter="colorido" aria-pressed="false">Colorido</button>
             <button class="filter" data-filter="blackwork" aria-pressed="false">Blackwork</button>
-            <button class="filter" data-filter="fineline" aria-pressed="false">Fineline</button>
           </div>
         </div>
         <div class="t-grid" id="portfolio-grid" data-portfolio></div>
@@ -368,7 +371,6 @@
               <div class="pill-group" role="radiogroup" aria-labelledby="style-label">
                 <label class="pill"><input type="radio" name="tstyle" value="Old school colorido"><span>Old school colorido</span></label>
                 <label class="pill"><input type="radio" name="tstyle" value="Blackwork"><span>Blackwork</span></label>
-                <label class="pill"><input type="radio" name="tstyle" value="Fineline"><span>Fineline</span></label>
                 <label class="pill"><input type="radio" name="tstyle" value="Ainda não sei"><span>Não sei</span></label>
               </div>
               <div class="field-row">
