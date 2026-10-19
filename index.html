@@ -43,6 +43,15 @@
   <svg width="0" height="0" class="sr-only" aria-hidden="true">
     <defs>
       <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#b9b6b2"/><stop offset=".7" stop-color="#f4f2ef"/><stop offset="1" stop-color="#8d8984"/></linearGradient>
+      <linearGradient id="g-intimate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d9cc"/><stop offset=".55" stop-color="#ecccbf"/><stop offset="1" stop-color="#c9dcc2"/></linearGradient>
+      <linearGradient id="g-bw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#15110e"/><stop offset="1" stop-color="#d9d2c6"/></linearGradient>
+      <linearGradient id="m-dourado" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".35" stop-color="#e5bb5c"/><stop offset=".65" stop-color="#a8781f"/><stop offset="1" stop-color="#f6d98b"/></linearGradient>
+      <linearGradient id="m-prateado" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#cfd3d8"/><stop offset=".65" stop-color="#8b9097"/><stop offset="1" stop-color="#eef0f3"/></linearGradient>
+      <linearGradient id="m-rose" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0ea"/><stop offset=".35" stop-color="#e9b6a2"/><stop offset=".65" stop-color="#b47562"/><stop offset="1" stop-color="#f6d2c4"/></linearGradient>
+      <radialGradient id="s-cristal" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#e6f1fb"/><stop offset="1" stop-color="#9fb8cf"/></radialGradient>
+      <radialGradient id="s-rosa" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#f8bfd2"/><stop offset="1" stop-color="#d0628e"/></radialGradient>
+      <radialGradient id="s-verde" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#a8e6c8"/><stop offset="1" stop-color="#2f8f63"/></radialGradient>
+      <radialGradient id="s-azul" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#bfe0fb"/><stop offset="1" stop-color="#3f7fc4"/></radialGradient>
       <radialGradient id="g-gem" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#dfe9f2"/><stop offset="1" stop-color="#9fb4c8"/></radialGradient>
     </defs>
     <symbol id="j-ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><circle cx="32" cy="12" r="2.4"/><circle cx="46" cy="18" r="2.4"/><circle cx="52" cy="32" r="2.4"/><circle cx="46" cy="46" r="2.4"/><circle cx="18" cy="46" r="2.4"/><circle cx="12" cy="32" r="2.4"/><circle cx="18" cy="18" r="2.4"/></g><path d="M26 50.5 L38 50.5" stroke="currentColor" stroke-width="3"/></symbol>
@@ -86,7 +95,6 @@
       <h1 id="hero-title" class="sr-only">Bad Luck Tattoo &amp; Piercing — Barra Mansa, RJ</h1>
       <div class="hero-halves">
         <div class="half half--light" data-half="fran">
-          <span class="half__word half__word--bad" aria-hidden="true">Bad</span>
           <a class="path" href="#piercing">
             <span class="sticker sticker--arch"><img src="assets/img/piercing/orelha-ramo.webp" alt="Joia de ramo com zircônias aplicada pela Fran" width="488" height="546"></span>
             <span class="path__copy">
@@ -98,7 +106,6 @@
           </a>
         </div>
         <div class="half half--dark" data-half="italo">
-          <span class="half__word half__word--luck" aria-hidden="true">Luck</span>
           <a class="path path--dark" href="#tattoo">
             <span class="sticker sticker--card"><img src="assets/img/tattoo/pantera-isp.webp" alt="Pantera old school tatuada pelo Italo" width="488" height="606"></span>
             <span class="path__copy">
@@ -109,9 +116,13 @@
             </span>
           </a>
         </div>
-        <div class="hero-seal" aria-hidden="true">
-          <svg class="hero-seal__ring" viewBox="0 0 200 200"><defs><path id="seal-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#seal-circle">TATTOO ✦ PIERCING ✦ BARRA MANSA ✦ SINCE 2021 ✦ </textPath></text></svg>
-          <img src="assets/img/logo.png" alt="" width="142" height="142">
+        <div class="hero-brand" aria-hidden="true">
+          <div class="hero-seal">
+            <svg class="hero-seal__ring" viewBox="0 0 200 200"><defs><path id="seal-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#seal-circle">TATTOO ✦ PIERCING ✦ BARRA MANSA ✦ SINCE 2021 ✦ </textPath></text></svg>
+            <img src="assets/img/logo.png" alt="" width="142" height="142">
+          </div>
+          <span class="hero-wordmark">Bad Luck</span>
+          <span class="hero-kicker">Tattoo &amp; Piercing · Barra Mansa</span>
         </div>
       </div>
       <p class="hero-tagline"><span class="script">Azar</span> de quem não marcou horário.</p>
@@ -155,21 +166,8 @@
         </div>
         <div class="explorer__tabs" role="tablist" aria-label="Regiões do corpo" data-explorer-tabs></div>
         <div class="explorer__stage">
-          <div class="explorer__visual" data-explorer-visual>
-            <div class="ear" data-ear hidden>
-              <svg class="ear__art" viewBox="0 0 300 400" aria-hidden="true">
-                <path class="ear__fill" d="M118 96 C132 44 204 18 250 56 C292 90 290 166 266 214 C248 250 226 266 219 302 C213 342 202 376 168 382 C136 387 116 362 122 330 C124 312 112 300 108 282 C104 262 112 250 110 232 C108 208 104 140 118 96 Z"/>
-                <path class="ear__line" d="M118 96 C132 44 204 18 250 56 C292 90 290 166 266 214 C248 250 226 266 219 302 C213 342 202 376 168 382 C136 387 116 362 122 330"/>
-                <path class="ear__line ear__line--soft" d="M142 92 C164 62 214 54 240 84 C262 110 258 162 240 196"/>
-                <path class="ear__line ear__line--soft" d="M150 126 C182 104 222 116 226 152 C230 186 206 214 190 246 C178 268 166 282 150 288"/>
-                <path class="ear__line ear__line--soft" d="M160 136 C178 150 196 150 214 140"/>
-                <path class="ear__line ear__line--soft" d="M122 214 C106 224 106 254 126 264"/>
-                <path class="ear__line ear__line--soft" d="M150 290 C168 286 186 276 194 260"/>
-                <path class="ear__line ear__line--soft" d="M146 176 C160 168 176 172 180 186"/>
-              </svg>
-              <div class="ear__spots" data-ear-spots></div>
-            </div>
-            <div class="explorer__art" data-explorer-art hidden></div>
+          <div class="explorer__visual">
+            <div class="map" data-map></div>
           </div>
           <div class="explorer__panel" role="tabpanel" aria-live="polite" data-explorer-panel></div>
         </div>
@@ -199,6 +197,19 @@
         </div>
       </div>
 
+      <!-- Lojinha de semi-joias (PRÉVIA — remover este bloco se a Fran não aprovar) -->
+      <div class="container shop reveal" aria-labelledby="shop-title">
+        <div class="section-head section-head--row">
+          <div>
+            <span class="eyebrow">Lojinha da Fran</span>
+            <h3 id="shop-title" class="title-serif">Semi-joias</h3>
+            <p class="muted">Escolha o modelo, a cor do banho e da pedra. A peça vai separada na sua mensagem.</p>
+          </div>
+          <div class="shop__filters" role="group" aria-label="Filtrar semi-joias" data-shop-filters></div>
+        </div>
+        <ul class="shop-grid" data-shop></ul>
+      </div>
+
       <!-- Galeria piercing -->
       <div class="container gallery-wrap reveal" aria-labelledby="pgallery-title">
         <div class="section-head section-head--row">
@@ -222,72 +233,60 @@
 
     <!-- ITALO / TATTOO -->
     <section id="tattoo" class="zone zone--dark" data-zone="dark" aria-labelledby="italo-title">
-      <span class="ghost-word ghost-word--italo" aria-hidden="true">Old School</span>
-      <div class="container about about--reverse">
-        <div class="about__copy reveal">
-          <span class="eyebrow eyebrow--gold">Tatuador · fundador</span>
-          <h2 id="italo-title" class="title-slab">Italo <span class="script">Nogueira</span></h2>
-          <p class="lead">Traço firme, cor chapada e clássicos que atravessam gerações. O Italo vive o <strong>old school</strong> — panteras, adagas, rosas, gatos e tudo que nasceu das folhas de flash — e também manda bem no <strong>blackwork</strong>.</p>
-          <p>Faz projetos autorais e tattoos comerciais: do flash pronto pra sair hoje ao desenho exclusivo pensado pra você.</p>
+      <!-- Letreiro -->
+      <div class="container sign">
+        <div class="sign__copy reveal">
+          <span class="eyebrow eyebrow--gold">Tatuador · cofundador</span>
+          <h2 id="italo-title" class="sign__name"><span class="sign__first">Italo</span> <span class="sign__last">Nogueira</span></h2>
+          <p class="lead">Especialista em <strong>old school</strong>: traço firme, cor chapada e os clássicos que atravessam gerações — panteras, adagas, rosas e tudo que nasceu das folhas de flash.</p>
+          <p class="muted">Mas não para por aí: blackwork, pontilhismo, fineline e lettering também saem da máquina dele. Do flash pronto ao projeto exclusivo, cada tattoo é pensada pra durar.</p>
           <div class="actions">
             <button class="btn btn-red" data-book="italo">Agendar com o Italo</button>
             <a class="btn btn-ghost-light" href="https://www.instagram.com/itallo.ttt/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg>@itallo.ttt</a>
           </div>
         </div>
-        <div class="about__stats reveal">
-          <div class="spin-badge spin-badge--dark" aria-hidden="true">
-            <svg viewBox="0 0 200 200"><defs><path id="italo-circle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#italo-circle">OLD SCHOOL ✦ BLACKWORK ✦ AUTORAL ✦ FLASH ✦ </textPath></text></svg>
-            <span class="spin-badge__center">13</span>
+        <figure class="sign__frame reveal">
+          <div class="frame">
+            <img src="assets/img/tattoo/dragao.webp" alt="Dragão old school colorido tatuado pelo Italo" loading="lazy" width="488" height="606">
           </div>
-          <div class="banner"><span>Agendamentos abertos</span></div>
-          <ul class="stat-list">
-            <li><b>Old school</b><span>colorido</span></li>
-            <li><b>Blackwork</b><span>&amp; pontilhismo</span></li>
-            <li><b>Autoral</b><span>&amp; comercial</span></li>
-          </ul>
-        </div>
+          <figcaption class="banner"><span>Especialidade: old school</span></figcaption>
+          <div class="spin-badge spin-badge--dark" aria-hidden="true">
+            <svg viewBox="0 0 200 200"><defs><path id="italo-circle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#italo-circle">AGENDA ABERTA ✦ BARRA MANSA ✦ </textPath></text></svg>
+            <span class="spin-badge__center"><svg><use href="#i-star"/></svg></span>
+          </div>
+        </figure>
       </div>
 
-      <!-- Portfólio -->
-      <div class="container reveal" aria-labelledby="portfolio-title">
+      <!-- Estilos -->
+      <div class="container styles reveal" aria-labelledby="styles-title">
         <div class="section-head section-head--row">
           <div>
-            <span class="eyebrow eyebrow--gold">Portfólio</span>
-            <h3 id="portfolio-title" class="title-slab title-slab--sm">Trabalhos recentes</h3>
+            <span class="eyebrow eyebrow--gold">Estilos</span>
+            <h3 id="styles-title" class="title-slab title-slab--sm">Do old school <span class="script">ao fineline</span></h3>
           </div>
-          <div class="filters" role="group" aria-label="Filtrar portfólio" data-filters>
-            <button class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
-            <button class="filter" data-filter="colorido" aria-pressed="false">Colorido</button>
-            <button class="filter" data-filter="blackwork" aria-pressed="false">Blackwork</button>
-          </div>
+          <p class="muted styles__hint">Toque num estilo para pedir um orçamento nele.</p>
         </div>
-        <div class="t-grid" id="portfolio-grid" data-portfolio></div>
-        <div class="more">
-          <button class="btn btn-red" data-more aria-controls="portfolio-grid" aria-expanded="false">Ver mais trabalhos</button>
-          <a class="btn btn-ghost-light" href="https://contate.me/itallotattoo" target="_blank" rel="noopener">Portfólio completo &amp; contatos <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
+        <ul class="style-grid" data-styles></ul>
       </div>
 
-      <!-- Tire sua sorte -->
-      <div class="container luck reveal" aria-labelledby="luck-title">
-        <div class="luck__copy">
-          <span class="eyebrow eyebrow--gold">Bad Luck?</span>
-          <h3 id="luck-title" class="title-slab title-slab--sm">Tire sua <span class="script">sorte</span></h3>
-          <p class="lead">Embaralha, vira a carta e descobre o flash que o destino escolheu pra você. Gostou? É só pedir.</p>
-          <div class="actions">
-            <button class="btn btn-red" data-draw>Virar uma carta</button>
-          </div>
-          <p class="sr-only" aria-live="polite" data-draw-status></p>
-        </div>
-        <div class="deck" data-deck>
-          <div class="deck__fan" aria-hidden="true">
-            <span class="card-back"></span><span class="card-back"></span><span class="card-back"></span><span class="card-back"></span><span class="card-back"></span>
-          </div>
-          <div class="drawn" data-drawn>
-            <div class="drawn__inner">
-              <div class="drawn__face drawn__face--back card-back" aria-hidden="true"></div>
-              <div class="drawn__face drawn__face--front" data-drawn-front></div>
+      <!-- Portfólio sobre "papel" -->
+      <div class="container">
+        <div class="sheet reveal" aria-labelledby="portfolio-title">
+          <div class="section-head section-head--row">
+            <div>
+              <span class="eyebrow sheet__eyebrow">Portfólio</span>
+              <h3 id="portfolio-title" class="sheet__title">Trabalhos recentes</h3>
             </div>
+            <div class="filters" role="group" aria-label="Filtrar portfólio" data-filters>
+              <button class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
+              <button class="filter" data-filter="colorido" aria-pressed="false">Colorido</button>
+              <button class="filter" data-filter="blackwork" aria-pressed="false">Blackwork</button>
+            </div>
+          </div>
+          <div class="t-grid" id="portfolio-grid" data-portfolio></div>
+          <div class="more">
+            <button class="btn btn-ink" data-more aria-controls="portfolio-grid" aria-expanded="false">Ver mais trabalhos</button>
+            <a class="btn btn-ghost" href="https://contate.me/itallotattoo" target="_blank" rel="noopener">Portfólio completo &amp; contatos <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </div>
@@ -295,142 +294,185 @@
       <!-- Flash -->
       <div class="container flash-wrap reveal" aria-labelledby="flash-title">
         <div class="section-head">
-          <span class="eyebrow eyebrow--gold">Pronto pra tatuar</span>
-          <h3 id="flash-title" class="title-slab title-slab--sm">Flash <span class="script">disponível</span></h3>
-          <p class="muted">Gostou de algum? Clique em <b>Quero esse</b> e a mensagem já vai pronta pro Italo.</p>
+          <span class="eyebrow eyebrow--gold">Flash disponível</span>
+          <h3 id="flash-title" class="title-slab title-slab--sm">Pronto <span class="script">pra tatuar</span></h3>
+          <p class="muted">Flash são desenhos prontos do Italo, com tamanho e valor definidos: é só escolher, marcar e tatuar. Gostou de algum? Toque em <b>Quero esse</b>.</p>
         </div>
         <div class="flash-rail" data-flash></div>
+
+        <!-- Tire sua sorte -->
+        <div class="luck" aria-labelledby="luck-title">
+          <div class="luck__copy">
+            <span class="eyebrow eyebrow--gold">Não sabe qual escolher?</span>
+            <h4 id="luck-title" class="title-slab title-slab--xs">Deixa a <span class="script">sorte</span> escolher</h4>
+            <p>Bad Luck que nada: vira uma carta e ela revela um dos flashes disponíveis. Curtiu? É só pedir.</p>
+            <div class="actions">
+              <button class="btn btn-red" data-draw>Virar uma carta</button>
+            </div>
+            <p class="sr-only" aria-live="polite" data-draw-status></p>
+          </div>
+          <div class="deck" data-deck>
+            <div class="deck__fan" aria-hidden="true">
+              <span class="card-back"></span><span class="card-back"></span><span class="card-back"></span><span class="card-back"></span><span class="card-back"></span>
+            </div>
+            <div class="drawn" data-drawn>
+              <div class="drawn__inner">
+                <div class="drawn__face drawn__face--back card-back" aria-hidden="true"></div>
+                <div class="drawn__face drawn__face--front" data-drawn-front></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- AGENDAMENTO -->
     <section id="agendar" class="zone zone--sand" data-zone="light" aria-labelledby="book-title">
-      <div class="container booking">
-        <div class="booking__intro reveal">
-          <span class="eyebrow">Agendamento</span>
-          <h2 id="book-title" class="title-serif">Bora marcar?</h2>
-          <p class="lead">Responda em menos de um minuto e a gente monta a mensagem certinha pro WhatsApp de quem vai te atender.</p>
-          <ul class="contact-cards">
-            <li>
-              <span class="contact-cards__who">Piercing · Fran</span>
-              <a data-wa="fran" href="https://wa.me/5524999860188" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whats"/></svg>(24) 99986-0188</a>
+      <div class="container">
+        <div class="book-head reveal">
+          <div class="book-head__copy">
+            <span class="eyebrow">Agendamento</span>
+            <h2 id="book-title" class="title-serif">Bora marcar?</h2>
+            <p class="lead">Em menos de um minuto a gente monta sua mensagem e manda pro WhatsApp de quem vai te atender. Você acompanha tudo ao vivo antes de enviar.</p>
+          </div>
+          <ul class="artists">
+            <li class="artist">
+              <img class="artist__avatar" src="assets/img/fran-avatar.webp" alt="" width="64" height="64">
+              <span class="artist__info"><b>Fran</b><span>Piercing &amp; semi-joias</span></span>
+              <a class="artist__wa" data-wa="fran" href="https://wa.me/5524999860188" target="_blank" rel="noopener" aria-label="WhatsApp da Fran, (24) 99986-0188"><svg aria-hidden="true"><use href="#i-whats"/></svg><span>(24) 99986-0188</span></a>
             </li>
-            <li>
-              <span class="contact-cards__who">Tattoo · Italo</span>
-              <a data-wa="italo" href="https://wa.me/5524999297145" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whats"/></svg>(24) 99929-7145</a>
+            <li class="artist artist--dark">
+              <span class="artist__avatar artist__avatar--mono" aria-hidden="true">IN</span>
+              <span class="artist__info"><b>Italo Nogueira</b><span>Tattoo</span></span>
+              <a class="artist__wa" data-wa="italo" href="https://wa.me/5524999297145" target="_blank" rel="noopener" aria-label="WhatsApp do Italo, (24) 99929-7145"><svg aria-hidden="true"><use href="#i-whats"/></svg><span>(24) 99929-7145</span></a>
             </li>
           </ul>
         </div>
 
-        <form class="wizard reveal" data-wizard novalidate>
-          <ol class="wizard__progress" aria-hidden="true">
-            <li class="is-active">Serviço</li><li>Detalhes</li><li>Você</li><li>Enviar</li>
-          </ol>
+        <div class="planner reveal">
+          <form class="wizard" data-wizard novalidate>
+            <ol class="wizard__progress" aria-hidden="true">
+              <li class="is-active">Serviço</li><li>Detalhes</li><li>Você</li><li>Enviar</li>
+            </ol>
 
-          <!-- Passo 1 -->
-          <fieldset class="step is-active" data-step="1">
-            <legend class="step__title">O que você quer fazer?</legend>
-            <div class="choice-grid">
-              <label class="choice choice--fran">
-                <input type="radio" name="service" value="piercing">
-                <span class="choice__body"><b>Piercing</b><small>com a Fran</small></span>
-              </label>
-              <label class="choice choice--italo">
-                <input type="radio" name="service" value="tattoo">
-                <span class="choice__body"><b>Tattoo</b><small>com o Italo</small></span>
-              </label>
-              <label class="choice choice--both">
-                <input type="radio" name="service" value="both">
-                <span class="choice__body"><b>Os dois</b><small>Fran + Italo</small></span>
-              </label>
-            </div>
-            <p class="field-error" data-error="service" hidden>Escolha uma opção para continuar.</p>
-          </fieldset>
-
-          <!-- Passo 2 -->
-          <fieldset class="step" data-step="2">
-            <legend class="step__title">Conta um pouco mais</legend>
-
-            <div class="detail-block" data-for="piercing">
-              <h4 class="detail-title">Piercing</h4>
-              <p class="label" id="area-label">Onde? <small>(pode marcar mais de um)</small></p>
-              <div class="pill-group" role="group" aria-labelledby="area-label" data-area-pills></div>
-              <div class="bag-inline" data-bag-inline hidden></div>
-            </div>
-
-            <div class="detail-block" data-for="tattoo">
-              <h4 class="detail-title">Tattoo</h4>
-              <p class="label" id="type-label">Tipo de projeto</p>
-              <div class="pill-group" role="radiogroup" aria-labelledby="type-label">
-                <label class="pill"><input type="radio" name="ttype" value="Flash pronto"><span>Flash pronto</span></label>
-                <label class="pill"><input type="radio" name="ttype" value="Projeto autoral"><span>Projeto autoral</span></label>
-                <label class="pill"><input type="radio" name="ttype" value="Tenho uma referência"><span>Tenho referência</span></label>
-              </div>
-              <div class="flash-chosen" data-flash-chosen hidden></div>
-              <p class="label" id="style-label">Estilo</p>
-              <div class="pill-group" role="radiogroup" aria-labelledby="style-label">
-                <label class="pill"><input type="radio" name="tstyle" value="Old school colorido"><span>Old school colorido</span></label>
-                <label class="pill"><input type="radio" name="tstyle" value="Blackwork"><span>Blackwork</span></label>
-                <label class="pill"><input type="radio" name="tstyle" value="Ainda não sei"><span>Não sei</span></label>
-              </div>
-              <div class="field-row">
-                <label class="field">
-                  <span class="label">Local do corpo</span>
-                  <input type="text" name="tplace" placeholder="Ex.: antebraço" autocomplete="off">
+            <!-- Passo 1 -->
+            <fieldset class="step is-active" data-step="1">
+              <legend class="step__title">O que você quer fazer?</legend>
+              <div class="choice-grid">
+                <label class="choice choice--fran">
+                  <input type="radio" name="service" value="piercing">
+                  <span class="choice__body">
+                    <img class="choice__avatar" src="assets/img/fran-avatar.webp" alt="" width="44" height="44">
+                    <b>Piercing</b><small>com a Fran</small>
+                  </span>
                 </label>
-                <label class="field">
-                  <span class="label">Tamanho aproximado: <output data-size-out>10 cm</output></span>
-                  <input type="range" name="tsize" min="3" max="40" value="10" step="1">
+                <label class="choice choice--italo">
+                  <input type="radio" name="service" value="tattoo">
+                  <span class="choice__body">
+                    <span class="choice__avatar choice__avatar--mono" aria-hidden="true">IN</span>
+                    <b>Tattoo</b><small>com o Italo</small>
+                  </span>
+                </label>
+                <label class="choice choice--both">
+                  <input type="radio" name="service" value="both">
+                  <span class="choice__body">
+                    <span class="choice__pair" aria-hidden="true"><img src="assets/img/fran-avatar.webp" alt="" width="44" height="44"><span class="choice__avatar--mono">IN</span></span>
+                    <b>Os dois</b><small>Fran + Italo</small>
+                  </span>
                 </label>
               </div>
-              <label class="field">
-                <span class="label">Sua ideia</span>
-                <textarea name="tidea" rows="3" placeholder="Ex.: uma pantera old school com rosas, colorida"></textarea>
-              </label>
-            </div>
-            <p class="field-error" data-error="details" hidden>Escolha pelo menos uma opção acima.</p>
-          </fieldset>
+              <p class="field-error" data-error="service" hidden>Escolha uma opção para continuar.</p>
+            </fieldset>
 
-          <!-- Passo 3 -->
-          <fieldset class="step" data-step="3">
-            <legend class="step__title">Agora sobre você</legend>
-            <label class="field">
-              <span class="label">Seu nome</span>
-              <input type="text" name="name" autocomplete="given-name" required placeholder="Como podemos te chamar?">
-            </label>
-            <p class="field-error" data-error="name" hidden>Diga seu nome para continuar.</p>
-            <div class="field-row">
-              <label class="field">
-                <span class="label">Data de preferência</span>
-                <input type="date" name="date">
-              </label>
-              <div class="field">
-                <p class="label" id="shift-label">Período</p>
-                <div class="pill-group" role="radiogroup" aria-labelledby="shift-label">
-                  <label class="pill"><input type="radio" name="shift" value="manhã"><span>Manhã</span></label>
-                  <label class="pill"><input type="radio" name="shift" value="tarde"><span>Tarde</span></label>
-                  <label class="pill"><input type="radio" name="shift" value="qualquer horário"><span>Tanto faz</span></label>
+            <!-- Passo 2 -->
+            <fieldset class="step" data-step="2">
+              <legend class="step__title">Conta um pouco mais</legend>
+
+              <div class="detail-block" data-for="piercing">
+                <h4 class="detail-title">Piercing</h4>
+                <p class="label" id="area-label">Onde? <small>(pode marcar mais de um)</small></p>
+                <div class="pill-group" role="group" aria-labelledby="area-label" data-area-pills></div>
+                <div class="bag-inline" data-bag-inline hidden></div>
+              </div>
+
+              <div class="detail-block" data-for="tattoo">
+                <h4 class="detail-title">Tattoo</h4>
+                <p class="label" id="type-label">Tipo de projeto</p>
+                <div class="pill-group" role="radiogroup" aria-labelledby="type-label">
+                  <label class="pill"><input type="radio" name="ttype" value="Flash pronto"><span>Flash pronto</span></label>
+                  <label class="pill"><input type="radio" name="ttype" value="Projeto autoral"><span>Projeto autoral</span></label>
+                  <label class="pill"><input type="radio" name="ttype" value="Tenho uma referência"><span>Tenho referência</span></label>
                 </div>
+                <div class="flash-chosen" data-flash-chosen hidden></div>
+                <p class="label" id="style-label">Estilo</p>
+                <div class="pill-group" role="radiogroup" aria-labelledby="style-label" data-style-pills></div>
+                <div class="field-row">
+                  <label class="field">
+                    <span class="label">Local do corpo</span>
+                    <input type="text" name="tplace" placeholder="Ex.: antebraço" autocomplete="off">
+                  </label>
+                  <label class="field">
+                    <span class="label">Tamanho aproximado: <output data-size-out>10 cm</output></span>
+                    <input type="range" name="tsize" min="3" max="40" value="10" step="1">
+                  </label>
+                </div>
+                <label class="field">
+                  <span class="label">Sua ideia</span>
+                  <textarea name="tidea" rows="3" placeholder="Ex.: uma pantera old school com rosas, colorida"></textarea>
+                </label>
               </div>
+              <p class="field-error" data-error="details" hidden>Escolha pelo menos uma opção acima.</p>
+            </fieldset>
+
+
+            <!-- Passo 3 -->
+            <fieldset class="step" data-step="3">
+              <legend class="step__title">Agora sobre você</legend>
+              <label class="field">
+                <span class="label">Seu nome</span>
+                <input type="text" name="name" autocomplete="given-name" required placeholder="Como podemos te chamar?">
+              </label>
+              <p class="field-error" data-error="name" hidden>Diga seu nome para continuar.</p>
+              <p class="label" id="date-label">Melhor dia pra você</p>
+              <div class="days" role="radiogroup" aria-labelledby="date-label" data-days></div>
+              <p class="label" id="shift-label">Período</p>
+              <div class="pill-group" role="radiogroup" aria-labelledby="shift-label">
+                <label class="pill"><input type="radio" name="shift" value="manhã"><span>Manhã</span></label>
+                <label class="pill"><input type="radio" name="shift" value="tarde"><span>Tarde</span></label>
+                <label class="pill"><input type="radio" name="shift" value="qualquer horário"><span>Tanto faz</span></label>
+              </div>
+              <label class="check">
+                <input type="checkbox" name="first">
+                <span>É minha primeira vez</span>
+              </label>
+              <p class="fine">O horário é confirmado por quem vai te atender, conforme a agenda.</p>
+            </fieldset>
+
+            <!-- Passo 4 -->
+            <fieldset class="step" data-step="4">
+              <legend class="step__title">Confere sua mensagem</legend>
+              <div class="previews" data-previews></div>
+              <p class="fine">Nada é enviado pelo site: você revisa e envia direto do seu WhatsApp.</p>
+            </fieldset>
+
+            <div class="wizard__nav">
+              <button type="button" class="btn btn-ghost" data-prev hidden>Voltar</button>
+              <button type="button" class="btn btn-ink" data-next>Continuar <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
             </div>
-            <label class="check">
-              <input type="checkbox" name="first">
-              <span>É minha primeira vez</span>
-            </label>
-          </fieldset>
+          </form>
 
-          <!-- Passo 4 -->
-          <fieldset class="step" data-step="4">
-            <legend class="step__title">Confere sua mensagem</legend>
-            <div class="previews" data-previews></div>
-            <p class="fine">Nada é enviado pelo site: você revisa e envia direto do seu WhatsApp.</p>
-          </fieldset>
-
-          <div class="wizard__nav">
-            <button type="button" class="btn btn-ghost" data-prev hidden>Voltar</button>
-            <button type="button" class="btn btn-ink" data-next>Continuar <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
-          </div>
-        </form>
+          <aside class="phone" aria-label="Prévia da sua mensagem">
+            <div class="phone__screen">
+              <div class="phone__status" aria-hidden="true"><span>9:41</span><span class="phone__island"></span><span>5G ▮▮▮</span></div>
+              <div class="phone__head">
+                <span class="phone__avatar" data-phone-avatar aria-hidden="true"><img src="assets/img/logo.png" alt=""></span>
+                <span class="phone__who"><b data-phone-name>Bad Luck</b><small data-phone-sub>Tattoo &amp; Piercing</small></span>
+              </div>
+              <div class="phone__chat" data-phone-chat aria-live="polite"></div>
+              <div class="phone__input" aria-hidden="true"><span>Mensagem</span><span class="phone__send"><svg><use href="#i-arrow"/></svg></span></div>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -450,6 +492,14 @@
             <a class="btn btn-ghost-light" href="https://www.instagram.com/badlucktattoepiercing/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg>@badlucktattoepiercing</a>
           </div>
         </div>
+        <figure class="map-card reveal">
+          <iframe class="map-card__frame" title="Mapa: Bad Luck Tattoo &amp; Piercing, Rua Monsenhor Costa 56, Centro, Barra Mansa" src="https://maps.google.com/maps?q=Rua%20Monsenhor%20Costa%2C%2056%2C%20Centro%2C%20Barra%20Mansa%20-%20RJ%2C%2027330-390&amp;z=17&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <figcaption class="map-card__info">
+            <img src="assets/img/logo.png" alt="" width="44" height="44">
+            <span><b>Bad Luck Tattoo &amp; Piercing</b><small>Rua Monsenhor Costa, 56 — sala 101 · Centro, Barra Mansa</small></span>
+            <a class="btn btn-small btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Monsenhor+Costa+56+Centro+Barra+Mansa+RJ+27330-390" target="_blank" rel="noopener">Abrir no Maps</a>
+          </figcaption>
+        </figure>
         <div class="faq reveal">
           <h3 class="faq__title">Perguntas frequentes</h3>
           <div data-faq></div>
