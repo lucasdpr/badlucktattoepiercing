@@ -142,21 +142,62 @@
       <circle cx="172" cy="92" r="13" fill="url(#g-metal)" stroke="#bdb8b2"/>${SPARK(66, 86)}`,
   };
 
+  /* ---------- Mapas do explorador (viewBox 300 x 400) ---------- */
+  const SKIN_BG = `<rect class="sc-skin" width="300" height="400"/>`;
+  const MAPS = {
+    ear: `<path class="ear__fill" d="M118 96 C132 44 204 18 250 56 C292 90 290 166 266 214 C248 250 226 266 219 302 C213 342 202 376 168 382 C136 387 116 362 122 330 C124 312 112 300 108 282 C104 262 112 250 110 232 C108 208 104 140 118 96 Z"/>
+      <path class="sc-line" d="M118 96 C132 44 204 18 250 56 C292 90 290 166 266 214 C248 250 226 266 219 302 C213 342 202 376 168 382 C136 387 116 362 122 330"/>
+      <path class="sc-line sc-soft" d="M142 92 C164 62 214 54 240 84 C262 110 258 162 240 196"/>
+      <path class="sc-line sc-soft" d="M150 126 C182 104 222 116 226 152 C230 186 206 214 190 246 C178 268 166 282 150 288"/>
+      <path class="sc-line sc-soft" d="M160 136 C178 150 196 150 214 140"/>
+      <path class="sc-line sc-soft" d="M122 214 C106 224 106 254 126 264"/>
+      <path class="sc-line sc-soft" d="M150 290 C168 286 186 276 194 260"/>
+      <path class="sc-line sc-soft" d="M146 176 C160 168 176 172 180 186"/>`,
+    nose: `${SKIN_BG}
+      <path class="sc-line sc-soft" d="M44 84 C70 66 100 66 120 82"/><path class="sc-line sc-soft" d="M180 82 C200 66 230 66 256 84"/>
+      <path class="sc-line sc-soft" d="M58 92 C78 100 100 100 114 92"/><path class="sc-line sc-soft" d="M186 92 C200 100 222 100 242 92"/>
+      <path class="sc-line" d="M134 70 C132 140 126 210 112 262"/><path class="sc-line" d="M166 70 C168 140 174 210 188 262"/>
+      <path class="sc-line" d="M112 262 C80 266 72 306 100 318 C112 322 124 316 132 318"/>
+      <path class="sc-line" d="M188 262 C220 266 228 306 200 318 C188 322 176 316 168 318"/>
+      <path class="sc-line sc-soft" d="M122 290 C134 272 166 272 178 290"/>
+      <path class="sc-nostril" d="M120 316 C124 302 140 302 143 316 C136 320 126 320 120 316 Z"/>
+      <path class="sc-nostril" d="M180 316 C176 302 160 302 157 316 C164 320 174 320 180 316 Z"/>
+      <path class="sc-line" d="M143 316 C146 322 154 322 157 316"/>
+      <path class="sc-line sc-soft" d="M92 372 C120 360 140 364 150 370 C160 364 180 360 208 372"/>`,
+    mouth: `${SKIN_BG}
+      <path class="sc-line sc-soft" d="M112 46 C126 34 140 40 150 46 C160 40 174 34 188 46"/>
+      <path class="sc-line sc-soft" d="M138 56 L134 120"/><path class="sc-line sc-soft" d="M162 56 L166 120"/>
+      <path class="sc-mouth" d="M44 172 C100 184 200 184 256 172 C210 260 90 260 44 172 Z"/>
+      <path class="sc-teeth" d="M74 180 C120 188 180 188 226 180 L220 202 C180 210 120 210 80 202 Z"/>
+      <path class="sc-tongue" d="M96 226 C112 206 188 206 204 226 C186 238 114 238 96 226 Z"/>
+      <path class="sc-lip" d="M44 172 C80 140 118 116 150 132 C182 116 220 140 256 172 C200 184 100 184 44 172 Z"/>
+      <path class="sc-lip sc-lip--low" d="M44 172 C90 260 210 260 256 172 C246 270 200 300 150 300 C100 300 54 270 44 172 Z"/>
+      <path class="sc-line sc-soft" d="M118 360 C134 370 166 370 182 360"/>`,
+    navel: `<path class="sc-skin" d="M58 0 C74 110 70 220 52 400 L248 400 C230 220 226 110 242 0 Z"/>
+      <path class="sc-line" d="M58 0 C74 110 70 220 52 400"/><path class="sc-line" d="M242 0 C226 110 230 220 248 400"/>
+      <path class="sc-line sc-soft" d="M150 40 L150 160"/>
+      <path class="sc-navel" d="M134 214 C138 198 162 198 166 214 C164 232 136 232 134 214 Z"/>
+      <path class="sc-line" d="M140 214 C144 206 156 206 160 214"/>
+      <path class="sc-line sc-soft" d="M60 340 C120 330 180 330 240 340"/>`,
+    nipple: `${SKIN_BG}
+      <circle cx="150" cy="200" r="58" class="sc-areola"/><circle cx="150" cy="200" r="17" class="sc-areola sc-areola--in"/>`,
+    surface: `${SKIN_BG}
+      <path class="sc-line" d="M104 0 C108 70 106 130 92 176"/><path class="sc-line" d="M196 0 C192 70 194 130 208 176"/>
+      <path class="sc-line" d="M92 176 C60 194 28 206 0 214"/><path class="sc-line" d="M208 176 C240 194 272 206 300 214"/>
+      <path class="sc-line" d="M30 262 C70 244 112 246 140 266"/><path class="sc-line" d="M270 262 C230 244 188 246 160 266"/>
+      <path class="sc-line sc-soft" d="M140 266 C144 274 156 274 160 266"/>`,
+    intimate: `<rect width="300" height="400" fill="url(#g-intimate)"/>
+      <circle cx="150" cy="190" r="92" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/>
+      <circle cx="150" cy="190" r="70" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="3 6"/>
+      <path d="M150 158 L166 174 L150 222 L134 174 Z M134 174 L166 174 M142 158 L150 174 L158 158" fill="url(#g-gem)" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+      <text x="150" y="320" text-anchor="middle" class="sc-label">atendimento reservado</text>`,
+  };
+
   /* ---------- Explorador de piercings ---------- */
   const tabsEl = $("[data-explorer-tabs]");
   const panelEl = $("[data-explorer-panel]");
-  const earEl = $("[data-ear]");
-  const artEl = $("[data-explorer-art]");
-  const spotsEl = $("[data-ear-spots]");
-
-  spotsEl.innerHTML = S.earSpots
-    .map(
-      (sp) =>
-        `<button class="ear__spot" style="left:${sp.x}%;top:${sp.y}%" data-spot="${sp.id}" aria-pressed="false">
-          <span class="sr-only">${escapeHtml(sp.label)}</span><span class="ear__tip" aria-hidden="true">${escapeHtml(sp.label)}</span>
-        </button>`
-    )
-    .join("");
+  const mapEl = $("[data-map]");
+  let currentArea = null;
 
   function swapPanel(html) {
     panelEl.innerHTML = html;
@@ -165,68 +206,75 @@
     panelEl.classList.add("is-swapping");
   }
 
-  function panelHtml({ kicker, title, text, price, area, spot }) {
+  function panelHtml({ kicker, title, text, price, area, spot, list }) {
     return `
       <span class="explorer__kicker">${escapeHtml(kicker)}</span>
       <h4>${escapeHtml(title)}</h4>
       <p>${escapeHtml(text)}</p>
+      ${list ? `<ul class="explorer__list">${list.map((li) => `<li>${escapeHtml(li)}</li>`).join("")}</ul>` : ""}
       <span class="explorer__price">${escapeHtml(price)}</span>
-      <button class="btn btn-ink" data-book-area="${area}" ${spot ? `data-spot-label="${escapeHtml(spot)}"` : ""}>Quero esse</button>`;
+      <button class="btn btn-ink" data-book-area="${area}" ${spot ? `data-spot-label="${escapeHtml(spot)}"` : ""}>${spot ? `Quero ${escapeHtml(spot.toLowerCase())}` : "Quero agendar"}</button>`;
+  }
+
+  function spotPoints(sp) {
+    return sp.pts || [[sp.x, sp.y]];
+  }
+
+  function renderMap(area) {
+    const draws = area.spots
+      .filter((sp) => sp.draw)
+      .map((sp) => `<g class="map__draw" data-draw="${sp.id}">${sp.draw}</g>`)
+      .join("");
+    const buttons = area.spots
+      .map((sp) =>
+        spotPoints(sp)
+          .map(
+            ([x, y], i) =>
+              `<button class="spot" style="left:${x}%;top:${y}%" data-spot="${sp.id}" aria-pressed="false" ${i > 0 ? 'tabindex="-1" aria-hidden="true"' : ""}>
+                <span class="sr-only">${escapeHtml(sp.label)}</span>${i === 0 ? `<span class="spot__tip" aria-hidden="true">${escapeHtml(sp.label)}</span>` : ""}
+              </button>`
+          )
+          .join("")
+      )
+      .join("");
+    mapEl.className = `map map--${area.map}`;
+    mapEl.innerHTML = `<div class="map__frame"><svg class="map__art" viewBox="0 0 300 400" aria-hidden="true">${MAPS[area.map]}${draws}</svg></div>
+      <div class="map__spots">${buttons}</div>`;
+    mapEl.classList.remove("is-swapping");
+    void mapEl.offsetWidth;
+    mapEl.classList.add("is-swapping");
   }
 
   function selectSpot(id) {
-    const sp = S.earSpots.find((x) => x.id === id);
-    const area = S.piercingAreas.find((a) => a.ear);
-    $$(".ear__spot", spotsEl).forEach((b) => {
+    const area = currentArea;
+    const sp = area.spots.find((x) => x.id === id);
+    $$(".spot", mapEl).forEach((b) => {
       const on = b.dataset.spot === id;
       b.classList.toggle("is-active", on);
       b.setAttribute("aria-pressed", String(on));
     });
-    swapPanel(panelHtml({ kicker: "Orelha", title: sp.label, text: sp.text, price: area.from, area: area.id, spot: sp.label }));
+    $$(".map__draw", mapEl).forEach((g) => g.classList.toggle("is-on", g.dataset.draw === id));
+    swapPanel(panelHtml({ kicker: area.label, title: sp.label, text: sp.text, price: sp.from || area.from, area: area.id, spot: sp.label }));
   }
 
   function renderArea(index) {
     const area = S.piercingAreas[index];
+    currentArea = area;
     $$(".tab", tabsEl).forEach((t, i) => {
       t.setAttribute("aria-selected", String(i === index));
       t.tabIndex = i === index ? 0 : -1;
     });
     panelEl.setAttribute("aria-labelledby", `tab-${area.id}`);
-    earEl.hidden = !area.ear;
-    artEl.hidden = !!area.ear;
-    if (area.ear) {
-      $$(".ear__spot", spotsEl).forEach((b) => {
-        b.classList.remove("is-active");
-        b.setAttribute("aria-pressed", "false");
-      });
-      swapPanel(
-        panelHtml({
-          kicker: `${String(index + 1).padStart(2, "0")} · Toque nos pontos`,
-          title: area.label,
-          text: area.text,
-          price: area.from,
-          area: area.id,
-        })
-      );
-      return;
-    }
-    if (area.img) {
-      artEl.innerHTML = `<span class="explorer__photo"><img src="${area.img}" alt="Exemplo de ${escapeHtml(area.label.toLowerCase())} feito pela Fran" loading="lazy"></span>`;
-    } else if (area.scene) {
-      artEl.innerHTML = `<span class="explorer__scene jewel__scene"><svg viewBox="0 0 240 180" aria-hidden="true">${SCENES[area.scene]}</svg></span>`;
-    } else {
-      artEl.innerHTML = `<span class="explorer__icon" aria-hidden="true"><svg><use href="#j-${area.icon}"/></svg></span>`;
-    }
-    artEl.classList.remove("is-swapping");
-    void artEl.offsetWidth;
-    artEl.classList.add("is-swapping");
+    renderMap(area);
+    const hint = area.spots.length ? ` · ${area.spots.length} opções — toque nos pontos` : "";
     swapPanel(
       panelHtml({
-        kicker: String(index + 1).padStart(2, "0"),
+        kicker: `${String(index + 1).padStart(2, "0")}${hint}`,
         title: area.label,
         text: area.text,
         price: area.from,
         area: area.id,
+        list: area.spots.length ? null : ["Conversa antes do procedimento", "Privacidade total", "Orientação completa de cuidados"],
       })
     );
   }
@@ -251,7 +299,7 @@
     renderArea(next);
     tabs[next].focus();
   });
-  spotsEl.addEventListener("click", (e) => {
+  mapEl.addEventListener("click", (e) => {
     const b = e.target.closest("[data-spot]");
     if (b) selectSpot(b.dataset.spot);
   });
@@ -259,18 +307,26 @@
 
   panelEl.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-book-area]");
-    if (btn) Wizard.start({ service: "piercing", areas: [btn.dataset.bookArea], spot: btn.dataset.spotLabel || null });
+    if (!btn) return;
+    const area = btn.dataset.bookArea;
+    Wizard.start({ service: "piercing", areas: [area], spot: btn.dataset.spotLabel ? { area, label: btn.dataset.spotLabel } : null });
   });
 
   /* ---------- Catálogo de joias + sacolinha ---------- */
-  const bag = new Set();
+  // Sacolinha compartilhada: chave → nome que vai na mensagem
+  const bag = new Map();
   const jewelryEl = $("[data-jewelry]");
   jewelryEl.innerHTML = S.jewelry
     .map(
       (j) => `
-      <li class="jewel" data-jewel="${j.id}">
+      <li class="jewel" data-jewel="${j.id}" data-view="${j.photo ? "photo" : "scene"}">
         <div class="jewel__scene">
           <svg viewBox="0 0 240 180" role="img" aria-label="Ilustração: ${escapeHtml(j.name)} ${escapeHtml(j.where || "")}">${SCENES[j.scene] || ""}</svg>
+          ${j.photo ? `<img class="jewel__photo" src="${j.photo}" alt="Foto: ${escapeHtml(j.name.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer">
+          <span class="jewel__credit">${j.credit === "fran" ? "Feito pela Fran" : "Foto ilustrativa"}</span>
+          <span class="jewel__toggle" role="group" aria-label="Ver foto ou como fica">
+            <button type="button" data-view="photo" aria-pressed="true">Foto</button><button type="button" data-view="scene" aria-pressed="false">Como fica</button>
+          </span>` : ""}
           ${j.where ? `<span class="jewel__where">${escapeHtml(j.where)}</span>` : ""}
         </div>
         <div class="jewel__body">
@@ -284,32 +340,218 @@
     .join("");
 
   const jewelName = (id) => S.jewelry.find((j) => j.id === id).name;
+  const bagNames = () => [...bag.values()];
 
   function renderBag() {
     const box = $("[data-bag]");
-    const names = [...bag].map(jewelName);
     box.hidden = bag.size === 0;
     $("[data-bag-count]").textContent = `${bag.size} ${bag.size === 1 ? "joia separada" : "joias separadas"}`;
-    $("[data-bag-list]").textContent = names.join(" · ");
+    $("[data-bag-list]").textContent = bagNames().join(" · ");
     $$(".jewel", jewelryEl).forEach((li) => {
       const on = bag.has(li.dataset.jewel);
       li.classList.toggle("is-picked", on);
       $(".jewel__add", li).setAttribute("aria-pressed", String(on));
     });
+    syncShop();
     Wizard.refreshBag();
   }
 
+  function setJewelView(li, view) {
+    li.dataset.view = view;
+    $$(".jewel__toggle button", li).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === view)));
+  }
+  $$(".jewel__photo", jewelryEl).forEach((img) => {
+    // Foto externa fora do ar: fica só a ilustração
+    const fail = () => {
+      const li = img.closest(".jewel");
+      setJewelView(li, "scene");
+      li.classList.add("no-photo");
+    };
+    img.addEventListener("error", fail);
+    if (img.complete && img.naturalWidth === 0) fail();
+  });
+
   jewelryEl.addEventListener("click", (e) => {
+    const viewBtn = e.target.closest(".jewel__toggle button");
+    if (viewBtn) return setJewelView(viewBtn.closest(".jewel"), viewBtn.dataset.view);
     const btn = e.target.closest(".jewel__add");
     if (!btn) return;
     const id = btn.closest(".jewel").dataset.jewel;
     if (bag.has(id)) {
       bag.delete(id);
     } else {
-      bag.add(id);
+      bag.set(id, jewelName(id));
       toast(`${jewelName(id)} separada ✨`);
     }
     renderBag();
+  });
+
+  /* ---------- Lojinha de semi-joias (prévia) ---------- */
+  const SHOP_SHAPES = {
+    clicker: (M, G) => {
+      const gems = [25, 50, 75, 100, 125, 150]
+        .map((deg) => {
+          const a = (deg * Math.PI) / 180;
+          return `<circle cx="${(100 + 56 * Math.cos(a)).toFixed(1)}" cy="${(100 + 56 * Math.sin(a)).toFixed(1)}" r="7.5" fill="${G}" stroke="rgba(0,0,0,.18)"/>`;
+        })
+        .join("");
+      return `<circle cx="100" cy="100" r="56" fill="none" stroke="${M}" stroke-width="15"/>
+        <circle cx="100" cy="100" r="49" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/>
+        <rect x="90" y="34" width="20" height="12" rx="4" fill="${M}"/>${gems}`;
+    },
+    stud: (M, G) => `<circle cx="100" cy="100" r="48" fill="${G}" stroke="rgba(0,0,0,.15)"/>
+      <path d="M100 58 L126 100 L100 142 L74 100 Z M56 100 H144 M100 54 V146 M70 70 L130 130 M130 70 L70 130" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/>
+      ${[45, 135, 225, 315].map((deg) => { const a = (deg * Math.PI) / 180; return `<circle cx="${(100 + 46 * Math.cos(a)).toFixed(1)}" cy="${(100 + 46 * Math.sin(a)).toFixed(1)}" r="9" fill="${M}"/>`; }).join("")}`,
+    butterfly: (M, G) => `<ellipse cx="74" cy="84" rx="20" ry="36" transform="rotate(-38 74 84)" fill="${G}" stroke="${M}" stroke-width="5"/>
+      <ellipse cx="126" cy="84" rx="20" ry="36" transform="rotate(38 126 84)" fill="${G}" stroke="${M}" stroke-width="5"/>
+      <ellipse cx="80" cy="128" rx="14" ry="24" transform="rotate(35 80 128)" fill="${G}" stroke="${M}" stroke-width="5"/>
+      <ellipse cx="120" cy="128" rx="14" ry="24" transform="rotate(-35 120 128)" fill="${G}" stroke="${M}" stroke-width="5"/>
+      <path d="M100 74 V140" stroke="${M}" stroke-width="8" stroke-linecap="round"/><circle cx="100" cy="68" r="7" fill="${M}"/>`,
+    branch: (M, G) => `<path d="M64 166 C86 126 108 96 144 40" fill="none" stroke="${M}" stroke-width="6" stroke-linecap="round"/>
+      ${[[80, 132, -25], [104, 118, 62], [98, 94, -30], [126, 82, 58], [134, 56, 8]].map(([x, y, r]) => `<ellipse cx="${x}" cy="${y}" rx="10" ry="20" transform="rotate(${r} ${x} ${y})" fill="${G}" stroke="${M}" stroke-width="3.5"/>`).join("")}`,
+    star: (M, G) => `<path d="M100 26 L115 85 L174 100 L115 115 L100 174 L85 115 L26 100 L85 85 Z" fill="${M}"/>
+      <path d="M100 26 L115 85 L100 100 Z M174 100 L115 115 L100 100 Z M100 174 L85 115 L100 100 Z M26 100 L85 85 L100 100 Z" fill="#fff" fill-opacity=".28"/>
+      <circle cx="100" cy="100" r="15" fill="${G}" stroke="${M}" stroke-width="4"/>`,
+    chain: (M, G) => {
+      const links = [];
+      for (let t = 0.04; t < 0.97; t += 0.075) {
+        const x = 54 + 92 * t;
+        const y = 62 + 92 * 4 * t * (1 - t) * 0.82;
+        links.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4" fill="none" stroke="${M}" stroke-width="2.2"/>`);
+      }
+      return `<path d="M44 60 C76 44 124 44 156 60" fill="none" stroke="${M}" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="44" cy="60" r="8" fill="${M}"/><circle cx="156" cy="60" r="8" fill="${M}"/>${links.join("")}
+        <path d="M100 124 V134" stroke="${M}" stroke-width="3"/><circle cx="100" cy="150" r="17" fill="${G}" stroke="${M}" stroke-width="5"/>`;
+    },
+    hoop: (M) => `<circle cx="100" cy="100" r="54" fill="none" stroke="${M}" stroke-width="9"/>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/><circle cx="100" cy="154" r="10" fill="${M}"/>`,
+    navel: (M, G) => `<path d="M100 66 C138 76 138 128 100 138" fill="none" stroke="${M}" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="100" cy="56" r="13" fill="${G}" stroke="${M}" stroke-width="4"/>
+      <circle cx="100" cy="150" r="24" fill="${G}" stroke="${M}" stroke-width="5"/>
+      <path d="M88 144 L112 156 M112 144 L88 156" stroke="#fff" stroke-opacity=".45" stroke-width="1.5"/>`,
+    heart: (M, G) => {
+      const h = "M100 162 C40 122 40 62 78 58 C90 57 100 66 100 78 C100 66 110 57 122 58 C160 62 160 122 100 162 Z";
+      return `<path d="${h}" fill="${M}"/><g transform="translate(100 104) scale(.62) translate(-100 -104)"><path d="${h}" fill="${G}" stroke="rgba(0,0,0,.12)" stroke-width="3"/></g>
+        <path d="M100 162 V184" stroke="${M}" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="186" r="7" fill="${M}"/>`;
+    },
+  };
+  const shopEl = $("[data-shop]");
+  const shopFiltersEl = $("[data-shop-filters]");
+  const SH = S.shop;
+  const metalLabel = (id) => SH.metals.find((m) => m.id === id).label;
+  const stoneLabel = (id) => SH.stones.find((m) => m.id === id).label;
+  const shopKey = (li) => `shop:${li.dataset.product}:${li.dataset.metal}:${li.dataset.stone || ""}`;
+  const shopName = (li) => {
+    const p = SH.products.find((x) => x.id === li.dataset.product);
+    const variant = [metalLabel(li.dataset.metal).toLowerCase(), li.dataset.stone ? `pedra ${stoneLabel(li.dataset.stone).toLowerCase()}` : ""]
+      .filter(Boolean)
+      .join(", ");
+    return `${p.name} (${variant})`;
+  };
+
+  function drawProduct(li) {
+    const p = SH.products.find((x) => x.id === li.dataset.product);
+    const svg = $(".shop-card__render svg", li);
+    svg.innerHTML = `<ellipse cx="100" cy="190" rx="54" ry="6" fill="rgba(59,46,38,.12)"/>` +
+      SHOP_SHAPES[p.shape](`url(#m-${li.dataset.metal})`, `url(#s-${li.dataset.stone || "cristal"})`);
+    svg.setAttribute("aria-label", shopName(li));
+    $(".shop-card__variant", li).textContent = [metalLabel(li.dataset.metal), li.dataset.stone ? stoneLabel(li.dataset.stone) : ""]
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function syncShop() {
+    $$(".shop-card", shopEl).forEach((li) => {
+      const on = bag.has(shopKey(li));
+      li.classList.toggle("is-picked", on);
+      const btn = $(".shop-card__add", li);
+      btn.textContent = on ? "Separada ✓" : "Separar";
+      btn.setAttribute("aria-pressed", String(on));
+    });
+  }
+
+  shopEl.innerHTML = SH.products
+    .map((p) => {
+      const cat = SH.categories.find((c) => c.id === p.cat);
+      const metals = SH.metals
+        .map((m, i) => `<button class="swatch swatch--${m.id}" data-metal="${m.id}" aria-pressed="${i === 0}" title="${m.label}"><span class="sr-only">${m.label}</span></button>`)
+        .join("");
+      const stones = p.stones
+        ? SH.stones
+            .map((st, i) => `<button class="swatch swatch--stone swatch--${st.id}" data-stone="${st.id}" aria-pressed="${i === 0}" title="${st.label}"><span class="sr-only">Pedra ${st.label}</span></button>`)
+            .join("")
+        : "";
+      return `
+      <li class="shop-card" data-product="${p.id}" data-cat="${p.cat}" data-metal="${SH.metals[0].id}" ${p.stones ? `data-stone="${SH.stones[0].id}"` : ""}>
+        <div class="shop-card__stage">
+          ${p.photo ? `<img class="shop-card__photo" src="${p.photo}" alt="Foto de ${escapeHtml(p.name.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer">` : ""}
+          <span class="shop-card__render"><svg viewBox="0 0 200 200" role="img"></svg></span>
+          <span class="shop-card__cat">${escapeHtml(cat.label)}</span>
+          ${p.photo ? `<span class="shop-card__credit">${p.credit === "fran" ? "Feito pela Fran" : "Foto ilustrativa"}</span>` : ""}
+        </div>
+        <div class="shop-card__body">
+          <b>${escapeHtml(p.name)}</b>
+          <span class="shop-card__variant"></span>
+          <div class="swatches" role="group" aria-label="Cor do banho">${metals}</div>
+          ${stones ? `<div class="swatches" role="group" aria-label="Cor da pedra">${stones}</div>` : ""}
+          <div class="shop-card__foot">
+            <span class="shop-card__price">Valor sob consulta</span>
+            <button class="btn btn-small btn-ink shop-card__add" aria-pressed="false">Separar</button>
+          </div>
+        </div>
+      </li>`;
+    })
+    .join("");
+  $$(".shop-card", shopEl).forEach((li) => {
+    drawProduct(li);
+    const img = $(".shop-card__photo", li);
+    if (!img) return li.classList.add("no-photo");
+    // Foto externa fora do ar: mostra só o render
+    const fail = () => li.classList.add("no-photo");
+    img.addEventListener("error", fail);
+    if (img.complete && img.naturalWidth === 0 && img.src) fail();
+  });
+
+  shopEl.addEventListener("click", (e) => {
+    const li = e.target.closest(".shop-card");
+    if (!li) return;
+    const sw = e.target.closest(".swatch");
+    if (sw) {
+      const key = sw.dataset.metal ? "metal" : "stone";
+      li.dataset[key] = sw.dataset[key];
+      $$(`.swatch[data-${key}]`, li).forEach((b) => b.setAttribute("aria-pressed", String(b === sw)));
+      drawProduct(li);
+      syncShop();
+      return;
+    }
+    if (e.target.closest(".shop-card__add")) {
+      const key = shopKey(li);
+      if (bag.has(key)) bag.delete(key);
+      else {
+        bag.set(key, shopName(li));
+        toast(`${shopName(li)} separada ✨`);
+      }
+      renderBag();
+    }
+  });
+
+  shopFiltersEl.innerHTML = [{ id: "all", label: "Todas" }, ...SH.categories]
+    .map((c, i) => `<button class="tab" data-shop-filter="${c.id}" aria-pressed="${i === 0}">${escapeHtml(c.label)}</button>`)
+    .join("");
+  shopFiltersEl.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-shop-filter]");
+    if (!b) return;
+    const f = b.dataset.shopFilter;
+    $$("[data-shop-filter]", shopFiltersEl).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    $$(".shop-card", shopEl).forEach((li) => {
+      const show = f === "all" || li.dataset.cat === f;
+      li.hidden = !show;
+      if (show && !reduceMotion) {
+        li.classList.remove("is-entering");
+        void li.offsetWidth;
+        li.classList.add("is-entering");
+      }
+    });
   });
 
   /* ---------- Lightbox (compartilhado) ---------- */
@@ -389,6 +631,37 @@
   pGallery.addEventListener("click", (e) => {
     const b = e.target.closest("button");
     if (b) Lightbox.open(S.piercingGallery, Number(b.dataset.i), b);
+  });
+
+  /* ---------- Estilos do Italo ---------- */
+  const STYLE_ICONS = {
+    star: `<polygon points="24.0,4.0 29.0,17.1 43.0,17.8 32.1,26.6 35.8,40.2 24.0,32.5 12.2,40.2 15.9,26.6 5.0,17.8 19.0,17.1" fill="#e3a92b" stroke="#15110e" stroke-width="2" stroke-linejoin="round"/><path d="M24 24 L24.0 4.0 L29.0 17.1 Z" fill="#a8741c"/><path d="M24 24 L43.0 17.8 L32.1 26.6 Z" fill="#a8741c"/><path d="M24 24 L35.8 40.2 L24.0 32.5 Z" fill="#a8741c"/><path d="M24 24 L12.2 40.2 L15.9 26.6 Z" fill="#a8741c"/><path d="M24 24 L5.0 17.8 L19.0 17.1 Z" fill="#a8741c"/>`,
+    blackwork: `<path d="M30 6 A18 18 0 1 0 42 34 A15 15 0 1 1 30 6 Z" fill="#15110e"/>`,
+    dots: [0, 1, 2, 3, 4]
+      .map((r) => [0, 1, 2, 3, 4].map((c) => `<circle cx="${8 + c * 8}" cy="${8 + r * 8}" r="${(3.2 - r * 0.55).toFixed(2)}" fill="#15110e"/>`).join(""))
+      .join(""),
+    line: `<path d="M6 34 C14 10 22 10 24 24 C26 38 34 38 42 14" fill="none" stroke="#15110e" stroke-width="1.6" stroke-linecap="round"/><circle cx="42" cy="14" r="2" fill="#15110e"/>`,
+    letter: `<text x="24" y="33" text-anchor="middle" font-family="Yellowtail, cursive" font-size="26" fill="#15110e">Aa</text>`,
+    gradient: `<circle cx="24" cy="24" r="18" fill="url(#g-bw)"/>`,
+  };
+  const stylesEl = $("[data-styles]");
+  stylesEl.innerHTML = S.styles
+    .map(
+      (st) => `
+      <li>
+        <button class="style-card${st.note ? " style-card--main" : ""}" data-style="${escapeHtml(st.name)}">
+          ${st.note ? `<span class="style-card__ribbon">${escapeHtml(st.note)}</span>` : ""}
+          <span class="style-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48">${STYLE_ICONS[st.icon] || ""}</svg></span>
+          <b>${escapeHtml(st.name)}</b>
+          <span>${escapeHtml(st.text)}</span>
+          <span class="style-card__cta">Orçar nesse estilo <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </button>
+      </li>`
+    )
+    .join("");
+  stylesEl.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-style]");
+    if (b) Wizard.start({ service: "tattoo", style: b.dataset.style });
   });
 
   /* ---------- Portfólio com filtro ---------- */
@@ -561,15 +834,29 @@
     const prevBtn = $("[data-prev]", form);
     const nextBtn = $("[data-next]", form);
     const sizeOut = $("[data-size-out]", form);
-    const dateInput = form.elements.date;
     let current = 1;
     let chosenFlash = null;
     let chosenSpot = null;
 
-    // Datas no passado não fazem sentido
-    const today = new Date();
-    today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
-    dateInput.min = today.toISOString().slice(0, 10);
+    // Próximos 14 dias como botões (mais rápido que um calendário, principalmente no celular)
+    const pad = (n) => String(n).padStart(2, "0");
+    const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    const weekday = new Intl.DateTimeFormat("pt-BR", { weekday: "short" });
+    const month = new Intl.DateTimeFormat("pt-BR", { month: "short" });
+    const clean = (str) => str.replace(".", "").replace(/^./, (c) => c.toUpperCase());
+    const days = [`<label class="day day--any"><input type="radio" name="date" value="" checked><span><small>Qualquer</small><b>✦</b><small>dia</small></span></label>`];
+    for (let i = 0; i < 14; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() + i);
+      const top = i === 0 ? "Hoje" : i === 1 ? "Amanhã" : clean(weekday.format(d));
+      days.push(`<label class="day"><input type="radio" name="date" value="${iso(d)}"><span><small>${top}</small><b>${d.getDate()}</b><small>${clean(month.format(d))}</small></span></label>`);
+    }
+    $("[data-days]", form).innerHTML = days.join("");
+
+    $("[data-style-pills]", form).innerHTML = S.styles
+      .map((st) => `<label class="pill"><input type="radio" name="tstyle" value="${escapeHtml(st.name)}"><span>${escapeHtml(st.name)}</span></label>`)
+      .join("") +
+      `<label class="pill"><input type="radio" name="tstyle" value="Ainda não sei"><span>Não sei</span></label>`;
 
     $("[data-area-pills]", form).innerHTML = S.piercingAreas
       .map(
@@ -592,9 +879,10 @@
       const box = $("[data-bag-inline]", form);
       box.hidden = bag.size === 0;
       if (bag.size) {
-        box.innerHTML = `<span>Joias separadas: <b>${[...bag].map((id) => escapeHtml(jewelName(id))).join(", ")}</b></span>
+        box.innerHTML = `<span>Joias separadas: <b>${bagNames().map(escapeHtml).join(", ")}</b></span>
           <button type="button" data-clear-bag>limpar</button>`;
       }
+      updatePhone();
     }
 
     function refreshFlash() {
@@ -604,6 +892,7 @@
         box.innerHTML = `<span>Flash escolhido: <b>${escapeHtml(chosenFlash.name)}</b></span>
           <button type="button" data-clear-flash>trocar</button>`;
       }
+      updatePhone();
     }
 
     form.addEventListener("click", (e) => {
@@ -629,6 +918,7 @@
       if (n === 2) syncDetailBlocks();
       if (n === 4) renderPreviews();
       $$(".field-error", form).forEach((el) => (el.hidden = true));
+      updatePhone();
     }
 
     function focusStep() {
@@ -683,6 +973,7 @@
         chosenFlash = null;
         refreshFlash();
       }
+      updatePhone();
     });
     form.elements.tsize.addEventListener("input", (e) => {
       sizeOut.textContent = `${e.target.value}${Number(e.target.value) >= 40 ? "+" : ""} cm`;
@@ -707,7 +998,7 @@
     function greeting(artist) {
       const name = form.elements.name.value.trim();
       const first = form.elements.first.checked ? " É minha primeira vez!" : "";
-      return `Oi, ${artist}! Me chamo ${name} e vim pelo site.${first}`;
+      return `Oi, ${artist}! Me chamo ${name || "…"} e vim pelo site.${first}`;
     }
 
     function piercingMessage() {
@@ -715,10 +1006,10 @@
       const areas = areaIds.map((id) =>
         id === "duvida" ? "ainda não sei o local" : S.piercingAreas.find((a) => a.id === id).label.toLowerCase()
       );
-      if (chosenSpot && areaIds.includes("orelha")) areas[areaIds.indexOf("orelha")] += ` (${chosenSpot.toLowerCase()})`;
+      if (chosenSpot && areaIds.includes(chosenSpot.area)) areas[areaIds.indexOf(chosenSpot.area)] += ` (${chosenSpot.label.toLowerCase()})`;
       const lines = [greeting("Fran"), "", "Quero agendar um piercing."];
       if (areas.length) lines.push(`• Local: ${areas.join(", ")}`);
-      if (bag.size) lines.push(`• Joias que gostei: ${[...bag].map(jewelName).join(", ")}`);
+      if (bag.size) lines.push(`• Joias que gostei: ${bagNames().join(", ")}`);
       lines.push(`• ${whenLine()}`);
       return lines.join("\n");
     }
@@ -749,6 +1040,50 @@
         </div>`;
     }
 
+    // Celular com a mensagem montada ao vivo
+    const phoneChat = $("[data-phone-chat]");
+    const phoneName = $("[data-phone-name]");
+    const phoneSub = $("[data-phone-sub]");
+    const phoneAvatar = $("[data-phone-avatar]");
+    const AVATAR = {
+      fran: `<img src="assets/img/fran-avatar.webp" alt="">`,
+      italo: `<span class="phone__mono">IN</span>`,
+      none: `<img src="assets/img/logo.png" alt="">`,
+    };
+    function updatePhone() {
+      const targets = [];
+      if (wantsPiercing()) targets.push(["fran", piercingMessage()]);
+      if (wantsTattoo()) targets.push(["italo", tattooMessage()]);
+      if (targets.length === 1) {
+        const a = S.artists[targets[0][0]];
+        phoneAvatar.innerHTML = AVATAR[targets[0][0]];
+        phoneName.textContent = a.name;
+        phoneSub.textContent = a.phoneLabel;
+      } else if (targets.length === 2) {
+        phoneAvatar.innerHTML = AVATAR.none;
+        phoneName.textContent = "Fran & Italo";
+        phoneSub.textContent = "2 mensagens";
+      } else {
+        phoneAvatar.innerHTML = AVATAR.none;
+        phoneName.textContent = "Bad Luck";
+        phoneSub.textContent = "Tattoo & Piercing";
+      }
+      const count = String(targets.length);
+      const grew = phoneChat.dataset.count !== count;
+      phoneChat.dataset.count = count;
+      phoneChat.innerHTML = targets.length
+        ? targets
+            .map(
+              ([id, msg]) =>
+                `${targets.length > 1 ? `<span class="phone__to">Para ${escapeHtml(S.artists[id].name.split(" ")[0])}</span>` : ""}
+                <div class="phone__bubble${grew ? " is-new" : ""}">${escapeHtml(msg)}<span class="phone__time">agora ✓✓</span></div>`
+            )
+            .join("")
+        : `<p class="phone__hint">Escolha o serviço ao lado e veja sua mensagem sendo montada aqui ✨</p>`;
+      phoneChat.scrollTop = phoneChat.scrollHeight;
+    }
+    form.addEventListener("input", updatePhone);
+
     function renderPreviews() {
       const out = [];
       if (wantsPiercing()) out.push(previewCard("fran", "Piercing", piercingMessage()));
@@ -757,7 +1092,7 @@
     }
 
     // Entrada a partir de outros pontos do site (flash, explorador, botões)
-    function start({ service: svc, areas = [], flash = null, spot = null } = {}) {
+    function start({ service: svc, areas = [], flash = null, spot = null, style = null } = {}) {
       form.reset();
       sizeOut.textContent = "10 cm";
       chosenFlash = flash;
@@ -768,6 +1103,7 @@
         if (box) box.checked = true;
       });
       if (flash) form.elements.ttype.value = "Flash pronto";
+      if (style) form.elements.tstyle.value = style;
       refreshFlash();
       refreshBag();
       go(svc ? 2 : 1);

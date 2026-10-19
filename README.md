@@ -15,11 +15,12 @@ npx http-server -p 8080
 
 | Seção | Interação |
 | --- | --- |
-| Hero "Bad \| Luck" | Divisão diagonal clara/escura; o lado em foco cresce no hover |
-| Fran — piercing | Mapa interativo da orelha (helix, tragus, conch, rook, daith…), regiões do corpo, catálogo de joias com ilustração de "como fica" e "sacolinha", vale-presente, galeria com lightbox |
-| Italo — tattoo | Portfólio em mural com filtro (colorido / blackwork) e "ver mais", "Tire sua sorte" (baralho que revela um flash), flashes com "Quero esse" |
-| Agendamento | Passo a passo que monta a mensagem e abre o WhatsApp **de quem vai atender** (piercing → Fran, tattoo → Italo, os dois → duas mensagens) |
-| Extras | Botão flutuante do WhatsApp, cabeçalho que muda de tema por seção, menu mobile, FAQ |
+| Hero | Dois mundos (claro/escuro) divididos na diagonal; o letreiro "Bad Luck" inverte de cor sozinho ao cruzar a divisão |
+| Fran — piercing | Explorador com mapas ilustrados e pontos clicáveis (orelha, nariz, boca, umbigo, mamilo, surface/microdermal; íntima com cartão discreto), catálogo de joias em titânio (foto ⇄ "como fica"), **lojinha de semi-joias (prévia)** com troca de banho e pedra, vale-presente, galeria |
+| Italo — tattoo | Letreiro dourado + peça emoldurada, cards de estilos (abrem o agendamento já com o estilo), portfólio sobre "folha de papel" com filtro, flashes com "Quero esse" e o baralho "deixa a sorte escolher" |
+| Agendamento | Passo a passo com dias em botões e um celular que mostra a mensagem sendo montada ao vivo; envia para o WhatsApp **de quem vai atender** (piercing → Fran, tattoo → Italo, os dois → duas mensagens) |
+| Estúdio | Endereço, mapa do Google embutido, FAQ |
+| Extras | Botão flutuante do WhatsApp, cabeçalho que muda de tema por seção, menu mobile |
 
 Nenhum dado é enviado ou guardado pelo site: a mensagem é montada no navegador e o cliente envia pelo próprio WhatsApp.
 
@@ -28,7 +29,9 @@ Nenhum dado é enviado ou guardado pelo site: a mensagem é montada no navegador
 Quase tudo fica em **`assets/js/data.js`**:
 
 - `artists` — WhatsApp, Instagram e nomes da Fran e do Italo
-- `piercingAreas` / `earSpots` — regiões e pontos do mapa da orelha
+- `piercingAreas` — regiões do explorador; cada uma tem `map` (ilustração) e `spots` (pontos clicáveis, em % da ilustração)
+- `styles` — estilos do Italo (o primeiro com `note: "Especialidade"` ganha destaque)
+- `shop` — **prévia** da lojinha de semi-joias (modelos, banhos, pedras e fotos)
 - `jewelry` — catálogo de joias e preços (`scene` escolhe a ilustração de "como fica", definidas em `SCENES` no `main.js`)
 - `portfolio` — trabalhos do Italo (`tags`: `colorido` ou `blackwork`; `link` opcional para o post). Os 8 primeiros aparecem direto, o resto em "Ver mais trabalhos"
 - `flashes` — flashes disponíveis
@@ -36,11 +39,25 @@ Quase tudo fica em **`assets/js/data.js`**:
 
 Para adicionar um trabalho ao portfólio: coloque a foto em `assets/img/tattoo/` e adicione uma linha em `portfolio`.
 
+## Lojinha de semi-joias (prévia)
+
+Montada para a Fran aprovar a ideia. As fotos são de dois tipos, indicados no próprio card:
+
+- **"Feito pela Fran"** — trabalhos reais dela (recortados do Instagram).
+- **"Foto ilustrativa"** — fotos gratuitas do [Pexels](https://www.pexels.com/license/) carregadas direto do site deles. Se alguma sair do ar, o card mostra o render da joia automaticamente.
+
+O círculo no canto de cada foto é um render que muda conforme o banho/pedra escolhidos.
+
+- **Se ela aprovar:** trocar o campo `photo` de cada produto em `data.js` pelas fotos do catálogo dela (e ajustar modelos/cores).
+- **Se não aprovar:** apagar o bloco `shop` em `data.js` e o bloco marcado `Lojinha de semi-joias (PRÉVIA ...)` no `index.html`.
+
 ## Pendências antes de publicar
 
 - [ ] **Fotos em alta resolução.** As imagens atuais foram recortadas de prints do Instagram (≈500 px) só para a demonstração — é o que mais limita a qualidade visual hoje. Pedir os originais (ideal ≥ 1200 px) à Fran e ao Italo.
 - [ ] **Depoimentos reais** (a Fran tem destaque "Feedback" no Instagram) — não foram inventados no site.
 - [ ] `og:image` precisa de URL absoluta depois que houver domínio.
+- [ ] **Foto da Fran em alta** para a seção dela (a atual é um recorte de print e fica borrada se ampliada).
+- [ ] **Confirmar estilos do Italo** (old school, blackwork, pontilhismo, fineline, lettering, preto & cinza).
 - [ ] **Flashes reais.** Os flashes usam fotos do portfólio como exemplo; trocar pelas artes disponíveis do Italo.
 - [ ] **Revisar textos** (biografias, FAQ, descrições das regiões) com a Fran e o Italo.
 - [ ] **Confirmar preços** — vieram do catálogo do WhatsApp da Fran e não está claro se incluem perfuração + joia.
