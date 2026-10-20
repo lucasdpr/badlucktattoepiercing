@@ -114,12 +114,13 @@ window.SITE = {
       id: "surface",
       label: "Surface / Microdermal",
       map: "surface",
-      text: "Especialidade da Fran: pontos de luz direto na pele, no colo, clavícula, pescoço ou onde a anatomia permitir.",
+      text: "Especialidade da Fran. Microdermal é um ponto de brilho único, com base por baixo da pele; surface é uma barrinha sob a pele com duas pontas aparentes. Toque nos pontos e veja onde cada um fica.",
       from: "Surface a partir de R$ 150",
       spots: [
-        { id: "colo", label: "Microdermal no colo", x: 50, y: 78.5, text: "Um ponto de luz único, fixo na pele. Delicado e marcante.", draw: '<circle cx="150" cy="314" r="9" fill="url(#g-gem)" stroke="#cfcac4"/>' },
-        { id: "clavicula", label: "Surface na clavícula", pts: [[20.7, 56.5], [32.7, 55.5]], text: "Barra por baixo da pele com duas pontas aparentes, acompanhando a clavícula.", draw: '<path d="M62 226 L98 222" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="62" cy="226" r="7" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="98" cy="222" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
-        { id: "pescoco", label: "Pescoço / nuca", pts: [[60.7, 23], [61.3, 33]], text: "Surface na lateral do pescoço ou na nuca. Visual ousado e elegante.", draw: '<path d="M182 92 L184 132" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="182" cy="92" r="7" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="184" cy="132" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "rosto", label: "Microdermal no rosto", x: 60, y: 34, text: "Um ponto de brilho na maçã do rosto. Delicado e cheio de personalidade.", draw: '<circle cx="180" cy="136" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "pescoco", label: "Surface no pescoço", pts: [[57.3, 47.5], [58, 55.5]], text: "Na lateral do pescoço (ou na nuca): barrinha sob a pele com duas pontas de brilho.", draw: '<path d="M172 190 L174 222" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="172" cy="190" r="6" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="174" cy="222" r="6" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "clavicula", label: "Surface na clavícula", pts: [[22, 68], [34, 67]], text: "Acompanha a linha da clavícula, com duas pontas aparentes.", draw: '<path d="M66 272 L102 268" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="66" cy="272" r="7" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="102" cy="268" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "colo", label: "Microdermal no colo", x: 50, y: 83.5, text: "Um ponto de luz no centro do colo. Fica lindo com decote.", draw: '<circle cx="150" cy="334" r="9" fill="url(#g-gem)" stroke="#cfcac4"/>' },
       ],
     },
     {
@@ -133,17 +134,19 @@ window.SITE = {
   ],
 
   // Catálogo de joias (valores de referência do catálogo do WhatsApp da Fran).
-  // scene: ilustração de "como fica" (ver SCENES em main.js). photo (opcional): foto real; credit "fran" ou "pexels".
+  // scene: ilustração de "como fica" (ver SCENES em main.js). photo (opcional): foto real.
+  // credit: "catalogo" (catálogo do WhatsApp da Fran), "fran" (trabalho dela) ou "pexels" (foto ilustrativa).
   jewelry: [
-    { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring", scene: "ear-ring", where: "no helix", credit: "pexels", photo: "https://images.pexels.com/photos/18597841/pexels-photo-18597841.jpeg?auto=compress&cs=tinysrgb&w=640" },
-    { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring", scene: "nose-dring", where: "na aba nasal", credit: "pexels", photo: "https://images.pexels.com/photos/3269683/pexels-photo-3269683.jpeg?auto=compress&cs=tinysrgb&w=640" },
-    { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "no lóbulo", credit: "pexels", photo: "https://images.pexels.com/photos/19875392/pexels-photo-19875392.jpeg?auto=compress&cs=tinysrgb&w=640" },
-    { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret", scene: "lip-labret", where: "abaixo do lábio" },
-    { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell", scene: "barbell", where: "barbell reto" },
-    { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem", scene: "nose-gem", where: "na pele ou no nariz", credit: "fran", photo: "assets/img/piercing/dermal.webp" },
+    { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring", scene: "ear-ring", where: "no helix", credit: "catalogo", photo: "assets/img/catalogo/argolas.webp" },
+    { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring", scene: "nose-dring", where: "na aba nasal", credit: "catalogo", photo: "assets/img/catalogo/dring.webp" },
+    { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "no lóbulo", credit: "catalogo", photo: "assets/img/catalogo/basicas.webp" },
+    { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret", scene: "lip-labret", where: "abaixo do lábio", credit: "catalogo", photo: "assets/img/catalogo/labret.webp" },
+    { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell", scene: "barbell", where: "barbell reto", credit: "catalogo", photo: "assets/img/catalogo/mamilo.webp" },
+    { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem", scene: "nose-gem", where: "no nariz", credit: "catalogo", photo: "assets/img/catalogo/abanasal.webp" },
   ],
 
-  // PRÉVIA da lojinha de semi-joias da Fran (renders ilustrativos — trocar pelas fotos do catálogo dela).
+
+  // PRÉVIA da lojinha de semi-joias da Fran (fotos do trabalho/catálogo dela — trocar pelas fotos das semi-joias).
   // Se ela não aprovar: apagar este bloco e a seção "Lojinha" do index.html.
   shop: {
     metals: [
@@ -159,21 +162,22 @@ window.SITE = {
     ],
     categories: [
       { id: "orelha", label: "Orelha" },
+      { id: "boca", label: "Boca" },
       { id: "nariz", label: "Nariz" },
       { id: "umbigo", label: "Umbigo" },
       { id: "corpo", label: "Corpo" },
     ],
-    // photo: foto do card. credit "fran" = trabalho real da Fran; "pexels" = foto ilustrativa gratuita (pexels.com).
-    // Se a foto externa não carregar, o card mostra o render da joia.
+    // photo: foto do card; credit "fran" = trabalho real da Fran, "catalogo" = foto do catálogo dela.
+    // Se a foto não carregar, o card mostra o render da joia.
     products: [
-      { id: "clicker", name: "Argola cravejada", cat: "orelha", shape: "clicker", stones: true, credit: "pexels", photo: "https://images.pexels.com/photos/19875392/pexels-photo-19875392.jpeg?auto=compress&cs=tinysrgb&w=640" },
+      { id: "clicker", name: "Argola cravejada", cat: "orelha", shape: "clicker", stones: true, credit: "catalogo", photo: "assets/img/catalogo/argolas.webp" },
       { id: "borboleta", name: "Borboleta", cat: "orelha", shape: "butterfly", stones: true, credit: "fran", photo: "assets/img/piercing/orelha-borboleta.webp" },
       { id: "ramo", name: "Ramo de folhas", cat: "orelha", shape: "branch", stones: true, credit: "fran", photo: "assets/img/piercing/orelha-ramo.webp" },
-      { id: "estrela", name: "Estrela", cat: "orelha", shape: "star", stones: true, credit: "pexels", photo: "https://images.pexels.com/photos/9671580/pexels-photo-9671580.jpeg?auto=compress&cs=tinysrgb&w=640" },
-      { id: "argolinha", name: "Argolinha de nariz", cat: "nariz", shape: "hoop", stones: false, credit: "pexels", photo: "https://images.pexels.com/photos/6644163/pexels-photo-6644163.jpeg?auto=compress&cs=tinysrgb&w=640" },
-      { id: "septo", name: "Clicker de septo", cat: "nariz", shape: "clicker", stones: true, credit: "pexels", photo: "https://images.pexels.com/photos/19588725/pexels-photo-19588725.jpeg?auto=compress&cs=tinysrgb&w=640" },
+      { id: "labret-folhas", name: "Labret de folhas", cat: "boca", shape: "branch", stones: true, credit: "catalogo", photo: "assets/img/catalogo/labret.webp" },
+      { id: "pontoluz", name: "Ponto de luz", cat: "nariz", shape: "stud", stones: true, credit: "catalogo", photo: "assets/img/catalogo/pontoluz.webp" },
       { id: "umbigo", name: "Joia de umbigo", cat: "umbigo", shape: "navel", stones: true, credit: "fran", photo: "assets/img/piercing/umbigo.webp" },
-      { id: "pontoluz", name: "Ponto de luz", cat: "corpo", shape: "stud", stones: true, credit: "fran", photo: "assets/img/piercing/dermal.webp" },
+      { id: "microdermal", name: "Microdermal", cat: "corpo", shape: "stud", stones: true, credit: "catalogo", photo: "assets/img/catalogo/surface.webp" },
+      { id: "barbell", name: "Barbell com pedras", cat: "corpo", shape: "barbell", stones: true, credit: "catalogo", photo: "assets/img/catalogo/mamilo.webp" },
     ],
   },
 
@@ -235,6 +239,14 @@ window.SITE = {
     {
       q: "Posso levar minha própria ideia de tattoo?",
       a: "Pode e deve. O Italo faz projetos autorais e também tattoos a partir da sua referência — além dos flashes prontos.",
+    },
+    {
+      q: "Tenho medo de agulha. E agora?",
+      a: "Super normal — muita gente sente o mesmo. Marque “Tenho medo de agulha” no agendamento: a gente explica cada passo antes, respeita o seu tempo e você pode pedir pausa quando quiser.",
+    },
+    {
+      q: "Tenho alguma restrição ou preciso de acessibilidade. Como faço?",
+      a: "Conta pra gente no agendamento (alergia, condição de saúde, mobilidade ou qualquer outra necessidade). Assim a gente prepara o atendimento pra você com antecedência.",
     },
     {
       q: "Como é a higiene?",

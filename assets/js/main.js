@@ -13,6 +13,8 @@
     return `https://wa.me/${num}` + (text ? `?text=${encodeURIComponent(text)}` : "");
   };
 
+  const CREDIT = { fran: "Feito pela Fran", catalogo: "Catálogo da Fran", pexels: "Foto ilustrativa" };
+
   const escapeHtml = (str) =>
     String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -181,11 +183,18 @@
       <path class="sc-line sc-soft" d="M60 340 C120 330 180 330 240 340"/>`,
     nipple: `${SKIN_BG}
       <circle cx="150" cy="200" r="58" class="sc-areola"/><circle cx="150" cy="200" r="17" class="sc-areola sc-areola--in"/>`,
-    surface: `${SKIN_BG}
-      <path class="sc-line" d="M104 0 C108 70 106 130 92 176"/><path class="sc-line" d="M196 0 C192 70 194 130 208 176"/>
-      <path class="sc-line" d="M92 176 C60 194 28 206 0 214"/><path class="sc-line" d="M208 176 C240 194 272 206 300 214"/>
-      <path class="sc-line" d="M30 262 C70 244 112 246 140 266"/><path class="sc-line" d="M270 262 C230 244 188 246 160 266"/>
-      <path class="sc-line sc-soft" d="M140 266 C144 274 156 274 160 266"/>`,
+    surface: `<rect width="300" height="400" fill="#f6e4d9"/>
+      <path class="sc-hair" d="M150 18 C88 18 66 74 72 140 C76 190 86 226 104 248 L196 248 C214 226 224 190 228 140 C234 74 212 18 150 18 Z"/>
+      <path class="sc-skin" d="M120 160 C122 196 120 220 112 238 C86 250 40 258 0 266 L0 400 L300 400 L300 266 C260 258 214 250 188 238 C180 220 178 196 180 160 Z"/>
+      <path class="sc-line" d="M120 168 C122 200 120 222 112 238 C86 250 40 258 0 266"/>
+      <path class="sc-line" d="M180 168 C178 200 180 222 188 238 C214 250 260 258 300 266"/>
+      <ellipse class="sc-skin" cx="150" cy="112" rx="56" ry="70"/>
+      <path class="sc-hair" d="M94 100 C98 46 202 40 208 100 C192 74 172 64 150 64 C128 64 108 74 94 100 Z"/>
+      <path class="sc-line sc-soft" d="M120 112 C126 107 134 107 140 112"/><path class="sc-line sc-soft" d="M160 112 C166 107 174 107 180 112"/>
+      <path class="sc-line sc-soft" d="M150 118 C148 130 145 138 147 143 C150 145 153 145 155 143"/>
+      <path class="sc-lip" d="M136 160 C143 155 150 157 150 158 C150 157 157 155 164 160 C157 166 143 166 136 160 Z"/>
+      <path class="sc-line" d="M44 290 C80 278 116 280 140 296"/><path class="sc-line" d="M256 290 C220 278 184 280 160 296"/>
+      <path class="sc-line sc-soft" d="M140 296 C145 303 155 303 160 296"/>`,
     intimate: `<rect width="300" height="400" fill="url(#g-intimate)"/>
       <circle cx="150" cy="190" r="92" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/>
       <circle cx="150" cy="190" r="70" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="3 6"/>
@@ -323,7 +332,7 @@
         <div class="jewel__scene">
           <svg viewBox="0 0 240 180" role="img" aria-label="Ilustração: ${escapeHtml(j.name)} ${escapeHtml(j.where || "")}">${SCENES[j.scene] || ""}</svg>
           ${j.photo ? `<img class="jewel__photo" src="${j.photo}" alt="Foto: ${escapeHtml(j.name.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer">
-          <span class="jewel__credit">${j.credit === "fran" ? "Feito pela Fran" : "Foto ilustrativa"}</span>
+          <span class="jewel__credit">${CREDIT[j.credit] || ""}</span>
           <span class="jewel__toggle" role="group" aria-label="Ver foto ou como fica">
             <button type="button" data-view="photo" aria-pressed="true">Foto</button><button type="button" data-view="scene" aria-pressed="false">Como fica</button>
           </span>` : ""}
@@ -423,6 +432,8 @@
         <circle cx="44" cy="60" r="8" fill="${M}"/><circle cx="156" cy="60" r="8" fill="${M}"/>${links.join("")}
         <path d="M100 124 V134" stroke="${M}" stroke-width="3"/><circle cx="100" cy="150" r="17" fill="${G}" stroke="${M}" stroke-width="5"/>`;
     },
+    barbell: (M, G) => `<rect x="52" y="96" width="96" height="8" rx="4" fill="${M}"/>
+      <circle cx="44" cy="100" r="16" fill="${G}" stroke="${M}" stroke-width="5"/><circle cx="156" cy="100" r="16" fill="${G}" stroke="${M}" stroke-width="5"/>`,
     hoop: (M) => `<circle cx="100" cy="100" r="54" fill="none" stroke="${M}" stroke-width="9"/>
       <circle cx="100" cy="100" r="50" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/><circle cx="100" cy="154" r="10" fill="${M}"/>`,
     navel: (M, G) => `<path d="M100 66 C138 76 138 128 100 138" fill="none" stroke="${M}" stroke-width="7" stroke-linecap="round"/>
@@ -487,7 +498,7 @@
           ${p.photo ? `<img class="shop-card__photo" src="${p.photo}" alt="Foto de ${escapeHtml(p.name.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer">` : ""}
           <span class="shop-card__render"><svg viewBox="0 0 200 200" role="img"></svg></span>
           <span class="shop-card__cat">${escapeHtml(cat.label)}</span>
-          ${p.photo ? `<span class="shop-card__credit">${p.credit === "fran" ? "Feito pela Fran" : "Foto ilustrativa"}</span>` : ""}
+          ${p.photo ? `<span class="shop-card__credit">${CREDIT[p.credit] || ""}</span>` : ""}
         </div>
         <div class="shop-card__body">
           <b>${escapeHtml(p.name)}</b>
@@ -969,6 +980,7 @@
         syncDetailBlocks();
         $('[data-error="service"]', form).hidden = true;
       }
+      if (e.target.name === "care") syncCareNote();
       if (e.target.name === "ttype" && e.target.value !== "Flash pronto" && chosenFlash) {
         chosenFlash = null;
         refreshFlash();
@@ -997,8 +1009,28 @@
 
     function greeting(artist) {
       const name = form.elements.name.value.trim();
-      const first = form.elements.first.checked ? " É minha primeira vez!" : "";
-      return `Oi, ${artist}! Me chamo ${name || "…"} e vim pelo site.${first}`;
+      return `Oi, ${artist}! Me chamo ${name || "…"} e vim pelo site.`;
+    }
+
+    // "Pra vocês saberem": primeira vez, medo de agulha, saúde, acessibilidade
+    const CARE = {
+      first: "É minha primeira vez",
+      fear: "Tenho medo de agulha, então prefiro ir com calma",
+      health: "Tenho alergia ou alguma restrição de saúde",
+      access: "Preciso de acessibilidade no atendimento",
+    };
+    const careNote = $("[data-care-note]", form);
+    function careLines() {
+      const picked = $$('input[name="care"]:checked', form).map((i) => CARE[i.value]);
+      const note = form.elements.carenote.value.trim();
+      if (!picked.length && !note) return [];
+      const lines = ["", "Pra vocês saberem:", ...picked.map((t) => `• ${t}`)];
+      if (note) lines.push(`• ${note}`);
+      return lines;
+    }
+    function syncCareNote() {
+      // O campo de detalhes aparece para medo, saúde ou acessibilidade
+      careNote.hidden = !$$('input[name="care"]:checked', form).some((i) => i.value !== "first") && !form.elements.carenote.value.trim();
     }
 
     function piercingMessage() {
@@ -1010,7 +1042,7 @@
       const lines = [greeting("Fran"), "", "Quero agendar um piercing."];
       if (areas.length) lines.push(`• Local: ${areas.join(", ")}`);
       if (bag.size) lines.push(`• Joias que gostei: ${bagNames().join(", ")}`);
-      lines.push(`• ${whenLine()}`);
+      lines.push(`• ${whenLine()}`, ...careLines());
       return lines.join("\n");
     }
 
@@ -1023,7 +1055,7 @@
       if (f.tplace.value.trim()) lines.push(`• Local: ${f.tplace.value.trim()}`);
       if (!chosenFlash) lines.push(`• Tamanho aproximado: ${sizeOut.textContent}`);
       if (f.tidea.value.trim()) lines.push(`• Ideia: ${f.tidea.value.trim()}`);
-      lines.push(`• ${whenLine()}`);
+      lines.push(`• ${whenLine()}`, ...careLines());
       if (f.ttype.value === "Tenho uma referência") lines.push("", "Vou te mandar a referência aqui na conversa.");
       return lines.join("\n");
     }
@@ -1106,6 +1138,7 @@
       if (style) form.elements.tstyle.value = style;
       refreshFlash();
       refreshBag();
+      syncCareNote();
       go(svc ? 2 : 1);
       $("#agendar").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
       if (flash) toast(`Flash “${flash.name}” selecionado`);
