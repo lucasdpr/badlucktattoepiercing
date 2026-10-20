@@ -241,6 +241,14 @@ window.SITE = {
       a: "Pode e deve. O Italo faz projetos autorais e também tattoos a partir da sua referência — além dos flashes prontos.",
     },
     {
+      q: "Tenho medo de agulha. E agora?",
+      a: "Super normal — muita gente sente o mesmo. Marque “Tenho medo de agulha” no agendamento: a gente explica cada passo antes, respeita o seu tempo e você pode pedir pausa quando quiser.",
+    },
+    {
+      q: "Tenho alguma restrição ou preciso de acessibilidade. Como faço?",
+      a: "Conta pra gente no agendamento (alergia, condição de saúde, mobilidade ou qualquer outra necessidade). Assim a gente prepara o atendimento pra você com antecedência.",
+    },
+    {
       q: "Como é a higiene?",
       a: "Todo procedimento segue protocolo asséptico. Ficou com dúvida sobre o processo? Pergunte no atendimento — a gente explica tudo.",
     },

@@ -441,11 +441,18 @@
                 <label class="pill"><input type="radio" name="shift" value="tarde"><span>Tarde</span></label>
                 <label class="pill"><input type="radio" name="shift" value="qualquer horário"><span>Tanto faz</span></label>
               </div>
-              <label class="check">
-                <input type="checkbox" name="first">
-                <span>É minha primeira vez</span>
+              <p class="label" id="care-label">Quer contar algo pra gente? <small>(opcional)</small></p>
+              <div class="pill-group care" role="group" aria-labelledby="care-label">
+                <label class="pill"><input type="checkbox" name="care" value="first"><span><span aria-hidden="true">✨</span> É minha primeira vez</span></label>
+                <label class="pill"><input type="checkbox" name="care" value="fear"><span><span aria-hidden="true">💉</span> Tenho medo de agulha</span></label>
+                <label class="pill"><input type="checkbox" name="care" value="health"><span><span aria-hidden="true">🩺</span> Alergia ou restrição de saúde</span></label>
+                <label class="pill"><input type="checkbox" name="care" value="access"><span><span aria-hidden="true">♿</span> Preciso de acessibilidade</span></label>
+              </div>
+              <label class="field" data-care-note hidden>
+                <span class="label">Conta um pouco mais <small>(opcional)</small></span>
+                <textarea name="carenote" rows="2" placeholder="Ex.: alergia a níquel, uso cadeira de rodas, prefiro um horário mais tranquilo…"></textarea>
               </label>
-              <p class="fine">O horário é confirmado por quem vai te atender, conforme a agenda.</p>
+              <p class="fine">Isso nos ajuda a preparar seu atendimento com calma. Vai só na sua mensagem — o site não guarda nada. O horário é confirmado por quem vai te atender, conforme a agenda.</p>
             </fieldset>
 
             <!-- Passo 4 -->

@@ -980,6 +980,7 @@
         syncDetailBlocks();
         $('[data-error="service"]', form).hidden = true;
       }
+      if (e.target.name === "care") syncCareNote();
       if (e.target.name === "ttype" && e.target.value !== "Flash pronto" && chosenFlash) {
         chosenFlash = null;
         refreshFlash();
@@ -1008,8 +1009,28 @@
 
     function greeting(artist) {
       const name = form.elements.name.value.trim();
-      const first = form.elements.first.checked ? " É minha primeira vez!" : "";
-      return `Oi, ${artist}! Me chamo ${name || "…"} e vim pelo site.${first}`;
+      return `Oi, ${artist}! Me chamo ${name || "…"} e vim pelo site.`;
+    }
+
+    // "Pra vocês saberem": primeira vez, medo de agulha, saúde, acessibilidade
+    const CARE = {
+      first: "É minha primeira vez",
+      fear: "Tenho medo de agulha, então prefiro ir com calma",
+      health: "Tenho alergia ou alguma restrição de saúde",
+      access: "Preciso de acessibilidade no atendimento",
+    };
+    const careNote = $("[data-care-note]", form);
+    function careLines() {
+      const picked = $$('input[name="care"]:checked', form).map((i) => CARE[i.value]);
+      const note = form.elements.carenote.value.trim();
+      if (!picked.length && !note) return [];
+      const lines = ["", "Pra vocês saberem:", ...picked.map((t) => `• ${t}`)];
+      if (note) lines.push(`• ${note}`);
+      return lines;
+    }
+    function syncCareNote() {
+      // O campo de detalhes aparece para medo, saúde ou acessibilidade
+      careNote.hidden = !$$('input[name="care"]:checked', form).some((i) => i.value !== "first") && !form.elements.carenote.value.trim();
     }
 
     function piercingMessage() {
@@ -1021,7 +1042,7 @@
       const lines = [greeting("Fran"), "", "Quero agendar um piercing."];
       if (areas.length) lines.push(`• Local: ${areas.join(", ")}`);
       if (bag.size) lines.push(`• Joias que gostei: ${bagNames().join(", ")}`);
-      lines.push(`• ${whenLine()}`);
+      lines.push(`• ${whenLine()}`, ...careLines());
       return lines.join("\n");
     }
 
@@ -1034,7 +1055,7 @@
       if (f.tplace.value.trim()) lines.push(`• Local: ${f.tplace.value.trim()}`);
       if (!chosenFlash) lines.push(`• Tamanho aproximado: ${sizeOut.textContent}`);
       if (f.tidea.value.trim()) lines.push(`• Ideia: ${f.tidea.value.trim()}`);
-      lines.push(`• ${whenLine()}`);
+      lines.push(`• ${whenLine()}`, ...careLines());
       if (f.ttype.value === "Tenho uma referência") lines.push("", "Vou te mandar a referência aqui na conversa.");
       return lines.join("\n");
     }
@@ -1117,6 +1138,7 @@
       if (style) form.elements.tstyle.value = style;
       refreshFlash();
       refreshBag();
+      syncCareNote();
       go(svc ? 2 : 1);
       $("#agendar").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
       if (flash) toast(`Flash “${flash.name}” selecionado`);
