@@ -39,24 +39,25 @@ Quase tudo fica em **`assets/js/data.js`**:
 
 Para adicionar um trabalho ao portfólio: coloque a foto em `assets/img/tattoo/` e adicione uma linha em `portfolio`.
 
+## Fotos
+
+As fotos vieram de prints do Instagram e do catálogo do WhatsApp da Fran (miniaturas de ~80 a ~250 px). Para a demonstração elas foram **ampliadas com IA (Real-ESRGAN)**, o que deixa tudo nítido, mas pode suavizar texturas e alterar levemente detalhes. Antes de publicar de verdade, trocar pelas fotos originais.
+
+Selos nos cards: **"Feito pela Fran"** (trabalho dela, do Instagram) e **"Catálogo da Fran"** (foto do catálogo do WhatsApp dela).
+
 ## Lojinha de semi-joias (prévia)
 
-Montada para a Fran aprovar a ideia. As fotos são de dois tipos, indicados no próprio card:
+Montada para a Fran aprovar a ideia, usando por enquanto fotos do trabalho e do catálogo dela. O círculo no canto de cada foto é um render que muda conforme o banho/pedra escolhidos.
 
-- **"Feito pela Fran"** — trabalhos reais dela (recortados do Instagram).
-- **"Foto ilustrativa"** — fotos gratuitas do [Pexels](https://www.pexels.com/license/) carregadas direto do site deles. Se alguma sair do ar, o card mostra o render da joia automaticamente.
-
-O círculo no canto de cada foto é um render que muda conforme o banho/pedra escolhidos.
-
-- **Se ela aprovar:** trocar o campo `photo` de cada produto em `data.js` pelas fotos do catálogo dela (e ajustar modelos/cores).
+- **Se ela aprovar:** trocar o campo `photo` de cada produto em `data.js` pelas fotos das semi-joias (e ajustar modelos/cores).
 - **Se não aprovar:** apagar o bloco `shop` em `data.js` e o bloco marcado `Lojinha de semi-joias (PRÉVIA ...)` no `index.html`.
 
 ## Pendências antes de publicar
 
-- [ ] **Fotos em alta resolução.** As imagens atuais foram recortadas de prints do Instagram (≈500 px) só para a demonstração — é o que mais limita a qualidade visual hoje. Pedir os originais (ideal ≥ 1200 px) à Fran e ao Italo.
+- [ ] **Fotos originais em alta resolução** (ideal ≥ 1200 px) da Fran e do Italo — as atuais são prints ampliados com IA.
 - [ ] **Depoimentos reais** (a Fran tem destaque "Feedback" no Instagram) — não foram inventados no site.
 - [ ] `og:image` precisa de URL absoluta depois que houver domínio.
-- [ ] **Foto da Fran em alta** para a seção dela (a atual é um recorte de print e fica borrada se ampliada).
+- [ ] **Foto original da Fran** para a seção dela (a atual é um print ampliado com IA).
 - [ ] **Confirmar estilos do Italo** (old school, blackwork, pontilhismo, fineline, lettering, preto & cinza).
 - [ ] **Flashes reais.** Os flashes usam fotos do portfólio como exemplo; trocar pelas artes disponíveis do Italo.
 - [ ] **Revisar textos** (biografias, FAQ, descrições das regiões) com a Fran e o Italo.
