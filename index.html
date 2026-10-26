@@ -44,13 +44,6 @@
     <defs>
       <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#b9b6b2"/><stop offset=".7" stop-color="#f4f2ef"/><stop offset="1" stop-color="#8d8984"/></linearGradient>
       <linearGradient id="g-intimate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d9cc"/><stop offset=".55" stop-color="#ecccbf"/><stop offset="1" stop-color="#c9dcc2"/></linearGradient>
-      <linearGradient id="m-dourado" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".35" stop-color="#e5bb5c"/><stop offset=".65" stop-color="#a8781f"/><stop offset="1" stop-color="#f6d98b"/></linearGradient>
-      <linearGradient id="m-prateado" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#cfd3d8"/><stop offset=".65" stop-color="#8b9097"/><stop offset="1" stop-color="#eef0f3"/></linearGradient>
-      <linearGradient id="m-rose" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0ea"/><stop offset=".35" stop-color="#e9b6a2"/><stop offset=".65" stop-color="#b47562"/><stop offset="1" stop-color="#f6d2c4"/></linearGradient>
-      <radialGradient id="s-cristal" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#e6f1fb"/><stop offset="1" stop-color="#9fb8cf"/></radialGradient>
-      <radialGradient id="s-rosa" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#f8bfd2"/><stop offset="1" stop-color="#d0628e"/></radialGradient>
-      <radialGradient id="s-verde" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#a8e6c8"/><stop offset="1" stop-color="#2f8f63"/></radialGradient>
-      <radialGradient id="s-azul" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#bfe0fb"/><stop offset="1" stop-color="#3f7fc4"/></radialGradient>
       <radialGradient id="g-gem" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#dfe9f2"/><stop offset="1" stop-color="#9fb4c8"/></radialGradient>
     </defs>
     <symbol id="j-ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><circle cx="32" cy="12" r="2.4"/><circle cx="46" cy="18" r="2.4"/><circle cx="52" cy="32" r="2.4"/><circle cx="46" cy="46" r="2.4"/><circle cx="18" cy="46" r="2.4"/><circle cx="12" cy="32" r="2.4"/><circle cx="18" cy="18" r="2.4"/></g><path d="M26 50.5 L38 50.5" stroke="currentColor" stroke-width="3"/></symbol>
@@ -196,17 +189,18 @@
         </div>
       </div>
 
-      <!-- Lojinha de semi-joias (PRÉVIA — remover este bloco se a Fran não aprovar) -->
+      <!-- Vitrine de joias (remover este bloco se a Fran não quiser) -->
       <div class="container shop reveal" aria-labelledby="shop-title">
         <div class="section-head section-head--row">
           <div>
-            <span class="eyebrow">Lojinha da Fran</span>
-            <h3 id="shop-title" class="title-serif">Semi-joias</h3>
-            <p class="muted">Escolha o modelo, a cor do banho e da pedra. A peça vai separada na sua mensagem.</p>
+            <span class="eyebrow">Vitrine da Fran</span>
+            <h3 id="shop-title" class="title-serif">Joias pra escolher</h3>
+            <p class="muted">Toque em <b>Separar</b> nas que você gostou: elas vão junto na sua mensagem de agendamento. Toque na foto para ampliar.</p>
           </div>
-          <div class="shop__filters" role="group" aria-label="Filtrar semi-joias" data-shop-filters></div>
+          <div class="shop__filters" role="group" aria-label="Filtrar joias" data-shop-filters></div>
         </div>
         <ul class="shop-grid" data-shop></ul>
+        <div class="more"><button class="btn btn-ink" data-shop-more aria-controls="shop-grid" aria-expanded="false"></button></div>
       </div>
 
       <!-- Galeria piercing -->

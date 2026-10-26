@@ -16,7 +16,7 @@ npx http-server -p 8080
 | Seção | Interação |
 | --- | --- |
 | Hero | Dois mundos (claro/escuro) divididos na diagonal; o letreiro "Bad Luck" inverte de cor sozinho ao cruzar a divisão |
-| Fran — piercing | Explorador com mapas ilustrados e pontos clicáveis (orelha, nariz, boca, umbigo, mamilo, surface/microdermal; íntima com cartão discreto), catálogo de joias em titânio (foto ⇄ "como fica"), **lojinha de semi-joias (prévia)** com troca de banho e pedra, vale-presente, galeria |
+| Fran — piercing | Explorador com mapas ilustrados e pontos clicáveis (orelha, nariz, boca, umbigo, mamilo, surface/microdermal; íntima com cartão discreto), catálogo de joias em titânio (foto ⇄ "como fica"), **vitrine com 43 joias (filtro, zoom e "Separar"), vale-presente, galeria |
 | Italo — tattoo | Letreiro dourado + peça emoldurada, cards de estilos (abrem o agendamento já com o estilo), portfólio sobre "folha de papel" com filtro, flashes com "Quero esse" e o baralho "deixa a sorte escolher" |
 | Agendamento | Passo a passo com dias em botões e um celular que mostra a mensagem sendo montada ao vivo; envia para o WhatsApp **de quem vai atender** (piercing → Fran, tattoo → Italo, os dois → duas mensagens) |
 | Estúdio | Endereço, mapa do Google embutido, FAQ |
@@ -31,7 +31,7 @@ Quase tudo fica em **`assets/js/data.js`**:
 - `artists` — WhatsApp, Instagram e nomes da Fran e do Italo
 - `piercingAreas` — regiões do explorador; cada uma tem `map` (ilustração) e `spots` (pontos clicáveis, em % da ilustração)
 - `styles` — estilos do Italo (um item pode ter `note: "texto"` para ganhar uma faixa de destaque)
-- `shop` — **prévia** da lojinha de semi-joias (modelos, banhos, pedras e fotos)
+- `shop` — vitrine de joias (categorias e produtos)
 - `jewelry` — catálogo de joias e preços (`scene` escolhe a ilustração de "como fica", definidas em `SCENES` no `main.js`)
 - `portfolio` — trabalhos do Italo (`tags`: `colorido` ou `blackwork`; `link` opcional para o post). Os 8 primeiros aparecem direto, o resto em "Ver mais trabalhos"
 - `agenda` — aviso de agenda do Italo (`status`: `open`, `limited` ou `closed`; troque só `status` e `text`)
@@ -46,12 +46,13 @@ As fotos vieram de prints do Instagram e do catálogo do WhatsApp da Fran (minia
 
 Selos nos cards: **"Feito pela Fran"** (trabalho dela, do Instagram) e **"Catálogo da Fran"** (foto do catálogo do WhatsApp dela).
 
-## Lojinha de semi-joias (prévia)
+## Vitrine de joias
 
-Montada para a Fran aprovar a ideia, usando por enquanto fotos do trabalho e do catálogo dela. O círculo no canto de cada foto é um render que muda conforme o banho/pedra escolhidos.
+43 joias com as fotos de produto enviadas pela Fran (`assets/img/vitrine/`), em 5 categorias, com filtro, zoom e botão "Separar" (a joia vai junto na mensagem de agendamento). Sem preço por enquanto: aparece "Valor sob consulta".
 
-- **Se ela aprovar:** trocar o campo `photo` de cada produto em `data.js` pelas fotos das semi-joias (e ajustar modelos/cores).
-- **Se não aprovar:** apagar o bloco `shop` em `data.js` e o bloco marcado `Lojinha de semi-joias (PRÉVIA ...)` no `index.html`.
+- **Adicionar/trocar uma joia:** coloque a foto em `assets/img/vitrine/<id>.webp` e adicione `{ id, name, cat, price? }` em `shop.products` no `data.js`.
+- **Preço:** `price: 80` mostra "R$ 80,00".
+- **Remover a vitrine:** apagar o bloco `shop` em `data.js` e o bloco `Vitrine de joias` no `index.html`.
 
 ## Pendências antes de publicar
 

@@ -394,85 +394,41 @@
     renderBag();
   });
 
-  /* ---------- Lojinha de semi-joias (prévia) ---------- */
-  const SHOP_SHAPES = {
-    clicker: (M, G) => {
-      const gems = [25, 50, 75, 100, 125, 150]
-        .map((deg) => {
-          const a = (deg * Math.PI) / 180;
-          return `<circle cx="${(100 + 56 * Math.cos(a)).toFixed(1)}" cy="${(100 + 56 * Math.sin(a)).toFixed(1)}" r="7.5" fill="${G}" stroke="rgba(0,0,0,.18)"/>`;
-        })
-        .join("");
-      return `<circle cx="100" cy="100" r="56" fill="none" stroke="${M}" stroke-width="15"/>
-        <circle cx="100" cy="100" r="49" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/>
-        <rect x="90" y="34" width="20" height="12" rx="4" fill="${M}"/>${gems}`;
-    },
-    stud: (M, G) => `<circle cx="100" cy="100" r="48" fill="${G}" stroke="rgba(0,0,0,.15)"/>
-      <path d="M100 58 L126 100 L100 142 L74 100 Z M56 100 H144 M100 54 V146 M70 70 L130 130 M130 70 L70 130" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/>
-      ${[45, 135, 225, 315].map((deg) => { const a = (deg * Math.PI) / 180; return `<circle cx="${(100 + 46 * Math.cos(a)).toFixed(1)}" cy="${(100 + 46 * Math.sin(a)).toFixed(1)}" r="9" fill="${M}"/>`; }).join("")}`,
-    butterfly: (M, G) => `<ellipse cx="74" cy="84" rx="20" ry="36" transform="rotate(-38 74 84)" fill="${G}" stroke="${M}" stroke-width="5"/>
-      <ellipse cx="126" cy="84" rx="20" ry="36" transform="rotate(38 126 84)" fill="${G}" stroke="${M}" stroke-width="5"/>
-      <ellipse cx="80" cy="128" rx="14" ry="24" transform="rotate(35 80 128)" fill="${G}" stroke="${M}" stroke-width="5"/>
-      <ellipse cx="120" cy="128" rx="14" ry="24" transform="rotate(-35 120 128)" fill="${G}" stroke="${M}" stroke-width="5"/>
-      <path d="M100 74 V140" stroke="${M}" stroke-width="8" stroke-linecap="round"/><circle cx="100" cy="68" r="7" fill="${M}"/>`,
-    branch: (M, G) => `<path d="M64 166 C86 126 108 96 144 40" fill="none" stroke="${M}" stroke-width="6" stroke-linecap="round"/>
-      ${[[80, 132, -25], [104, 118, 62], [98, 94, -30], [126, 82, 58], [134, 56, 8]].map(([x, y, r]) => `<ellipse cx="${x}" cy="${y}" rx="10" ry="20" transform="rotate(${r} ${x} ${y})" fill="${G}" stroke="${M}" stroke-width="3.5"/>`).join("")}`,
-    star: (M, G) => `<path d="M100 26 L115 85 L174 100 L115 115 L100 174 L85 115 L26 100 L85 85 Z" fill="${M}"/>
-      <path d="M100 26 L115 85 L100 100 Z M174 100 L115 115 L100 100 Z M100 174 L85 115 L100 100 Z M26 100 L85 85 L100 100 Z" fill="#fff" fill-opacity=".28"/>
-      <circle cx="100" cy="100" r="15" fill="${G}" stroke="${M}" stroke-width="4"/>`,
-    chain: (M, G) => {
-      const links = [];
-      for (let t = 0.04; t < 0.97; t += 0.075) {
-        const x = 54 + 92 * t;
-        const y = 62 + 92 * 4 * t * (1 - t) * 0.82;
-        links.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4" fill="none" stroke="${M}" stroke-width="2.2"/>`);
-      }
-      return `<path d="M44 60 C76 44 124 44 156 60" fill="none" stroke="${M}" stroke-width="9" stroke-linecap="round"/>
-        <circle cx="44" cy="60" r="8" fill="${M}"/><circle cx="156" cy="60" r="8" fill="${M}"/>${links.join("")}
-        <path d="M100 124 V134" stroke="${M}" stroke-width="3"/><circle cx="100" cy="150" r="17" fill="${G}" stroke="${M}" stroke-width="5"/>`;
-    },
-    barbell: (M, G) => `<rect x="52" y="96" width="96" height="8" rx="4" fill="${M}"/>
-      <circle cx="44" cy="100" r="16" fill="${G}" stroke="${M}" stroke-width="5"/><circle cx="156" cy="100" r="16" fill="${G}" stroke="${M}" stroke-width="5"/>`,
-    hoop: (M) => `<circle cx="100" cy="100" r="54" fill="none" stroke="${M}" stroke-width="9"/>
-      <circle cx="100" cy="100" r="50" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/><circle cx="100" cy="154" r="10" fill="${M}"/>`,
-    navel: (M, G) => `<path d="M100 66 C138 76 138 128 100 138" fill="none" stroke="${M}" stroke-width="7" stroke-linecap="round"/>
-      <circle cx="100" cy="56" r="13" fill="${G}" stroke="${M}" stroke-width="4"/>
-      <circle cx="100" cy="150" r="24" fill="${G}" stroke="${M}" stroke-width="5"/>
-      <path d="M88 144 L112 156 M112 144 L88 156" stroke="#fff" stroke-opacity=".45" stroke-width="1.5"/>`,
-    heart: (M, G) => {
-      const h = "M100 162 C40 122 40 62 78 58 C90 57 100 66 100 78 C100 66 110 57 122 58 C160 62 160 122 100 162 Z";
-      return `<path d="${h}" fill="${M}"/><g transform="translate(100 104) scale(.62) translate(-100 -104)"><path d="${h}" fill="${G}" stroke="rgba(0,0,0,.12)" stroke-width="3"/></g>
-        <path d="M100 162 V184" stroke="${M}" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="186" r="7" fill="${M}"/>`;
-    },
-  };
+  /* ---------- Vitrine de joias ---------- */
+  const SHOP_PREVIEW = 12;
+  const SH = S.shop;
   const shopEl = $("[data-shop]");
   const shopFiltersEl = $("[data-shop-filters]");
-  const SH = S.shop;
-  const metalLabel = (id) => SH.metals.find((m) => m.id === id).label;
-  const stoneLabel = (id) => SH.stones.find((m) => m.id === id).label;
-  const shopKey = (li) => `shop:${li.dataset.product}:${li.dataset.metal}:${li.dataset.stone || ""}`;
-  const shopName = (li) => {
-    const p = SH.products.find((x) => x.id === li.dataset.product);
-    const variant = [metalLabel(li.dataset.metal).toLowerCase(), li.dataset.stone ? `pedra ${stoneLabel(li.dataset.stone).toLowerCase()}` : ""]
-      .filter(Boolean)
-      .join(", ");
-    return `${p.name} (${variant})`;
-  };
+  const shopMoreBtn = $("[data-shop-more]");
+  const shopKey = (p) => `shop:${p.id}`;
+  let shopFilter = "all";
+  let shopExpanded = false;
 
-  function drawProduct(li) {
-    const p = SH.products.find((x) => x.id === li.dataset.product);
-    const svg = $(".shop-card__render svg", li);
-    svg.innerHTML = `<ellipse cx="100" cy="190" rx="54" ry="6" fill="rgba(59,46,38,.12)"/>` +
-      SHOP_SHAPES[p.shape](`url(#m-${li.dataset.metal})`, `url(#s-${li.dataset.stone || "cristal"})`);
-    svg.setAttribute("aria-label", shopName(li));
-    $(".shop-card__variant", li).textContent = [metalLabel(li.dataset.metal), li.dataset.stone ? stoneLabel(li.dataset.stone) : ""]
-      .filter(Boolean)
-      .join(" · ");
-  }
+  const catLabel = (id) => SH.categories.find((c) => c.id === id).label;
+
+  shopEl.innerHTML = SH.products
+    .map(
+      (p) => `
+      <li class="shop-card" data-product="${p.id}" data-cat="${p.cat}">
+        <button class="shop-card__stage" data-zoom="${p.id}" aria-label="Ampliar: ${escapeHtml(p.name)}">
+          <img class="shop-card__photo" src="assets/img/vitrine/${p.id}.webp" alt="${escapeHtml(p.name)}" loading="lazy" width="800" height="800">
+        </button>
+        <div class="shop-card__body">
+          <span class="shop-card__cat">${escapeHtml(catLabel(p.cat))}</span>
+          <b>${escapeHtml(p.name)}</b>
+          <div class="shop-card__foot">
+            <span class="shop-card__price">${p.price ? money(p.price) : "Valor sob consulta"}</span>
+            <button class="btn btn-small btn-ink shop-card__add" aria-pressed="false">Separar</button>
+          </div>
+        </div>
+      </li>`
+    )
+    .join("");
 
   function syncShop() {
     $$(".shop-card", shopEl).forEach((li) => {
-      const on = bag.has(shopKey(li));
+      const p = SH.products.find((x) => x.id === li.dataset.product);
+      const on = bag.has(shopKey(p));
       li.classList.toggle("is-picked", on);
       const btn = $(".shop-card__add", li);
       btn.textContent = on ? "Separada ✓" : "Separar";
@@ -480,68 +436,47 @@
     });
   }
 
-  shopEl.innerHTML = SH.products
-    .map((p) => {
-      const cat = SH.categories.find((c) => c.id === p.cat);
-      const metals = SH.metals
-        .map((m, i) => `<button class="swatch swatch--${m.id}" data-metal="${m.id}" aria-pressed="${i === 0}" title="${m.label}"><span class="sr-only">${m.label}</span></button>`)
-        .join("");
-      const stones = p.stones
-        ? SH.stones
-            .map((st, i) => `<button class="swatch swatch--stone swatch--${st.id}" data-stone="${st.id}" aria-pressed="${i === 0}" title="${st.label}"><span class="sr-only">Pedra ${st.label}</span></button>`)
-            .join("")
-        : "";
-      return `
-      <li class="shop-card" data-product="${p.id}" data-cat="${p.cat}" data-metal="${SH.metals[0].id}" ${p.stones ? `data-stone="${SH.stones[0].id}"` : ""}>
-        <div class="shop-card__stage">
-          ${p.photo ? `<img class="shop-card__photo" src="${p.photo}" alt="Foto de ${escapeHtml(p.name.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer">` : ""}
-          <span class="shop-card__render"><svg viewBox="0 0 200 200" role="img"></svg></span>
-          <span class="shop-card__cat">${escapeHtml(cat.label)}</span>
-          ${p.photo ? `<span class="shop-card__credit">${CREDIT[p.credit] || ""}</span>` : ""}
-        </div>
-        <div class="shop-card__body">
-          <b>${escapeHtml(p.name)}</b>
-          <span class="shop-card__variant"></span>
-          <div class="swatches" role="group" aria-label="Cor do banho">${metals}</div>
-          ${stones ? `<div class="swatches" role="group" aria-label="Cor da pedra">${stones}</div>` : ""}
-          <div class="shop-card__foot">
-            <span class="shop-card__price">Valor sob consulta</span>
-            <button class="btn btn-small btn-ink shop-card__add" aria-pressed="false">Separar</button>
-          </div>
-        </div>
-      </li>`;
-    })
-    .join("");
-  $$(".shop-card", shopEl).forEach((li) => {
-    drawProduct(li);
-    const img = $(".shop-card__photo", li);
-    if (!img) return li.classList.add("no-photo");
-    // Foto externa fora do ar: mostra só o render
-    const fail = () => li.classList.add("no-photo");
-    img.addEventListener("error", fail);
-    if (img.complete && img.naturalWidth === 0 && img.src) fail();
-  });
+  let visibleShop = [];
+  function applyShop(animate) {
+    visibleShop = [];
+    let shown = 0;
+    $$(".shop-card", shopEl).forEach((li) => {
+      const match = shopFilter === "all" || li.dataset.cat === shopFilter;
+      const extra = match && shopFilter === "all" && !shopExpanded && shown >= SHOP_PREVIEW;
+      li.hidden = !match || extra;
+      li.classList.remove("is-entering");
+      if (match && !extra) {
+        shown++;
+        visibleShop.push(SH.products.find((x) => x.id === li.dataset.product));
+        if (animate && !reduceMotion) {
+          void li.offsetWidth;
+          li.classList.add("is-entering");
+        }
+      }
+    });
+    const hasMore = shopFilter === "all" && SH.products.length > SHOP_PREVIEW;
+    shopMoreBtn.hidden = !hasMore;
+    shopMoreBtn.textContent = shopExpanded ? "Mostrar menos" : `Ver todas as ${SH.products.length} joias`;
+    shopMoreBtn.setAttribute("aria-expanded", String(shopExpanded));
+  }
 
   shopEl.addEventListener("click", (e) => {
     const li = e.target.closest(".shop-card");
     if (!li) return;
-    const sw = e.target.closest(".swatch");
-    if (sw) {
-      const key = sw.dataset.metal ? "metal" : "stone";
-      li.dataset[key] = sw.dataset[key];
-      $$(`.swatch[data-${key}]`, li).forEach((b) => b.setAttribute("aria-pressed", String(b === sw)));
-      drawProduct(li);
-      syncShop();
-      return;
-    }
+    const p = SH.products.find((x) => x.id === li.dataset.product);
     if (e.target.closest(".shop-card__add")) {
-      const key = shopKey(li);
+      const key = shopKey(p);
       if (bag.has(key)) bag.delete(key);
       else {
-        bag.set(key, shopName(li));
-        toast(`${shopName(li)} separada ✨`);
+        bag.set(key, p.name);
+        toast(`${p.name} separada ✨`);
       }
       renderBag();
+      return;
+    }
+    if (e.target.closest("[data-zoom]")) {
+      const list = visibleShop.map((x) => ({ src: `assets/img/vitrine/${x.id}.webp`, alt: x.name, title: x.name }));
+      Lightbox.open(list, visibleShop.indexOf(p), e.target.closest("[data-zoom]"));
     }
   });
 
@@ -551,18 +486,16 @@
   shopFiltersEl.addEventListener("click", (e) => {
     const b = e.target.closest("[data-shop-filter]");
     if (!b) return;
-    const f = b.dataset.shopFilter;
+    shopFilter = b.dataset.shopFilter;
     $$("[data-shop-filter]", shopFiltersEl).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-    $$(".shop-card", shopEl).forEach((li) => {
-      const show = f === "all" || li.dataset.cat === f;
-      li.hidden = !show;
-      if (show && !reduceMotion) {
-        li.classList.remove("is-entering");
-        void li.offsetWidth;
-        li.classList.add("is-entering");
-      }
-    });
+    applyShop(true);
   });
+  shopMoreBtn.addEventListener("click", () => {
+    shopExpanded = !shopExpanded;
+    applyShop(shopExpanded);
+    if (!shopExpanded) $(".shop").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
+  applyShop(false);
 
   /* ---------- Lightbox (compartilhado) ---------- */
   const Lightbox = (() => {
