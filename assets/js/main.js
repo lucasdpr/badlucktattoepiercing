@@ -169,9 +169,8 @@
     mouth: `${SKIN_BG}
       <path class="sc-line sc-soft" d="M112 46 C126 34 140 40 150 46 C160 40 174 34 188 46"/>
       <path class="sc-line sc-soft" d="M138 56 L134 120"/><path class="sc-line sc-soft" d="M162 56 L166 120"/>
-      <path class="sc-mouth" d="M44 172 C100 184 200 184 256 172 C210 260 90 260 44 172 Z"/>
-      <path class="sc-teeth" d="M74 180 C120 188 180 188 226 180 L220 202 C180 210 120 210 80 202 Z"/>
-      <path class="sc-tongue" d="M96 226 C112 206 188 206 204 226 C186 238 114 238 96 226 Z"/>
+      <path class="sc-lip sc-lip--low" d="M44 172 C100 184 200 184 256 172 C210 260 90 260 44 172 Z"/>
+      <path class="sc-line" d="M44 172 C100 184 200 184 256 172"/>
       <path class="sc-lip" d="M44 172 C80 140 118 116 150 132 C182 116 220 140 256 172 C200 184 100 184 44 172 Z"/>
       <path class="sc-lip sc-lip--low" d="M44 172 C90 260 210 260 256 172 C246 270 200 300 150 300 C100 300 54 270 44 172 Z"/>
       <path class="sc-line sc-soft" d="M118 360 C134 370 166 370 182 360"/>`,
@@ -644,6 +643,16 @@
     if (b) Lightbox.open(S.piercingGallery, Number(b.dataset.i), b);
   });
 
+  /* ---------- Aviso de agenda do Italo ---------- */
+  (() => {
+    const cfg = S.agenda;
+    const el = $("[data-agenda]");
+    if (!cfg || !cfg.enabled || !el) return;
+    el.hidden = false;
+    el.dataset.status = cfg.status || "open";
+    $("[data-agenda-text]", el).textContent = cfg.text;
+  })();
+
   /* ---------- Estilos do Italo ---------- */
   const STYLE_ICONS = {
     star: `<polygon points="24.0,4.0 29.0,17.1 43.0,17.8 32.1,26.6 35.8,40.2 24.0,32.5 12.2,40.2 15.9,26.6 5.0,17.8 19.0,17.1" fill="#e3a92b" stroke="#15110e" stroke-width="2" stroke-linejoin="round"/><path d="M24 24 L24.0 4.0 L29.0 17.1 Z" fill="#a8741c"/><path d="M24 24 L43.0 17.8 L32.1 26.6 Z" fill="#a8741c"/><path d="M24 24 L35.8 40.2 L24.0 32.5 Z" fill="#a8741c"/><path d="M24 24 L12.2 40.2 L15.9 26.6 Z" fill="#a8741c"/><path d="M24 24 L5.0 17.8 L19.0 17.1 Z" fill="#a8741c"/>`,
@@ -653,7 +662,6 @@
       .join(""),
     line: `<path d="M6 34 C14 10 22 10 24 24 C26 38 34 38 42 14" fill="none" stroke="#15110e" stroke-width="1.6" stroke-linecap="round"/><circle cx="42" cy="14" r="2" fill="#15110e"/>`,
     letter: `<text x="24" y="33" text-anchor="middle" font-family="Yellowtail, cursive" font-size="26" fill="#15110e">Aa</text>`,
-    gradient: `<circle cx="24" cy="24" r="18" fill="url(#g-bw)"/>`,
   };
   const stylesEl = $("[data-styles]");
   stylesEl.innerHTML = S.styles
@@ -1079,7 +1087,7 @@
     const phoneAvatar = $("[data-phone-avatar]");
     const AVATAR = {
       fran: `<img src="assets/img/fran-avatar.webp" alt="">`,
-      italo: `<span class="phone__mono">IN</span>`,
+      italo: `<img src="assets/img/italo/avatar.webp" alt="">`,
       none: `<img src="assets/img/logo.png" alt="">`,
     };
     function updatePhone() {

@@ -77,15 +77,13 @@ window.SITE = {
       id: "boca",
       label: "Boca",
       map: "mouth",
-      text: "Labret, laterais, medusa, smile, língua… a boca tem muita opção. Toque e descubra a sua.",
+      text: "Labret, laterais de baixo e de cima, medusa… a boca tem muita opção. Toque nos pontos e descubra a sua.",
       from: "Perfurações a partir de R$ 60",
       spots: [
         { id: "labret", label: "Labret", x: 50, y: 81.5, text: "Centralizado abaixo do lábio. Clássico, com ponto de luz ou argola." },
         { id: "laterais-baixo", label: "Laterais de baixo", pts: [[29.3, 74], [70.7, 74]], text: "Um de cada lado do lábio inferior (snake bites). Lindo com argolinhas." },
         { id: "laterais-cima", label: "Laterais de cima", pts: [[28.7, 31], [71.3, 31]], text: "Monroe e Madonna: a “pintinha” acima do lábio, de um lado ou dos dois." },
         { id: "medusa", label: "Medusa", x: 50, y: 25, text: "No centro, logo acima do lábio superior. Delicado e cheio de personalidade." },
-        { id: "smile", label: "Smile", x: 50, y: 45.5, text: "No freio do lábio superior — só aparece quando você sorri." },
-        { id: "lingua", label: "Língua", x: 50, y: 56, text: "Barbell no centro da língua. Um clássico que nunca sai de moda." },
       ],
     },
     {
@@ -203,14 +201,18 @@ window.SITE = {
     { src: "assets/img/tattoo/morcego-demonio.webp", alt: "Cabeça de morcego demoníaco em blackwork", title: "Morcego", tags: ["blackwork"] },
   ],
 
+  // Aviso de agenda do Italo (aparece ao lado do botão "Agendar com o Italo").
+  // status: "open" (verde), "limited" (dourado) ou "closed" (cinza). enabled: false esconde o aviso.
+  // Para atualizar: troque só status e text.
+  agenda: { enabled: true, status: "open", text: "Agenda aberta" },
+
   // Estilos que o Italo tatua (old school é a especialidade).
   styles: [
-    { id: "oldschool", name: "Old School", note: "Especialidade", text: "Traço firme, cor chapada e clássicos atemporais.", icon: "star" },
+    { id: "oldschool", name: "Old School", text: "Traço firme, cor chapada e clássicos atemporais.", icon: "star" },
     { id: "blackwork", name: "Blackwork", text: "Preto sólido, contraste e muita presença.", icon: "blackwork" },
     { id: "pontilhismo", name: "Pontilhismo", text: "Sombras feitas ponto a ponto, com textura única.", icon: "dots" },
     { id: "fineline", name: "Fineline", text: "Traço fino e delicado para peças discretas.", icon: "line" },
     { id: "lettering", name: "Lettering", text: "Nomes e frases com letra desenhada à mão.", icon: "letter" },
-    { id: "pretocinza", name: "Preto & cinza", text: "Degradês suaves em tons de cinza.", icon: "gradient" },
   ],
 
   // Flashes prontos para tatuar.

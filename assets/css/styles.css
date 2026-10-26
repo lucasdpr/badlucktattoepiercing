@@ -393,9 +393,6 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .ear__fill { fill: #f3d9cc; }
 .sc-nostril { fill: #8a5146; opacity: .55; }
 .sc-hair { fill: #7a4a33; }
-.sc-mouth { fill: #5b2a27; }
-.sc-teeth { fill: #fffaf5; stroke: #e9ddd3; stroke-width: 1.5; }
-.sc-tongue { fill: #d9837a; }
 .sc-navel { fill: #e6bcaa; stroke: var(--cocoa); stroke-width: 2.4; }
 .sc-areola { fill: #e6b19f; opacity: .75; }
 .sc-areola--in { fill: #d49482; opacity: .9; }
@@ -833,6 +830,7 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 }
 .artist--dark { background: var(--ink-2); border-color: var(--line-dark); color: var(--cream); }
 .artist__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--blush); }
+.artist--dark .artist__avatar { box-shadow: 0 0 0 3px var(--ink-2), 0 0 0 4px var(--gold); }
 .artist__avatar--mono, .choice__avatar--mono, .phone__mono {
   display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--gold);
   font-family: var(--font-slab); letter-spacing: .04em;
@@ -919,7 +917,7 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .choice__avatar--mono { width: 44px; height: 44px; font-size: 15px; margin-bottom: 6px; box-shadow: 0 0 0 2px var(--gold); }
 .choice__pair { display: flex; margin-bottom: 6px; }
 .choice__pair img, .choice__pair span { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #fff; }
-.choice__pair span { margin-left: -12px; font-size: 13px; }
+.choice__pair img + img { margin-left: -12px; }
 .choice__body { align-content: end; }
 
 
@@ -1277,3 +1275,30 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .studio-photos figure:last-child img { aspect-ratio: auto; min-height: 100%; }
 .frame img { filter: grayscale(1) contrast(1.05); }
 @media (max-width: 700px) { .studio-photos { grid-template-columns: 1fr 1fr; gap: 10px; } .studio-photos figure:first-child img { aspect-ratio: 3 / 4; } }
+
+/* Aviso de agenda */
+.agenda {
+  display: inline-flex; align-items: center; gap: 10px; margin: 22px 0 0; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--line-dark); background: rgba(255, 255, 255, .04); font-size: 14px; font-weight: 700; color: var(--cream);
+}
+.agenda__dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: #4ec27a; }
+.agenda__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: inherit; animation: ping 2.2s ease-out infinite; }
+.agenda[data-status="limited"] .agenda__dot { background: var(--gold); }
+.agenda[data-status="closed"] .agenda__dot { background: #8a8178; }
+.agenda[data-status="closed"] .agenda__dot::after { display: none; }
+
+/* Cuidados pós-tatuagem */
+.aftercare { margin-top: clamp(72px, 9vw, 112px); }
+.care-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.care-step { position: relative; padding: 22px 20px 20px; border-radius: 16px; border: 1px solid var(--line-dark); background: linear-gradient(160deg, #241d17, #1a1511); }
+.care-step__n {
+  display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; margin-bottom: 12px;
+  background: var(--cream); color: var(--ink); font-family: var(--font-slab); font-size: 18px; box-shadow: 0 0 0 3px #1a1511, 0 0 0 4px rgba(227, 169, 43, .6);
+}
+.care-step b { font-family: var(--font-slab); font-weight: 400; text-transform: uppercase; font-size: 18px; letter-spacing: .02em; }
+.care-step p { margin: 8px 0 0; font-size: 15px; color: var(--cream-2); }
+.care-step--warn { border-color: rgba(227, 169, 43, .45); }
+.care-alert { margin: 16px 0 0; padding: 16px 20px; border-radius: 14px; background: rgba(210, 64, 47, .12); border: 1px solid rgba(210, 64, 47, .45); color: var(--cream); }
+.care-alert b { color: #ff9c8d; }
+@media (max-width: 900px) { .care-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .care-steps { grid-template-columns: 1fr; } .care-step p { font-size: 14px; } }
