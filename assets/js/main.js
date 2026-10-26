@@ -169,9 +169,8 @@
     mouth: `${SKIN_BG}
       <path class="sc-line sc-soft" d="M112 46 C126 34 140 40 150 46 C160 40 174 34 188 46"/>
       <path class="sc-line sc-soft" d="M138 56 L134 120"/><path class="sc-line sc-soft" d="M162 56 L166 120"/>
-      <path class="sc-mouth" d="M44 172 C100 184 200 184 256 172 C210 260 90 260 44 172 Z"/>
-      <path class="sc-teeth" d="M74 180 C120 188 180 188 226 180 L220 202 C180 210 120 210 80 202 Z"/>
-      <path class="sc-tongue" d="M96 226 C112 206 188 206 204 226 C186 238 114 238 96 226 Z"/>
+      <path class="sc-lip sc-lip--low" d="M44 172 C100 184 200 184 256 172 C210 260 90 260 44 172 Z"/>
+      <path class="sc-line" d="M44 172 C100 184 200 184 256 172"/>
       <path class="sc-lip" d="M44 172 C80 140 118 116 150 132 C182 116 220 140 256 172 C200 184 100 184 44 172 Z"/>
       <path class="sc-lip sc-lip--low" d="M44 172 C90 260 210 260 256 172 C246 270 200 300 150 300 C100 300 54 270 44 172 Z"/>
       <path class="sc-line sc-soft" d="M118 360 C134 370 166 370 182 360"/>`,

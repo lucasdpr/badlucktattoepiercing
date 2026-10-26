@@ -393,9 +393,6 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .ear__fill { fill: #f3d9cc; }
 .sc-nostril { fill: #8a5146; opacity: .55; }
 .sc-hair { fill: #7a4a33; }
-.sc-mouth { fill: #5b2a27; }
-.sc-teeth { fill: #fffaf5; stroke: #e9ddd3; stroke-width: 1.5; }
-.sc-tongue { fill: #d9837a; }
 .sc-navel { fill: #e6bcaa; stroke: var(--cocoa); stroke-width: 2.4; }
 .sc-areola { fill: #e6b19f; opacity: .75; }
 .sc-areola--in { fill: #d49482; opacity: .9; }

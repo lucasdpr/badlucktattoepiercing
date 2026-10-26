@@ -77,15 +77,13 @@ window.SITE = {
       id: "boca",
       label: "Boca",
       map: "mouth",
-      text: "Labret, laterais, medusa, smile, língua… a boca tem muita opção. Toque e descubra a sua.",
+      text: "Labret, laterais de baixo e de cima, medusa… a boca tem muita opção. Toque nos pontos e descubra a sua.",
       from: "Perfurações a partir de R$ 60",
       spots: [
         { id: "labret", label: "Labret", x: 50, y: 81.5, text: "Centralizado abaixo do lábio. Clássico, com ponto de luz ou argola." },
         { id: "laterais-baixo", label: "Laterais de baixo", pts: [[29.3, 74], [70.7, 74]], text: "Um de cada lado do lábio inferior (snake bites). Lindo com argolinhas." },
         { id: "laterais-cima", label: "Laterais de cima", pts: [[28.7, 31], [71.3, 31]], text: "Monroe e Madonna: a “pintinha” acima do lábio, de um lado ou dos dois." },
         { id: "medusa", label: "Medusa", x: 50, y: 25, text: "No centro, logo acima do lábio superior. Delicado e cheio de personalidade." },
-        { id: "smile", label: "Smile", x: 50, y: 45.5, text: "No freio do lábio superior — só aparece quando você sorri." },
-        { id: "lingua", label: "Língua", x: 50, y: 56, text: "Barbell no centro da língua. Um clássico que nunca sai de moda." },
       ],
     },
     {
