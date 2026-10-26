@@ -572,22 +572,24 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 }
 
 /* ---------- Galeria piercing ---------- */
-.p-gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
-.p-gallery button { padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: var(--radius); overflow: hidden; position: relative; aspect-ratio: 4 / 5; }
-.p-gallery button:nth-child(odd) { transform: translateY(18px); }
-.p-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease), filter .6s; }
+.gallery-wrap .shop__filters { margin-bottom: 20px; }
+.p-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.p-gallery button { padding: 0; border: 0; background: #e9e4df; cursor: zoom-in; border-radius: var(--radius); overflow: hidden; position: relative; aspect-ratio: 4 / 5; }
+.p-gallery button[hidden] { display: none; }
+.p-gallery button.is-entering { animation: fadeUp .45s var(--ease) both; }
+.p-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .p-gallery button:hover img { transform: scale(1.06); }
 .p-gallery button::after {
   content: attr(data-title); position: absolute; left: 10px; bottom: 10px; right: 10px;
-  padding: 6px 10px; border-radius: 999px; background: rgba(251, 247, 241, .9); color: var(--cocoa);
+  padding: 6px 10px; border-radius: 999px; background: rgba(251, 247, 241, .92); color: var(--cocoa);
   font-size: 12px; font-weight: 700; text-align: center; opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s var(--ease);
 }
 .p-gallery button:hover::after, .p-gallery button:focus-visible::after { opacity: 1; transform: none; }
-@media (max-width: 860px) {
-  .p-gallery { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
-  .p-gallery button { scroll-snap-align: start; }
-  .p-gallery button:nth-child(odd) { transform: none; }
-  .p-gallery button::after { opacity: 1; transform: none; }
+.gallery-wrap .more .btn-ink { background: var(--cocoa); }
+@media (max-width: 900px) { .p-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .p-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .p-gallery button::after { opacity: 1; transform: none; font-size: 11px; left: 6px; right: 6px; bottom: 6px; padding: 4px 6px; }
 }
 
 /* ---------- Marquee ---------- */

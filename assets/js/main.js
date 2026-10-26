@@ -562,19 +562,68 @@
   })();
 
   /* ---------- Galeria piercing ---------- */
+  const GALLERY_PREVIEW = 8;
   const pGallery = $("[data-piercing-gallery]");
+  const gFilters = $("[data-gallery-filters]");
+  const gMore = $("[data-gallery-more]");
+  let gFilter = "all";
+  let gExpanded = false;
+  let gVisible = [];
+
   pGallery.innerHTML = S.piercingGallery
     .map(
       (p, i) =>
-        `<button data-i="${i}" data-title="${escapeHtml(p.title)}" aria-label="Ampliar: ${escapeHtml(p.title)}">
-          <img src="${p.src}" alt="${escapeHtml(p.alt)}" loading="lazy">
+        `<button data-i="${i}" data-cat="${p.cat}" data-title="${escapeHtml(p.title)}" aria-label="Ampliar: ${escapeHtml(p.title)}">
+          <img src="${p.src}" alt="${escapeHtml(p.alt)}" loading="lazy" width="720" height="900">
         </button>`
     )
     .join("");
+
+  function applyGallery(animate) {
+    gVisible = [];
+    let shown = 0;
+    $$("button", pGallery).forEach((b) => {
+      const match = gFilter === "all" || b.dataset.cat === gFilter;
+      const extra = match && gFilter === "all" && !gExpanded && shown >= GALLERY_PREVIEW;
+      b.hidden = !match || extra;
+      b.classList.remove("is-entering");
+      if (match && !extra) {
+        shown++;
+        gVisible.push(S.piercingGallery[Number(b.dataset.i)]);
+        if (animate && !reduceMotion) {
+          void b.offsetWidth;
+          b.classList.add("is-entering");
+        }
+      }
+    });
+    const hasMore = gFilter === "all" && S.piercingGallery.length > GALLERY_PREVIEW;
+    gMore.hidden = !hasMore;
+    gMore.textContent = gExpanded ? "Mostrar menos" : `Ver todos os ${S.piercingGallery.length} trabalhos`;
+    gMore.setAttribute("aria-expanded", String(gExpanded));
+  }
+
+  gFilters.innerHTML = [{ id: "all", label: "Todos" }, ...S.piercingGalleryCats]
+    .map((c, i) => `<button class="tab" data-g-filter="${c.id}" aria-pressed="${i === 0}">${escapeHtml(c.label)}</button>`)
+    .join("");
+  gFilters.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-g-filter]");
+    if (!b) return;
+    gFilter = b.dataset.gFilter;
+    $$("[data-g-filter]", gFilters).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    applyGallery(true);
+  });
+  gMore.addEventListener("click", () => {
+    gExpanded = !gExpanded;
+    applyGallery(gExpanded);
+    if (!gExpanded) $(".gallery-wrap").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
   pGallery.addEventListener("click", (e) => {
     const b = e.target.closest("button");
-    if (b) Lightbox.open(S.piercingGallery, Number(b.dataset.i), b);
+    if (!b) return;
+    const item = S.piercingGallery[Number(b.dataset.i)];
+    Lightbox.open(gVisible, gVisible.indexOf(item), b);
   });
+  applyGallery(false);
 
   /* ---------- Aviso de agenda do Italo ---------- */
   (() => {
