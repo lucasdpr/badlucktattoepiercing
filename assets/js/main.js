@@ -13,7 +13,7 @@
     return `https://wa.me/${num}` + (text ? `?text=${encodeURIComponent(text)}` : "");
   };
 
-  const CREDIT = { fran: "Feito pela Fran", catalogo: "Catálogo da Fran", pexels: "Foto ilustrativa" };
+  const CREDIT = { fran: "Feito pela Fran", joia: "Joia da Fran", catalogo: "Catálogo da Fran", pexels: "Foto ilustrativa" };
 
   const escapeHtml = (str) =>
     String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));

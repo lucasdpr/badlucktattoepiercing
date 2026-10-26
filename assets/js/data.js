@@ -133,14 +133,15 @@ window.SITE = {
 
   // Catálogo de joias (valores de referência do catálogo do WhatsApp da Fran).
   // scene: ilustração de "como fica" (ver SCENES em main.js). photo (opcional): foto real.
-  // credit: "catalogo" (catálogo do WhatsApp da Fran), "fran" (trabalho dela) ou "pexels" (foto ilustrativa).
+  // credit: "catalogo" (catálogo do WhatsApp da Fran), "fran" (foto da própria Fran: trabalho ou joia) ou "pexels" (foto ilustrativa).
   jewelry: [
     { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring", scene: "ear-ring", where: "no helix", credit: "catalogo", photo: "assets/img/catalogo/argolas.webp" },
-    { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring", scene: "nose-dring", where: "na aba nasal", credit: "catalogo", photo: "assets/img/catalogo/dring.webp" },
-    { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "no lóbulo", credit: "catalogo", photo: "assets/img/catalogo/basicas.webp" },
+    { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring", scene: "nose-dring", where: "na aba nasal", credit: "joia", photo: "assets/img/joias/dring.webp" },
+    { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "no lóbulo", credit: "joia", photo: "assets/img/joias/pontos-de-luz.webp" },
     { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret", scene: "lip-labret", where: "abaixo do lábio", credit: "catalogo", photo: "assets/img/catalogo/labret.webp" },
-    { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell", scene: "barbell", where: "barbell reto", credit: "catalogo", photo: "assets/img/catalogo/mamilo.webp" },
-    { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem", scene: "nose-gem", where: "no nariz", credit: "catalogo", photo: "assets/img/catalogo/abanasal.webp" },
+    { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell", scene: "barbell", where: "barbell reto", credit: "joia", photo: "assets/img/joias/barbell-pedras.webp" },
+    { id: "bolinha", name: "Bolinha", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "lisa, em 2 tamanhos", credit: "joia", photo: "assets/img/joias/bolinhas.webp" },
+    { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem", scene: "nose-gem", where: "no nariz", credit: "joia", photo: "assets/img/joias/ponto-de-luz.webp" },
   ],
 
 
@@ -172,10 +173,10 @@ window.SITE = {
       { id: "borboleta", name: "Borboleta", cat: "orelha", shape: "butterfly", stones: true, credit: "fran", photo: "assets/img/piercing/orelha-borboleta.webp" },
       { id: "ramo", name: "Ramo de folhas", cat: "orelha", shape: "branch", stones: true, credit: "fran", photo: "assets/img/piercing/orelha-ramo.webp" },
       { id: "labret-folhas", name: "Labret de folhas", cat: "boca", shape: "branch", stones: true, credit: "catalogo", photo: "assets/img/catalogo/labret.webp" },
-      { id: "pontoluz", name: "Ponto de luz", cat: "nariz", shape: "stud", stones: true, credit: "catalogo", photo: "assets/img/catalogo/pontoluz.webp" },
+      { id: "pontoluz", name: "Ponto de luz", cat: "nariz", shape: "stud", stones: true, credit: "joia", photo: "assets/img/joias/ponto-de-luz.webp" },
       { id: "umbigo", name: "Joia de umbigo", cat: "umbigo", shape: "navel", stones: true, credit: "fran", photo: "assets/img/piercing/umbigo.webp" },
       { id: "microdermal", name: "Microdermal", cat: "corpo", shape: "stud", stones: true, credit: "catalogo", photo: "assets/img/catalogo/surface.webp" },
-      { id: "barbell", name: "Barbell com pedras", cat: "corpo", shape: "barbell", stones: true, credit: "catalogo", photo: "assets/img/catalogo/mamilo.webp" },
+      { id: "barbell", name: "Barbell com pedras", cat: "corpo", shape: "barbell", stones: true, credit: "joia", photo: "assets/img/joias/barbell-pedras.webp" },
     ],
   },
 
