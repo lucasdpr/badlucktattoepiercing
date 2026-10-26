@@ -552,48 +552,14 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .shop-card.is-picked { border-color: var(--sage-ink); box-shadow: 0 0 0 3px rgba(185, 210, 177, .7); }
 .shop-card.is-entering { animation: fadeUp .45s var(--ease) both; }
 .shop-card__stage {
-  position: relative; aspect-ratio: 1;
-  background: radial-gradient(60% 60% at 50% 42%, #ffffff 0%, #f7ede5 55%, #efdfd3 100%);
+  position: relative; display: block; width: 100%; aspect-ratio: 1; padding: 0; border: 0; cursor: zoom-in; overflow: hidden;
+  background: #e9e4df;
 }
 .shop-card__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
-.shop-card:hover .shop-card__photo { transform: scale(1.05); }
-/* Render da joia: pequeno no canto quando há foto, ocupa tudo quando não há */
-.shop-card__render {
-  position: absolute; right: 10px; bottom: 10px; width: 34%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, #fff, #f3e7de); box-shadow: 0 0 0 3px #fff, 0 8px 20px -8px rgba(59, 46, 38, .5);
-  transition: transform .5s var(--ease);
-}
-.shop-card__render svg { width: 100%; height: 100%; display: block; padding: 12%; }
-.shop-card:hover .shop-card__render { transform: scale(1.08) rotate(-6deg); }
-.shop-card.no-photo .shop-card__photo, .shop-card.no-photo .shop-card__credit { display: none; }
-.shop-card.no-photo .shop-card__render { inset: 0; width: auto; border-radius: 0; background: none; box-shadow: none; }
-.shop-card.no-photo .shop-card__render svg { padding: 14%; }
-.shop-card__credit {
-  position: absolute; left: 12px; bottom: 12px; padding: 3px 9px; border-radius: 999px; background: rgba(59, 46, 38, .72);
-  color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em;
-}
-.shop-card__cat {
-  position: absolute; z-index: 1; left: 12px; top: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(251, 247, 241, .9);
-  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cocoa-2);
-}
-.shop-card__body { display: grid; gap: 8px; padding: 16px 16px 18px; flex: 1; align-content: start; }
+.shop-card:hover .shop-card__photo { transform: scale(1.06); }
+.shop-card__cat { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cocoa-2); }
+.shop-card__body { display: grid; gap: 4px; padding: 14px 16px 16px; flex: 1; align-content: start; }
 .shop-card__body b { font-size: 16px; }
-.shop-card__variant { font-size: 13px; color: var(--cocoa-2); margin-top: -6px; }
-.swatches { display: flex; gap: 8px; }
-.swatch {
-  width: 26px; height: 26px; border-radius: 50%; padding: 0; cursor: pointer; border: 2px solid #fff;
-  box-shadow: 0 0 0 1px var(--line-light); transition: transform .2s var(--ease), box-shadow .2s;
-}
-.swatch:hover { transform: scale(1.12); }
-.swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--cocoa); }
-.swatch--dourado { background: linear-gradient(135deg, #fff3c4, #e5bb5c 40%, #a8781f 70%, #f6d98b); }
-.swatch--prateado { background: linear-gradient(135deg, #fff, #cfd3d8 40%, #8b9097 70%, #eef0f3); }
-.swatch--rose { background: linear-gradient(135deg, #fff0ea, #e9b6a2 40%, #b47562 70%, #f6d2c4); }
-.swatch--stone { width: 22px; height: 22px; }
-.swatch--cristal { background: radial-gradient(circle at 35% 30%, #fff, #e6f1fb 45%, #9fb8cf); }
-.swatch--rosa { background: radial-gradient(circle at 35% 30%, #fff, #f8bfd2 45%, #d0628e); }
-.swatch--verde { background: radial-gradient(circle at 35% 30%, #fff, #a8e6c8 45%, #2f8f63); }
-.swatch--azul { background: radial-gradient(circle at 35% 30%, #fff, #bfe0fb 45%, #3f7fc4); }
 .shop-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
 .shop-card__price { font-size: 13px; font-weight: 700; color: var(--sage-ink); }
 .shop-card.is-picked .shop-card__add { background: var(--sage-ink); }
@@ -602,9 +568,6 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 @media (max-width: 480px) {
   .shop-card__body { padding: 12px; gap: 6px; }
   .shop-card__body b { font-size: 14px; }
-  .swatches { gap: 6px; }
-  .swatch { width: 24px; height: 24px; }
-  .swatch--stone { width: 20px; height: 20px; }
   .shop-card__foot .btn { width: 100%; }
 }
 
