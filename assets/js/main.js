@@ -644,6 +644,16 @@
     if (b) Lightbox.open(S.piercingGallery, Number(b.dataset.i), b);
   });
 
+  /* ---------- Aviso de agenda do Italo ---------- */
+  (() => {
+    const cfg = S.agenda;
+    const el = $("[data-agenda]");
+    if (!cfg || !cfg.enabled || !el) return;
+    el.hidden = false;
+    el.dataset.status = cfg.status || "open";
+    $("[data-agenda-text]", el).textContent = cfg.text;
+  })();
+
   /* ---------- Estilos do Italo ---------- */
   const STYLE_ICONS = {
     star: `<polygon points="24.0,4.0 29.0,17.1 43.0,17.8 32.1,26.6 35.8,40.2 24.0,32.5 12.2,40.2 15.9,26.6 5.0,17.8 19.0,17.1" fill="#e3a92b" stroke="#15110e" stroke-width="2" stroke-linejoin="round"/><path d="M24 24 L24.0 4.0 L29.0 17.1 Z" fill="#a8741c"/><path d="M24 24 L43.0 17.8 L32.1 26.6 Z" fill="#a8741c"/><path d="M24 24 L35.8 40.2 L24.0 32.5 Z" fill="#a8741c"/><path d="M24 24 L12.2 40.2 L15.9 26.6 Z" fill="#a8741c"/><path d="M24 24 L5.0 17.8 L19.0 17.1 Z" fill="#a8741c"/>`,

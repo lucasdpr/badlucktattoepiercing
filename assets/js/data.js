@@ -203,6 +203,11 @@ window.SITE = {
     { src: "assets/img/tattoo/morcego-demonio.webp", alt: "Cabeça de morcego demoníaco em blackwork", title: "Morcego", tags: ["blackwork"] },
   ],
 
+  // Aviso de agenda do Italo (aparece ao lado do botão "Agendar com o Italo").
+  // status: "open" (verde), "limited" (dourado) ou "closed" (cinza). enabled: false esconde o aviso.
+  // Para atualizar: troque só status e text.
+  agenda: { enabled: true, status: "open", text: "Agenda aberta" },
+
   // Estilos que o Italo tatua (old school é a especialidade).
   styles: [
     { id: "oldschool", name: "Old School", note: "Especialidade", text: "Traço firme, cor chapada e clássicos atemporais.", icon: "star" },
