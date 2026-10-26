@@ -210,12 +210,11 @@ window.SITE = {
 
   // Estilos que o Italo tatua (old school é a especialidade).
   styles: [
-    { id: "oldschool", name: "Old School", note: "Especialidade", text: "Traço firme, cor chapada e clássicos atemporais.", icon: "star" },
+    { id: "oldschool", name: "Old School", text: "Traço firme, cor chapada e clássicos atemporais.", icon: "star" },
     { id: "blackwork", name: "Blackwork", text: "Preto sólido, contraste e muita presença.", icon: "blackwork" },
     { id: "pontilhismo", name: "Pontilhismo", text: "Sombras feitas ponto a ponto, com textura única.", icon: "dots" },
     { id: "fineline", name: "Fineline", text: "Traço fino e delicado para peças discretas.", icon: "line" },
     { id: "lettering", name: "Lettering", text: "Nomes e frases com letra desenhada à mão.", icon: "letter" },
-    { id: "pretocinza", name: "Preto & cinza", text: "Degradês suaves em tons de cinza.", icon: "gradient" },
   ],
 
   // Flashes prontos para tatuar.

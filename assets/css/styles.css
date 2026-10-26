@@ -833,6 +833,7 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 }
 .artist--dark { background: var(--ink-2); border-color: var(--line-dark); color: var(--cream); }
 .artist__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--blush); }
+.artist--dark .artist__avatar { box-shadow: 0 0 0 3px var(--ink-2), 0 0 0 4px var(--gold); }
 .artist__avatar--mono, .choice__avatar--mono, .phone__mono {
   display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--gold);
   font-family: var(--font-slab); letter-spacing: .04em;
@@ -919,7 +920,7 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .choice__avatar--mono { width: 44px; height: 44px; font-size: 15px; margin-bottom: 6px; box-shadow: 0 0 0 2px var(--gold); }
 .choice__pair { display: flex; margin-bottom: 6px; }
 .choice__pair img, .choice__pair span { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #fff; }
-.choice__pair span { margin-left: -12px; font-size: 13px; }
+.choice__pair img + img { margin-left: -12px; }
 .choice__body { align-content: end; }
 
 

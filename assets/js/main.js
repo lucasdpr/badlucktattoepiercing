@@ -663,7 +663,6 @@
       .join(""),
     line: `<path d="M6 34 C14 10 22 10 24 24 C26 38 34 38 42 14" fill="none" stroke="#15110e" stroke-width="1.6" stroke-linecap="round"/><circle cx="42" cy="14" r="2" fill="#15110e"/>`,
     letter: `<text x="24" y="33" text-anchor="middle" font-family="Yellowtail, cursive" font-size="26" fill="#15110e">Aa</text>`,
-    gradient: `<circle cx="24" cy="24" r="18" fill="url(#g-bw)"/>`,
   };
   const stylesEl = $("[data-styles]");
   stylesEl.innerHTML = S.styles
@@ -1089,7 +1088,7 @@
     const phoneAvatar = $("[data-phone-avatar]");
     const AVATAR = {
       fran: `<img src="assets/img/fran-avatar.webp" alt="">`,
-      italo: `<span class="phone__mono">IN</span>`,
+      italo: `<img src="assets/img/italo/avatar.webp" alt="">`,
       none: `<img src="assets/img/logo.png" alt="">`,
     };
     function updatePhone() {

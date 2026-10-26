@@ -30,7 +30,7 @@ Quase tudo fica em **`assets/js/data.js`**:
 
 - `artists` — WhatsApp, Instagram e nomes da Fran e do Italo
 - `piercingAreas` — regiões do explorador; cada uma tem `map` (ilustração) e `spots` (pontos clicáveis, em % da ilustração)
-- `styles` — estilos do Italo (o primeiro com `note: "Especialidade"` ganha destaque)
+- `styles` — estilos do Italo (um item pode ter `note: "texto"` para ganhar uma faixa de destaque)
 - `shop` — **prévia** da lojinha de semi-joias (modelos, banhos, pedras e fotos)
 - `jewelry` — catálogo de joias e preços (`scene` escolhe a ilustração de "como fica", definidas em `SCENES` no `main.js`)
 - `portfolio` — trabalhos do Italo (`tags`: `colorido` ou `blackwork`; `link` opcional para o post). Os 8 primeiros aparecem direto, o resto em "Ver mais trabalhos"
@@ -59,7 +59,7 @@ Montada para a Fran aprovar a ideia, usando por enquanto fotos do trabalho e do 
 - [ ] **Depoimentos reais** (a Fran tem destaque "Feedback" no Instagram) — não foram inventados no site.
 - [ ] `og:image` precisa de URL absoluta depois que houver domínio.
 - [ ] **Foto original da Fran** para a seção dela (a atual é um print ampliado com IA).
-- [ ] **Confirmar estilos do Italo** (old school, blackwork, pontilhismo, fineline, lettering, preto & cinza).
+- [ ] **Confirmar estilos do Italo** (old school, blackwork, pontilhismo, fineline, lettering).
 - [ ] **Flashes reais.** Os flashes usam fotos do portfólio como exemplo; trocar pelas artes disponíveis do Italo.
 - [ ] **Italo revisar a seção "Cuidados pós-tatuagem"** (texto genérico; ajustar ao que ele orienta: tempo da proteção, pomada indicada etc.).
 - [ ] **Revisar textos** (biografias, FAQ, descrições das regiões) com a Fran e o Italo.
