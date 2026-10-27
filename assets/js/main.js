@@ -155,45 +155,73 @@
       <path class="sc-line sc-soft" d="M122 214 C106 224 106 254 126 264"/>
       <path class="sc-line sc-soft" d="M150 290 C168 286 186 276 194 260"/>
       <path class="sc-line sc-soft" d="M146 176 C160 168 176 172 180 186"/>`,
-    nose: `${SKIN_BG}
-      <path class="sc-line sc-soft" d="M44 84 C70 66 100 66 120 82"/><path class="sc-line sc-soft" d="M180 82 C200 66 230 66 256 84"/>
-      <path class="sc-line sc-soft" d="M58 92 C78 100 100 100 114 92"/><path class="sc-line sc-soft" d="M186 92 C200 100 222 100 242 92"/>
-      <path class="sc-line" d="M134 70 C132 140 126 210 112 262"/><path class="sc-line" d="M166 70 C168 140 174 210 188 262"/>
-      <path class="sc-line" d="M112 262 C80 266 72 306 100 318 C112 322 124 316 132 318"/>
-      <path class="sc-line" d="M188 262 C220 266 228 306 200 318 C188 322 176 316 168 318"/>
-      <path class="sc-line sc-soft" d="M122 290 C134 272 166 272 178 290"/>
-      <path class="sc-nostril" d="M120 316 C124 302 140 302 143 316 C136 320 126 320 120 316 Z"/>
-      <path class="sc-nostril" d="M180 316 C176 302 160 302 157 316 C164 320 174 320 180 316 Z"/>
-      <path class="sc-line" d="M143 316 C146 322 154 322 157 316"/>
-      <path class="sc-line sc-soft" d="M92 372 C120 360 140 364 150 370 C160 364 180 360 208 372"/>`,
-    mouth: `${SKIN_BG}
-      <path class="sc-line sc-soft" d="M112 46 C126 34 140 40 150 46 C160 40 174 34 188 46"/>
-      <path class="sc-line sc-soft" d="M138 56 L134 120"/><path class="sc-line sc-soft" d="M162 56 L166 120"/>
-      <path class="sc-lip sc-lip--low" d="M44 172 C100 184 200 184 256 172 C210 260 90 260 44 172 Z"/>
-      <path class="sc-line" d="M44 172 C100 184 200 184 256 172"/>
-      <path class="sc-lip" d="M44 172 C80 140 118 116 150 132 C182 116 220 140 256 172 C200 184 100 184 44 172 Z"/>
-      <path class="sc-lip sc-lip--low" d="M44 172 C90 260 210 260 256 172 C246 270 200 300 150 300 C100 300 54 270 44 172 Z"/>
-      <path class="sc-line sc-soft" d="M118 360 C134 370 166 370 182 360"/>`,
-    navel: `<path class="sc-skin" d="M58 0 C74 110 70 220 52 400 L248 400 C230 220 226 110 242 0 Z"/>
-      <path class="sc-line" d="M58 0 C74 110 70 220 52 400"/><path class="sc-line" d="M242 0 C226 110 230 220 248 400"/>
-      <path class="sc-line sc-soft" d="M150 40 L150 160"/>
-      <path class="sc-navel" d="M134 214 C138 198 162 198 166 214 C164 232 136 232 134 214 Z"/>
-      <path class="sc-line" d="M140 214 C144 206 156 206 160 214"/>
-      <path class="sc-line sc-soft" d="M60 340 C120 330 180 330 240 340"/>`,
+    nose: `<rect width="300" height="400" fill="url(#g-skin)"/>
+      <path d="M30 40 C62 20 104 22 128 44" fill="none" stroke="#6f4033" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+      <path d="M270 40 C238 20 196 22 172 44" fill="none" stroke="#6f4033" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+      <g filter="url(#f-blur)">
+        <path d="M98 60 C122 130 114 200 84 262 L50 262 C64 180 64 110 76 60Z" fill="#c07f69" opacity=".4"/>
+        <path d="M202 60 C178 130 186 200 216 262 L250 262 C236 180 236 110 224 60Z" fill="#c07f69" opacity=".4"/>
+        <path d="M138 40 C142 130 140 200 142 258 L158 258 C160 200 158 130 162 40Z" fill="#fff" opacity=".32"/>
+        <circle cx="150" cy="282" r="30" fill="#fff" opacity=".38"/>
+      </g>
+      <g filter="url(#f-blur)">
+        <ellipse cx="96" cy="300" rx="30" ry="30" fill="#c07f69" opacity=".3"/>
+        <ellipse cx="204" cy="300" rx="30" ry="30" fill="#c07f69" opacity=".3"/>
+      </g>
+      <path d="M112 250 C82 254 66 284 76 308 C84 326 108 332 126 324" fill="none" stroke="#b97862" stroke-width="2.6" stroke-linecap="round" opacity=".8"/>
+      <path d="M188 250 C218 254 234 284 224 308 C216 326 192 332 174 324" fill="none" stroke="#b97862" stroke-width="2.6" stroke-linecap="round" opacity=".8"/>
+      <path d="M126 296 C140 308 160 308 174 296" fill="none" stroke="#b97862" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+      <ellipse cx="122" cy="318" rx="16" ry="9" transform="rotate(-14 122 318)" fill="#6a3a30" opacity=".72"/>
+      <ellipse cx="178" cy="318" rx="16" ry="9" transform="rotate(14 178 318)" fill="#6a3a30" opacity=".72"/>
+      <path d="M146 326 C148 338 152 338 154 326" fill="none" stroke="#b97862" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+      <path d="M134 346 C132 368 128 386 124 400" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+      <path d="M166 346 C168 368 172 386 176 400" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round" opacity=".4"/>`,
+    mouth: `<rect width="300" height="400" fill="url(#g-skin)"/>
+      <ellipse cx="128" cy="76" rx="8" ry="4.5" fill="#6a3a30" opacity=".55"/><ellipse cx="172" cy="76" rx="8" ry="4.5" fill="#6a3a30" opacity=".55"/>
+      <path d="M104 62 C112 96 188 96 196 62" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+      <g filter="url(#f-blur)">
+        <path d="M137 98 L129 172 L150 180 L171 172 L163 98Z" fill="#fff" opacity=".2"/>
+        <ellipse cx="150" cy="330" rx="62" ry="30" fill="#fff" opacity=".22"/>
+        <ellipse cx="150" cy="292" rx="70" ry="16" fill="#c07f69" opacity=".25"/>
+      </g>
+      <path d="M137 100 C134 130 130 156 128 172" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+      <path d="M163 100 C166 130 170 156 172 172" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+      <path d="M56 214 C84 222 116 224 150 224 C184 224 216 222 244 214 C236 250 204 276 150 276 C96 276 64 250 56 214 Z" fill="url(#g-lip-low)"/>
+      <path d="M56 214 C74 200 102 178 126 176 C138 176 146 182 150 184 C154 182 162 176 174 176 C198 178 226 200 244 214 C216 222 184 224 150 224 C116 224 84 222 56 214 Z" fill="url(#g-lip-up)"/>
+      <path d="M56 214 C84 222 116 224 150 224 C184 224 216 222 244 214" fill="none" stroke="#8a4a42" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="150" cy="250" rx="34" ry="7" fill="#fff" opacity=".4" filter="url(#f-blur)"/>`,
+    navel: `<rect width="300" height="400" fill="url(#g-skin)"/>
+      <g filter="url(#f-blur)">
+        <rect x="-30" y="-20" width="100" height="440" fill="#c07f69" opacity=".38"/>
+        <rect x="230" y="-20" width="100" height="440" fill="#c07f69" opacity=".38"/>
+        <ellipse cx="150" cy="216" rx="30" ry="40" fill="#a8665a" opacity=".22"/>
+        <path d="M146 40 C148 100 148 150 150 186 L154 186 C152 150 152 100 154 40Z" fill="#fff" opacity=".18"/>
+      </g>
+      <path d="M0 336 C62 326 112 354 150 396 C188 354 238 326 300 336" fill="none" stroke="#b97862" stroke-width="2.4" stroke-linecap="round" opacity=".45"/>
+      <ellipse cx="150" cy="216" rx="14" ry="23" fill="url(#g-navel)"/>
+      <path d="M133 206 C136 192 164 192 167 206" fill="none" stroke="#d9a490" stroke-width="3" stroke-linecap="round"/>
+      <path d="M134 222 C138 240 162 240 166 222" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/>`,
     nipple: `${SKIN_BG}
       <circle cx="150" cy="200" r="58" class="sc-areola"/><circle cx="150" cy="200" r="17" class="sc-areola sc-areola--in"/>`,
-    surface: `<rect width="300" height="400" fill="#f6e4d9"/>
-      <path class="sc-hair" d="M150 18 C88 18 66 74 72 140 C76 190 86 226 104 248 L196 248 C214 226 224 190 228 140 C234 74 212 18 150 18 Z"/>
-      <path class="sc-skin" d="M120 160 C122 196 120 220 112 238 C86 250 40 258 0 266 L0 400 L300 400 L300 266 C260 258 214 250 188 238 C180 220 178 196 180 160 Z"/>
-      <path class="sc-line" d="M120 168 C122 200 120 222 112 238 C86 250 40 258 0 266"/>
-      <path class="sc-line" d="M180 168 C178 200 180 222 188 238 C214 250 260 258 300 266"/>
-      <ellipse class="sc-skin" cx="150" cy="112" rx="56" ry="70"/>
-      <path class="sc-hair" d="M94 100 C98 46 202 40 208 100 C192 74 172 64 150 64 C128 64 108 74 94 100 Z"/>
-      <path class="sc-line sc-soft" d="M120 112 C126 107 134 107 140 112"/><path class="sc-line sc-soft" d="M160 112 C166 107 174 107 180 112"/>
-      <path class="sc-line sc-soft" d="M150 118 C148 130 145 138 147 143 C150 145 153 145 155 143"/>
-      <path class="sc-lip" d="M136 160 C143 155 150 157 150 158 C150 157 157 155 164 160 C157 166 143 166 136 160 Z"/>
-      <path class="sc-line" d="M44 290 C80 278 116 280 140 296"/><path class="sc-line" d="M256 290 C220 278 184 280 160 296"/>
-      <path class="sc-line sc-soft" d="M140 296 C145 303 155 303 160 296"/>`,
+    surface: `<rect width="300" height="400" fill="#f7e8df"/>
+      <path d="M150 14 C84 14 60 70 66 140 C70 190 80 236 100 262 L200 262 C220 236 230 190 234 140 C240 70 216 14 150 14Z" fill="url(#g-hair)"/>
+      <path d="M120 150 C122 196 122 222 114 244 L186 244 C178 222 178 196 180 150Z" fill="url(#g-skin)"/>
+      <path d="M114 244 C84 256 40 262 0 276 L0 400 L300 400 L300 276 C260 262 216 256 186 244 Z" fill="url(#g-skin)"/>
+      <ellipse cx="150" cy="172" rx="48" ry="20" fill="#c07f69" opacity=".38" filter="url(#f-blur)"/>
+      <ellipse cx="150" cy="334" rx="70" ry="50" fill="#fff" opacity=".2" filter="url(#f-blur)"/>
+      <ellipse cx="150" cy="108" rx="52" ry="64" fill="url(#g-skin)"/>
+      <path d="M96 104 C96 50 204 46 206 104 C194 80 172 70 150 72 C128 70 106 80 96 104Z" fill="url(#g-hair)"/>
+      <path d="M116 98 C126 93 136 94 144 98" fill="none" stroke="#6f4033" stroke-width="2.4" stroke-linecap="round" opacity=".6"/>
+      <path d="M156 98 C164 94 174 93 184 98" fill="none" stroke="#6f4033" stroke-width="2.4" stroke-linecap="round" opacity=".6"/>
+      <path d="M118 112 C126 119 136 119 142 112" fill="none" stroke="#6b3a30" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M158 112 C164 119 174 119 182 112" fill="none" stroke="#6b3a30" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M150 114 C149 126 146 134 148 140 C150 143 153 143 155 140" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round"/>
+      <path d="M136 158 C143 153 150 155 150 156 C150 155 157 153 164 158 C158 167 142 167 136 158Z" fill="url(#g-lip-up)"/>
+      <path d="M112 262 C86 254 54 258 22 274" fill="none" stroke="#b97862" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+      <path d="M188 262 C214 254 246 258 278 274" fill="none" stroke="#b97862" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+      <path d="M112 270 C86 262 54 266 22 282" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+      <path d="M188 270 C214 262 246 266 278 282" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+      <path d="M138 252 C146 259 154 259 162 252" fill="none" stroke="#b97862" stroke-width="2" stroke-linecap="round" opacity=".6"/>`,
     intimate: `<rect width="300" height="400" fill="url(#g-intimate)"/>
       <circle cx="150" cy="190" r="92" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/>
       <circle cx="150" cy="190" r="70" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="3 6"/>
