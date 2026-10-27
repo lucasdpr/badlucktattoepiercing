@@ -67,10 +67,10 @@ window.SITE = {
       text: "Do brilhinho clássico na aba nasal ao septo. Toque nos pontos e veja cada opção.",
       from: "Perfurações a partir de R$ 60",
       spots: [
-        { id: "aba", label: "Aba nasal", x: 32, y: 74, text: "O famoso brilhinho no nariz: ponto de luz ou argola delicada.", from: "R$ 60 (aço) · R$ 80 (titânio)" },
-        { id: "high", label: "High nostril", x: 62, y: 67.5, text: "Mais alto na aba — perfeito para compor com o brilhinho clássico." },
-        { id: "septo", label: "Septo", x: 50, y: 80.5, text: "No centro do nariz, com argola ou clicker. Dá para deixar discreto quando precisar." },
-        { id: "bridge", label: "Bridge", x: 50, y: 21, text: "Na ponte do nariz, entre os olhos. Visual marcante — depende da anatomia." },
+        { id: "aba", label: "Aba nasal", x: 27.5, y: 75, text: "O famoso brilhinho no nariz: ponto de luz ou argola delicada.", from: "R$ 60 (aço) · R$ 80 (titânio)" },
+        { id: "high", label: "High nostril", x: 70, y: 67.5, text: "Mais alto na aba — perfeito para compor com o brilhinho clássico." },
+        { id: "septo", label: "Septo", x: 50, y: 83, text: "No centro do nariz, com argola ou clicker. Dá para deixar discreto quando precisar." },
+        { id: "bridge", label: "Bridge", x: 50, y: 20, text: "Na ponte do nariz, entre os olhos. Visual marcante — depende da anatomia." },
       ],
     },
     {
@@ -80,10 +80,10 @@ window.SITE = {
       text: "Labret, laterais de baixo e de cima, medusa… a boca tem muita opção. Toque nos pontos e descubra a sua.",
       from: "Perfurações a partir de R$ 60",
       spots: [
-        { id: "labret", label: "Labret", x: 50, y: 81.5, text: "Centralizado abaixo do lábio. Clássico, com ponto de luz ou argola." },
-        { id: "laterais-baixo", label: "Laterais de baixo", pts: [[29.3, 74], [70.7, 74]], text: "Um de cada lado do lábio inferior (snake bites). Lindo com argolinhas." },
-        { id: "laterais-cima", label: "Laterais de cima", pts: [[28.7, 31], [71.3, 31]], text: "Monroe e Madonna: a “pintinha” acima do lábio, de um lado ou dos dois." },
-        { id: "medusa", label: "Medusa", x: 50, y: 25, text: "No centro, logo acima do lábio superior. Delicado e cheio de personalidade." },
+        { id: "labret", label: "Labret", x: 50, y: 74, text: "Centralizado abaixo do lábio. Clássico, com ponto de luz ou argola." },
+        { id: "laterais-baixo", label: "Laterais de baixo", pts: [[30.7, 71], [69.3, 71]], text: "Um de cada lado do lábio inferior (snake bites). Lindo com argolinhas." },
+        { id: "laterais-cima", label: "Laterais de cima", pts: [[27.3, 44], [72.7, 44]], text: "Monroe e Madonna: a “pintinha” acima do lábio, de um lado ou dos dois." },
+        { id: "medusa", label: "Medusa", x: 50, y: 39.5, text: "No centro, logo acima do lábio superior. Delicado e cheio de personalidade." },
       ],
     },
     {
@@ -93,8 +93,8 @@ window.SITE = {
       text: "Clássico que nunca sai de moda, com joias pensadas para a sua anatomia.",
       from: "Perfurações a partir de R$ 60",
       spots: [
-        { id: "superior", label: "Superior", x: 50, y: 49, text: "O tradicional: a joia fica na borda de cima do umbigo." },
-        { id: "inferior", label: "Inferior", x: 50, y: 59.5, text: "Na borda de baixo, para um visual diferente. Depende da anatomia — a Fran avalia." },
+        { id: "superior", label: "Superior", x: 50, y: 47.5, text: "O tradicional: a joia fica na borda de cima do umbigo." },
+        { id: "inferior", label: "Inferior", x: 50, y: 60.5, text: "Na borda de baixo, para um visual diferente. Depende da anatomia — a Fran avalia." },
       ],
     },
     {
@@ -115,9 +115,9 @@ window.SITE = {
       text: "Especialidade da Fran. Microdermal é um ponto de brilho único, com base por baixo da pele; surface é uma barrinha sob a pele com duas pontas aparentes. Toque nos pontos e veja onde cada um fica.",
       from: "Surface a partir de R$ 150",
       spots: [
-        { id: "rosto", label: "Microdermal no rosto", x: 60, y: 34, text: "Um ponto de brilho na maçã do rosto. Delicado e cheio de personalidade.", draw: '<circle cx="180" cy="136" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
-        { id: "pescoco", label: "Surface no pescoço", pts: [[57.3, 47.5], [58, 55.5]], text: "Na lateral do pescoço (ou na nuca): barrinha sob a pele com duas pontas de brilho.", draw: '<path d="M172 190 L174 222" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="172" cy="190" r="6" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="174" cy="222" r="6" fill="url(#g-gem)" stroke="#cfcac4"/>' },
-        { id: "clavicula", label: "Surface na clavícula", pts: [[22, 68], [34, 67]], text: "Acompanha a linha da clavícula, com duas pontas aparentes.", draw: '<path d="M66 272 L102 268" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="66" cy="272" r="7" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="102" cy="268" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "rosto", label: "Microdermal no rosto", x: 61.3, y: 33, text: "Um ponto de brilho na maçã do rosto. Delicado e cheio de personalidade.", draw: '<circle cx="184" cy="132" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "pescoco", label: "Surface no pescoço", pts: [[56.7, 48], [57.3, 56]], text: "Na lateral do pescoço (ou na nuca): barrinha sob a pele com duas pontas de brilho.", draw: '<path d="M170 192 L172 224" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="170" cy="192" r="6" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="172" cy="224" r="6" fill="url(#g-gem)" stroke="#cfcac4"/>' },
+        { id: "clavicula", label: "Surface na clavícula", pts: [[19.3, 66], [31.3, 64.5]], text: "Acompanha a linha da clavícula, com duas pontas aparentes.", draw: '<path d="M58 264 L94 258" stroke="#b9a59a" stroke-width="3" stroke-dasharray="4 4"/><circle cx="58" cy="264" r="7" fill="url(#g-gem)" stroke="#cfcac4"/><circle cx="94" cy="258" r="7" fill="url(#g-gem)" stroke="#cfcac4"/>' },
         { id: "colo", label: "Microdermal no colo", x: 50, y: 83.5, text: "Um ponto de luz no centro do colo. Fica lindo com decote.", draw: '<circle cx="150" cy="334" r="9" fill="url(#g-gem)" stroke="#cfcac4"/>' },
       ],
     },
