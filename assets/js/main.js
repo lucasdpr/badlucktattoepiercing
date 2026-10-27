@@ -357,7 +357,7 @@
       (j) => `
       <li class="jewel" data-jewel="${j.id}" data-view="${j.photo ? "photo" : "scene"}">
         <div class="jewel__scene">
-          <svg viewBox="0 0 240 180" role="img" aria-label="Ilustração: ${escapeHtml(j.name)} ${escapeHtml(j.where || "")}">${SCENES[j.scene] || ""}</svg>
+          ${j.worn ? `<img class="jewel__worn" src="${j.worn}" alt="Como fica: ${escapeHtml(j.name.toLowerCase())} ${escapeHtml(j.where || "")}" loading="lazy" width="720" height="540">` : `<svg viewBox="0 0 240 180" role="img" aria-label="Ilustração: ${escapeHtml(j.name)} ${escapeHtml(j.where || "")}">${SCENES[j.scene] || ""}</svg>`}
           ${j.photo ? `<img class="jewel__photo" src="${j.photo}" alt="Foto: ${escapeHtml(j.name.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer">
           <span class="jewel__credit">${CREDIT[j.credit] || ""}</span>
           <span class="jewel__toggle" role="group" aria-label="Ver foto ou como fica">

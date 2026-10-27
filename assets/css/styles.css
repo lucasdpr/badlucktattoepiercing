@@ -1287,3 +1287,6 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 @media (max-width: 900px) { .process__photos, .included { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .process__photos { gap: 10px; } .process__photos li:nth-child(even) { margin-top: 18px; } .process__photos figcaption { font-size: 11px; padding: 5px 8px; left: 6px; right: 6px; bottom: 6px; } .included { gap: 10px; } .included li { padding: 14px; } }
 .sticker--arch img { object-position: 50% 28%; }
+
+.jewel__worn { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s var(--ease); }
+.jewel:hover .jewel__worn { transform: scale(1.05); }
