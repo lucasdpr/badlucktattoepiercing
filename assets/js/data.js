@@ -34,7 +34,6 @@ window.SITE = {
       phoneLabel: "(24) 99929-7145",
       instagram: "https://www.instagram.com/itallo.ttt/",
       instagramHandle: "@itallo.ttt",
-      externalPortfolio: "https://contate.me/itallotattoo",
     },
   },
 
