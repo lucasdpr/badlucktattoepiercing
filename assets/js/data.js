@@ -135,10 +135,10 @@ window.SITE = {
   // scene: ilustração de "como fica" (ver SCENES em main.js). photo (opcional): foto real.
   // credit: "catalogo" (catálogo do WhatsApp da Fran), "fran" (foto da própria Fran: trabalho ou joia) ou "pexels" (foto ilustrativa).
   jewelry: [
-    { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring", scene: "ear-ring", where: "no helix", credit: "catalogo", photo: "assets/img/catalogo/argolas.webp" },
+    { id: "argola", name: "Argola", material: "Titânio", price: 60, from: true, icon: "ring", scene: "ear-ring", where: "no helix", credit: "joia", photo: "assets/img/joias/argola.webp" },
     { id: "dring", name: "D ring aba nasal", material: "Titânio", price: 45, from: false, icon: "dring", scene: "nose-dring", where: "na aba nasal", credit: "joia", photo: "assets/img/joias/dring.webp" },
     { id: "basica", name: "Joia básica", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "no lóbulo", credit: "joia", photo: "assets/img/joias/pontos-de-luz.webp" },
-    { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret", scene: "lip-labret", where: "abaixo do lábio", credit: "catalogo", photo: "assets/img/catalogo/labret.webp" },
+    { id: "labret", name: "Labret", material: "Titânio", price: 50, from: true, icon: "labret", scene: "lip-labret", where: "nos cantos do lábio", credit: "fran", photo: "assets/img/joias/labret.webp" },
     { id: "mamilo", name: "Joia de mamilo", material: "Titânio", price: 60, from: true, icon: "barbell", scene: "barbell", where: "barbell reto", credit: "joia", photo: "assets/img/joias/barbell-pedras.webp" },
     { id: "bolinha", name: "Bolinha", material: "Titânio", price: 40, from: true, icon: "stud", scene: "ear-studs", where: "lisa, em 2 tamanhos", credit: "joia", photo: "assets/img/joias/bolinhas.webp" },
     { id: "pontoluz", name: "Ponto de luz", material: "Titânio · só a joia", price: 40, from: true, icon: "gem", scene: "nose-gem", where: "no nariz", credit: "joia", photo: "assets/img/joias/ponto-de-luz.webp" },
