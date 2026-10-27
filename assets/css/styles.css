@@ -1267,3 +1267,22 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .care-alert b { color: #ff9c8d; }
 @media (max-width: 900px) { .care-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .care-steps { grid-template-columns: 1fr; } .care-step p { font-size: 14px; } }
+
+/* Do jeito que a Fran trabalha */
+.process { margin-top: clamp(72px, 9vw, 112px); }
+.process__photos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.process__photos figure { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; background: #e9e4df; box-shadow: var(--shadow-soft); }
+.process__photos img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform .7s var(--ease); }
+.process__photos figure:hover img { transform: scale(1.04); }
+.process__photos li:nth-child(even) { margin-top: 28px; }
+.process__photos figcaption {
+  position: absolute; left: 10px; right: 10px; bottom: 10px; padding: 7px 12px; border-radius: 999px; text-align: center;
+  background: rgba(251, 247, 241, .92); color: var(--cocoa); font-size: 13px; font-weight: 700;
+}
+.included { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.included li { display: grid; gap: 2px; padding: 16px 18px; border-radius: 16px; background: var(--paper); border: 1px solid var(--line-light); }
+.included li::before { content: "✓"; display: grid; place-items: center; width: 26px; height: 26px; margin-bottom: 6px; border-radius: 50%; background: var(--sage); color: var(--sage-ink); font-weight: 700; font-size: 14px; }
+.included b { font-size: 15px; }
+.included span { font-size: 14px; color: var(--cocoa-2); }
+@media (max-width: 900px) { .process__photos, .included { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .process__photos { gap: 10px; } .process__photos li:nth-child(even) { margin-top: 18px; } .process__photos figcaption { font-size: 11px; padding: 5px 8px; left: 6px; right: 6px; bottom: 6px; } .included { gap: 10px; } .included li { padding: 14px; } }
