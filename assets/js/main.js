@@ -864,6 +864,7 @@
     const progress = $$(".wizard__progress li", form);
     const prevBtn = $("[data-prev]", form);
     const nextBtn = $("[data-next]", form);
+    const topBack = $("[data-back]", form);
     const sizeOut = $("[data-size-out]", form);
     let current = 1;
     let chosenFlash = null;
@@ -945,12 +946,33 @@
         li.classList.toggle("is-done", i + 1 < n);
       });
       prevBtn.hidden = n === 1;
+      topBack.hidden = n === 1;
       nextBtn.hidden = n === steps.length;
       if (n === 2) syncDetailBlocks();
       if (n === 4) renderPreviews();
       $$(".field-error", form).forEach((el) => (el.hidden = true));
       updatePhone();
     }
+
+    // Cada passo (a partir do 2) entra no histórico: o botão voltar do celular/navegador volta um passo
+    // em vez de sair da página.
+    function goTo(n) {
+      if (n > 1) history.pushState({ blStep: n }, "");
+      go(n);
+    }
+    function back() {
+      if (current <= 1) return;
+      if (history.state && history.state.blStep === current) history.back();
+      else {
+        go(current - 1);
+        focusStep();
+      }
+    }
+    window.addEventListener("popstate", (e) => {
+      const n = (e.state && e.state.blStep) || 1;
+      go(n);
+      focusStep();
+    });
 
     function focusStep() {
       const title = $(".step.is-active .step__title", form);
@@ -987,18 +1009,23 @@
 
     nextBtn.addEventListener("click", () => {
       if (!validate(current)) return;
-      go(current + 1);
+      goTo(current + 1);
       focusStep();
     });
-    prevBtn.addEventListener("click", () => {
-      go(current - 1);
-      focusStep();
-    });
+    prevBtn.addEventListener("click", back);
+    topBack.addEventListener("click", back);
     form.addEventListener("submit", (e) => e.preventDefault());
     form.addEventListener("change", (e) => {
       if (e.target.name === "service") {
         syncDetailBlocks();
         $('[data-error="service"]', form).hidden = true;
+        // Escolheu o serviço: já avança, sem precisar clicar em "Continuar"
+        setTimeout(() => {
+          if (current === 1 && validate(1)) {
+            goTo(2);
+            focusStep();
+          }
+        }, 260);
       }
       if (e.target.name === "care") syncCareNote();
       if (e.target.name === "ttype" && e.target.value !== "Flash pronto" && chosenFlash) {
@@ -1164,7 +1191,8 @@
       refreshFlash();
       refreshBag();
       syncCareNote();
-      go(svc ? 2 : 1);
+      if (svc) goTo(2);
+      else go(1);
       $("#agendar").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
       if (flash) toast(`Flash “${flash.name}” selecionado`);
     }
