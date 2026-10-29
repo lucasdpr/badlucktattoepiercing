@@ -539,7 +539,7 @@ h3.title-serif { font-size: clamp(32px, 4.4vw, 48px); }
 .gift p { margin: 4px 0 0; color: #34472f; }
 @media (max-width: 680px) { .gift { grid-template-columns: 1fr; text-align: left; } .gift .btn { width: 100%; } }
 
-/* ---------- Lojinha de semi-joias (prévia) ---------- */
+/* ---------- Vitrine de joias ---------- */
 .shop { margin-bottom: clamp(72px, 9vw, 112px); }
 .shop__filters { display: flex; flex-wrap: wrap; gap: 8px; }
 .shop__filters .tab[aria-pressed="true"] { background: var(--cocoa); color: var(--paper); border-color: var(--cocoa); }

@@ -27,7 +27,7 @@ window.SITE = {
       instagramHandle: "@piercer_fraan",
     },
     italo: {
-      name: "Italo Nogueira",
+      name: "Itallo Nogueira",
       role: "Tatuador",
       service: "tattoo",
       whatsapp: "5524999297145",
@@ -258,7 +258,7 @@ window.SITE = {
     { src: "assets/img/trabalhos/industrial-azul.webp", alt: "Piercing industrial com barras coloridas", title: "Industrial azul", cat: "orelha" }
   ],
 
-  // Portfólio do Italo.
+  // Portfólio do Itallo.
   // tags: "colorido" | "blackwork"
   // link (opcional): post no Instagram ou qualquer página externa.
   portfolio: [
@@ -272,29 +272,34 @@ window.SITE = {
     { src: "assets/img/tattoo/morcego-demonio.webp", alt: "Cabeça de morcego demoníaco em blackwork", title: "Morcego", tags: ["blackwork"] },
   ],
 
-  // Aviso de agenda do Italo (aparece ao lado do botão "Agendar com o Italo").
+  // Aviso de agenda do Itallo (aparece ao lado do botão "Agendar com o Itallo").
   // status: "open" (verde), "limited" (dourado) ou "closed" (cinza). enabled: false esconde o aviso.
   // Para atualizar: troque só status e text.
   agenda: { enabled: true, status: "open", text: "Agenda aberta" },
 
-  // Estilos que o Italo tatua (old school é a especialidade).
+  // Estilos que o Itallo tatua (old school é a especialidade).
   styles: [
     { id: "oldschool", name: "Old School", text: "Traço firme, cor chapada e clássicos atemporais.", icon: "star" },
     { id: "blackwork", name: "Blackwork", text: "Preto sólido, contraste e muita presença.", icon: "blackwork" },
-    { id: "pontilhismo", name: "Pontilhismo", text: "Sombras feitas ponto a ponto, com textura única.", icon: "dots" },
     { id: "fineline", name: "Fineline", text: "Traço fino e delicado para peças discretas.", icon: "line" },
-    { id: "lettering", name: "Lettering", text: "Nomes e frases com letra desenhada à mão.", icon: "letter" },
+    { id: "customizado", name: "Customizado", text: "Cada tattoo pensada e customizada pra você, misturando estilos do seu jeito.", icon: "mix" },
   ],
 
-  // Flashes prontos para tatuar.
-  // DEMO: imagens do portfólio usadas como exemplo — trocar pelas artes reais do Italo.
-  flashes: [
-    { id: "pantera", name: "Pantera de corações", size: "≈ 12 cm", price: "Sob consulta", src: "assets/img/tattoo/pantera-coracoes.webp" },
-    { id: "adaga", name: "Adaga & caveira", size: "≈ 15 cm", price: "Sob consulta", src: "assets/img/tattoo/adaga-caveira.webp" },
-    { id: "gato", name: "Gato & flor", size: "≈ 12 cm", price: "Sob consulta", src: "assets/img/tattoo/gato.webp" },
-    { id: "rosa", name: "Rosa & teia", size: "≈ 10 cm", price: "Sob consulta", src: "assets/img/tattoo/rosa.webp" },
-    { id: "morcego", name: "Morcego", size: "≈ 10 cm", price: "Sob consulta", src: "assets/img/tattoo/morcego-demonio.webp" },
+
+  // Cartas do "Tire sua sorte": tatuagens do portfólio usadas como inspiração (não são flashes).
+  inspirations: [
+    { id: "pantera", name: "Pantera de corações", src: "assets/img/tattoo/pantera-coracoes.webp" },
+    { id: "adaga", name: "Adaga & caveira", src: "assets/img/tattoo/adaga-caveira.webp" },
+    { id: "gato", name: "Gato & flor", src: "assets/img/tattoo/gato.webp" },
+    { id: "rosa", name: "Rosa & teia", src: "assets/img/tattoo/rosa.webp" },
+    { id: "morcego", name: "Morcego", src: "assets/img/tattoo/morcego-demonio.webp" },
+    { id: "dragao", name: "Dragão", src: "assets/img/tattoo/dragao.webp" },
   ],
+
+  // Flashes disponíveis do Itallo. Enquanto estiver vazio, a seção de flash e o baralho "Tire sua sorte"
+  // ficam ocultos. Quando ele mandar os flashes, preencher aqui:
+  // { id, name, size, price, src }
+  flashes: [],
 
   faq: [
     {
@@ -303,7 +308,7 @@ window.SITE = {
     },
     {
       q: "Quero tattoo e piercing. Falo com quem?",
-      a: "Com os dois! No agendamento escolha “Os dois” e o site prepara uma mensagem para a Fran (piercing) e outra para o Italo (tattoo).",
+      a: "Com os dois! No agendamento escolha “Os dois” e o site prepara uma mensagem para a Fran (piercing) e outra para o Itallo (tattoo).",
     },
     {
       q: "As joias são de quê?",
@@ -311,7 +316,7 @@ window.SITE = {
     },
     {
       q: "Posso levar minha própria ideia de tattoo?",
-      a: "Pode e deve. O Italo faz projetos autorais e também tattoos a partir da sua referência — além dos flashes prontos.",
+      a: "Pode e deve. O Itallo faz projetos autorais e também tattoos a partir da sua referência — buscando sempre fazer algo customizado pra você.",
     },
     {
       q: "Tenho medo de agulha. E agora?",

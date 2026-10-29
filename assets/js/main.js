@@ -653,7 +653,7 @@
   });
   applyGallery(false);
 
-  /* ---------- Aviso de agenda do Italo ---------- */
+  /* ---------- Aviso de agenda do Itallo ---------- */
   (() => {
     const cfg = S.agenda;
     const el = $("[data-agenda]");
@@ -663,15 +663,12 @@
     $("[data-agenda-text]", el).textContent = cfg.text;
   })();
 
-  /* ---------- Estilos do Italo ---------- */
+  /* ---------- Estilos do Itallo ---------- */
   const STYLE_ICONS = {
     star: `<polygon points="24.0,4.0 29.0,17.1 43.0,17.8 32.1,26.6 35.8,40.2 24.0,32.5 12.2,40.2 15.9,26.6 5.0,17.8 19.0,17.1" fill="#e3a92b" stroke="#15110e" stroke-width="2" stroke-linejoin="round"/><path d="M24 24 L24.0 4.0 L29.0 17.1 Z" fill="#a8741c"/><path d="M24 24 L43.0 17.8 L32.1 26.6 Z" fill="#a8741c"/><path d="M24 24 L35.8 40.2 L24.0 32.5 Z" fill="#a8741c"/><path d="M24 24 L12.2 40.2 L15.9 26.6 Z" fill="#a8741c"/><path d="M24 24 L5.0 17.8 L19.0 17.1 Z" fill="#a8741c"/>`,
     blackwork: `<path d="M30 6 A18 18 0 1 0 42 34 A15 15 0 1 1 30 6 Z" fill="#15110e"/>`,
-    dots: [0, 1, 2, 3, 4]
-      .map((r) => [0, 1, 2, 3, 4].map((c) => `<circle cx="${8 + c * 8}" cy="${8 + r * 8}" r="${(3.2 - r * 0.55).toFixed(2)}" fill="#15110e"/>`).join(""))
-      .join(""),
     line: `<path d="M6 34 C14 10 22 10 24 24 C26 38 34 38 42 14" fill="none" stroke="#15110e" stroke-width="1.6" stroke-linecap="round"/><circle cx="42" cy="14" r="2" fill="#15110e"/>`,
-    letter: `<text x="24" y="33" text-anchor="middle" font-family="Yellowtail, cursive" font-size="26" fill="#15110e">Aa</text>`,
+    mix: `<circle cx="18" cy="24" r="13" fill="none" stroke="#15110e" stroke-width="2.4"/><circle cx="30" cy="24" r="13" fill="none" stroke="#e3a92b" stroke-width="2.4"/><circle cx="24" cy="15" r="2.6" fill="#15110e"/>`,
   };
   const stylesEl = $("[data-styles]");
   stylesEl.innerHTML = S.styles
@@ -763,6 +760,11 @@
   });
 
   /* ---------- Flash ---------- */
+  // Sem flashes cadastrados: esconde a seção, o baralho e remove a opção "Flash pronto" do agendamento
+  if (!S.flashes.length) {
+    $(".flash-wrap").hidden = true;
+    $('input[name="ttype"][value="Flash pronto"]')?.closest(".pill")?.remove();
+  }
   const flashEl = $("[data-flash]");
   flashEl.innerHTML = S.flashes
     .map(
@@ -806,7 +808,7 @@
   drawBtn.addEventListener("click", () => {
     if (drawing) return;
     drawing = true;
-    const pool = S.flashes.filter((f) => f.id !== lastDraw);
+    const pool = S.inspirations.filter((f) => f.id !== lastDraw);
     const pick = pool[Math.floor(Math.random() * pool.length)];
     lastDraw = pick.id;
     deckEl.classList.remove("is-revealed");
@@ -814,10 +816,10 @@
     const reveal = () => {
       drawnFront.innerHTML = `
         <span class="drawn__corner" aria-hidden="true">13</span>
-        <span class="drawn__img"><img src="${pick.src}" alt="Flash: ${escapeHtml(pick.name)}"></span>
+        <span class="drawn__img"><img src="${pick.src}" alt="Inspiração: ${escapeHtml(pick.name)}"></span>
         <b class="drawn__name">${escapeHtml(pick.name)}</b>
-        <span class="drawn__meta">${escapeHtml(pick.size)} · ${escapeHtml(pick.price)}</span>
-        <button class="btn btn-red btn-small" data-want="${pick.id}">Quero esse</button>`;
+        <span class="drawn__meta">Do portfólio do Itallo</span>
+        <button class="btn btn-red btn-small" data-insp="${pick.id}">Quero algo assim</button>`;
       deckEl.classList.remove("is-shuffling");
       deckEl.classList.add("is-revealed");
       drawBtn.textContent = "Tirar outra carta";
@@ -828,8 +830,8 @@
     setTimeout(reveal, reduceMotion ? 0 : 900);
   });
   deckEl.addEventListener("click", (e) => {
-    const btn = e.target.closest("[data-want]");
-    if (btn) Wizard.start({ service: "tattoo", flash: S.flashes.find((f) => f.id === btn.dataset.want) });
+    const btn = e.target.closest("[data-insp]");
+    if (btn) Wizard.start({ service: "tattoo", inspiration: S.inspirations.find((f) => f.id === btn.dataset.insp) });
   });
 
   /* ---------- FAQ ---------- */
@@ -1066,7 +1068,7 @@
 
     function tattooMessage() {
       const f = form.elements;
-      const lines = [greeting("Italo"), "", "Quero fazer uma tattoo."];
+      const lines = [greeting("Itallo"), "", "Quero fazer uma tattoo."];
       if (chosenFlash) lines.push(`• Flash: ${chosenFlash.name}`);
       else if (f.ttype.value) lines.push(`• Tipo: ${f.ttype.value}`);
       if (f.tstyle.value) lines.push(`• Estilo: ${f.tstyle.value}`);
@@ -1111,7 +1113,7 @@
         phoneSub.textContent = a.phoneLabel;
       } else if (targets.length === 2) {
         phoneAvatar.innerHTML = AVATAR.none;
-        phoneName.textContent = "Fran & Italo";
+        phoneName.textContent = "Fran & Itallo";
         phoneSub.textContent = "2 mensagens";
       } else {
         phoneAvatar.innerHTML = AVATAR.none;
@@ -1142,7 +1144,7 @@
     }
 
     // Entrada a partir de outros pontos do site (flash, explorador, botões)
-    function start({ service: svc, areas = [], flash = null, spot = null, style = null } = {}) {
+    function start({ service: svc, areas = [], flash = null, spot = null, style = null, inspiration = null } = {}) {
       form.reset();
       sizeOut.textContent = "10 cm";
       chosenFlash = flash;
@@ -1154,6 +1156,11 @@
       });
       if (flash) form.elements.ttype.value = "Flash pronto";
       if (style) form.elements.tstyle.value = style;
+      if (inspiration) {
+        form.elements.ttype.value = "Projeto autoral";
+        form.elements.tidea.value = `Gostei da tattoo "${inspiration.name}" do seu portfólio. Quero algo nessa pegada, customizado pra mim.`;
+        toast(`Inspiração “${inspiration.name}” anotada`);
+      }
       refreshFlash();
       refreshBag();
       syncCareNote();
