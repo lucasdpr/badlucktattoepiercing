@@ -808,7 +808,7 @@
   drawBtn.addEventListener("click", () => {
     if (drawing) return;
     drawing = true;
-    const pool = S.flashes.filter((f) => f.id !== lastDraw);
+    const pool = S.inspirations.filter((f) => f.id !== lastDraw);
     const pick = pool[Math.floor(Math.random() * pool.length)];
     lastDraw = pick.id;
     deckEl.classList.remove("is-revealed");
@@ -816,10 +816,10 @@
     const reveal = () => {
       drawnFront.innerHTML = `
         <span class="drawn__corner" aria-hidden="true">13</span>
-        <span class="drawn__img"><img src="${pick.src}" alt="Flash: ${escapeHtml(pick.name)}"></span>
+        <span class="drawn__img"><img src="${pick.src}" alt="Inspiração: ${escapeHtml(pick.name)}"></span>
         <b class="drawn__name">${escapeHtml(pick.name)}</b>
-        <span class="drawn__meta">${escapeHtml(pick.size)} · ${escapeHtml(pick.price)}</span>
-        <button class="btn btn-red btn-small" data-want="${pick.id}">Quero esse</button>`;
+        <span class="drawn__meta">Do portfólio do Itallo</span>
+        <button class="btn btn-red btn-small" data-insp="${pick.id}">Quero algo assim</button>`;
       deckEl.classList.remove("is-shuffling");
       deckEl.classList.add("is-revealed");
       drawBtn.textContent = "Tirar outra carta";
@@ -830,8 +830,8 @@
     setTimeout(reveal, reduceMotion ? 0 : 900);
   });
   deckEl.addEventListener("click", (e) => {
-    const btn = e.target.closest("[data-want]");
-    if (btn) Wizard.start({ service: "tattoo", flash: S.flashes.find((f) => f.id === btn.dataset.want) });
+    const btn = e.target.closest("[data-insp]");
+    if (btn) Wizard.start({ service: "tattoo", inspiration: S.inspirations.find((f) => f.id === btn.dataset.insp) });
   });
 
   /* ---------- FAQ ---------- */
@@ -1144,7 +1144,7 @@
     }
 
     // Entrada a partir de outros pontos do site (flash, explorador, botões)
-    function start({ service: svc, areas = [], flash = null, spot = null, style = null } = {}) {
+    function start({ service: svc, areas = [], flash = null, spot = null, style = null, inspiration = null } = {}) {
       form.reset();
       sizeOut.textContent = "10 cm";
       chosenFlash = flash;
@@ -1156,6 +1156,11 @@
       });
       if (flash) form.elements.ttype.value = "Flash pronto";
       if (style) form.elements.tstyle.value = style;
+      if (inspiration) {
+        form.elements.ttype.value = "Projeto autoral";
+        form.elements.tidea.value = `Gostei da tattoo "${inspiration.name}" do seu portfólio. Quero algo nessa pegada, customizado pra mim.`;
+        toast(`Inspiração “${inspiration.name}” anotada`);
+      }
       refreshFlash();
       refreshBag();
       syncCareNote();

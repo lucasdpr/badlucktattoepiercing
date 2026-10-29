@@ -286,6 +286,16 @@ window.SITE = {
   ],
 
 
+  // Cartas do "Tire sua sorte": tatuagens do portfólio usadas como inspiração (não são flashes).
+  inspirations: [
+    { id: "pantera", name: "Pantera de corações", src: "assets/img/tattoo/pantera-coracoes.webp" },
+    { id: "adaga", name: "Adaga & caveira", src: "assets/img/tattoo/adaga-caveira.webp" },
+    { id: "gato", name: "Gato & flor", src: "assets/img/tattoo/gato.webp" },
+    { id: "rosa", name: "Rosa & teia", src: "assets/img/tattoo/rosa.webp" },
+    { id: "morcego", name: "Morcego", src: "assets/img/tattoo/morcego-demonio.webp" },
+    { id: "dragao", name: "Dragão", src: "assets/img/tattoo/dragao.webp" },
+  ],
+
   // Flashes disponíveis do Itallo. Enquanto estiver vazio, a seção de flash e o baralho "Tire sua sorte"
   // ficam ocultos. Quando ele mandar os flashes, preencher aqui:
   // { id, name, size, price, src }
